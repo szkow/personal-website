@@ -19,9 +19,11 @@
         max-height: 100%;
     }
     div.tile div.center {
+        line-height: 1em;
         float: left;
         max-width: 47%;
-        height: auto;
+        max-height: 90%;
+        overflow: hidden;
     }
     div.tile div.tileLink {
         background-color: lightcoral;
@@ -51,13 +53,18 @@
     <img src="resources/placeholder.png" alt="a placeholder image">
     
     <div class="center">
-        <h2>this is a div header</h2>
-        <p>and this is where i describe the project i did.<br> 
-            i can do newlines too
-        </p>
+        <h2>Raytracer</h2>
+            <p> As a part of my computer graphics coursework I wrote a 
+                program which renders using ray tracing--a 
+                physically- and mathematically-based technique to create
+                photorealistic scenes.
+            </p>
+            <p> Written in C++ from (nearly) scratch, including an image 
+                writter (to ascii .ppm format) and input file parser.
+            </p>
     </div>
 
-    <a href="index.html">
+    <a href="html/projects/raytracer.html">
     <div class="tileLink">
         >
     </div>
