@@ -2,8 +2,8 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='css/header.css'></link>
     <script src='js/image_gallery.js'></script>
+    <link rel='stylesheet' href='css/header.css'></link>
     <style>
         #column {
             border: solid grey;
@@ -19,7 +19,7 @@
         .gallery-thumbnail-container {
             width: 100%;
             height: 10%;
-            margin-bottom: 1%;
+            margin-bottom: 1.5%;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -27,6 +27,7 @@
         }
         .gallery-thumbnail-container div {
             height: 100%;
+            opacity: 0.7;
         }
         .thumbnail {
             max-height: 100%;
@@ -35,7 +36,7 @@
         .gallery-main {
             text-align: center;
             width: 100%;
-            height: 100%;
+            height: 88%;
         }
         .gallery-main img {
             max-width: 100%;
@@ -87,11 +88,11 @@
         <div id='links'>
             <div>
                 <p>
-                    <i class="fab fa-github-square"></i> <a href='https://github.com'>src</a>
+                    <i class="fab fa-github-square"></i> <a href='https://github.com'>Source code</a>
                 </p>
             </div>
             <div>
-                <p><b>Language</b> C++</p>
+                <p><b>Languages:</b> C++</p>
             </div>
         </div>
         <div id='words'>
