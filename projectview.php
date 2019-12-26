@@ -3,13 +3,13 @@
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='css/header.css'></link>
+    <script src='js/image_gallery.js'></script>
     <style>
         #column {
             border: solid grey;
             width: 60%;
             height: auto;
-            margin-left: 20%;
-            margin-top: 5%;
+            margin: 5% 20%;
         }
         #gallery {
             overflow: hidden;
@@ -18,7 +18,8 @@
         }
         .gallery-thumbnail-container {
             width: 100%;
-            height: 20%;
+            height: 10%;
+            margin-bottom: 1%;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -34,7 +35,7 @@
         .gallery-main {
             text-align: center;
             width: 100%;
-            height: 80%;
+            height: 100%;
         }
         .gallery-main img {
             max-width: 100%;
@@ -42,6 +43,7 @@
         }
         #links {
             border-bottom: solid grey;
+            border-top: solid grey;
             font-size: small;
             width: 100%;
             height: 5%;
@@ -73,12 +75,12 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
-                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
-                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
+                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='resources/stone.jpg' alt='placeholder image' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img src='resources/placeholder.png' alt='placeholder image'>
+                <img id='main-image-handle' src='resources/placeholder.png' alt='placeholder image'>
             </div>
         </div>
 
