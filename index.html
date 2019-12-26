@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
+<link rel='stylesheet' href='css/header.css'></link>
 <style type=text/css>
-    div#header {
-        /* border-bottom: 2px solid rgb(182, 182, 182); */
-        margin: 0px;
-        width: 100%;
-        height: 1%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    div#header a {
-        text-decoration: none;
-        font-size: x-large;
-    }
-    div#header div {
-        border-bottom: 1px solid coral;
-        width: 2ch;
-        text-align: center;
-    }
     div.tile {
         background-color: coral;
         height: 200px;
@@ -27,11 +11,6 @@
         margin-left: 15%;
         margin-right: 15%;
     }
-    /* div.tile div.tileLink:after {
-        content: "";
-        display: table;
-        clear: both;
-    } */
     div.tile img {
         float: left;
         width: auto;
@@ -59,11 +38,14 @@
 <body>
 <div id="header">
     <a href="index.html">
-        <div>&#x2302</div>
+        <div><i class="far fa-bookmark"></i></div>
+        <!-- &#x2302 -->
+    </a>
+    <a href="about.html">
+        <div><i class="fas fa-font"></i></div>
+        <!-- &#65 -->
     </a>
 </div>
-
-<h1>Tiles</h1> 
 
 <div class="tile">
     <img src="resources/placeholder.png" alt="a placeholder image">
