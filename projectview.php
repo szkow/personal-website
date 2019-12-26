@@ -3,44 +3,14 @@
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
     <script src='js/image_gallery.js'></script>
-    <link rel='stylesheet' href='css/header.css'></link>
+    <link rel='stylesheet' href='css/header.css'>
+    <link rel='stylesheet' href='css/gallery.css'>
     <style>
         #column {
             border: solid grey;
             width: 60%;
             height: auto;
             margin: 5% 20%;
-        }
-        #gallery {
-            overflow: hidden;
-            width: 100%;
-            height: 500px;
-        }
-        .gallery-thumbnail-container {
-            width: 100%;
-            height: 10%;
-            margin-bottom: 1.5%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-content: center;
-        }
-        .gallery-thumbnail-container div {
-            height: 100%;
-            opacity: 0.7;
-        }
-        .thumbnail {
-            max-height: 100%;
-            max-width: 100%;
-        }
-        .gallery-main {
-            text-align: center;
-            width: 100%;
-            height: 88%;
-        }
-        .gallery-main img {
-            max-width: 100%;
-            max-height: 100%;
         }
         #links {
             border-bottom: solid grey;
