@@ -39,7 +39,7 @@
 </head>
 
 <body>
-<?php include "header.html" ?>
+<?php include "html/header.html" ?>
 <div id='page-title'>
     <h1>Projects</h1>
 </div>
