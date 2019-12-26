@@ -27,19 +27,7 @@
 </head>
 
 <body>
-<header>
-    <a href="index.html">
-        <div><i class="far fa-bookmark"></i></div>
-        <!-- &#x2302 -->
-    </a>
-    <a href="about.html">
-        <div><i class="fas fa-font"></i></div>
-        <!-- &#65 -->
-    </a>
-    <a href='projects.html'>
-        <div><i class="fas fa-bars"></i></div>
-    </a>
-    </header>
+<?php include "header.html" ?>
 
 <div id='page-title'>
     <h1>About</h1>

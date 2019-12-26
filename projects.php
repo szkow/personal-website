@@ -5,7 +5,8 @@
 <link rel='stylesheet' href='css/header.css'></link>
 <style type=text/css>
     div.tile {
-        background-color: coral;
+        border-left: solid coral;
+        /* background-color: coral; */
         height: 200px;
         margin-top: 2%;
         margin-left: 15%;
@@ -38,19 +39,7 @@
 </head>
 
 <body>
-<header>
-    <a href="index.html">
-        <div><i class="far fa-bookmark"></i></div>
-        <!-- &#x2302 -->
-    </a>
-    <a href="about.html">
-        <div><i class="fas fa-font"></i></div>
-        <!-- &#65 -->
-    </a>
-    <a href='projects.html'>
-        <div><i class="fas fa-bars"></i></div>
-    </a>
-</header>
+<?php include "header.html" ?>
 <div id='page-title'>
     <h1>Projects</h1>
 </div>
@@ -66,7 +55,7 @@
                 photorealistic scenes.
             </p>
             <p> Written in C++ from (nearly) scratch, including an image 
-                writter (to ascii .ppm format) and input file parser.
+                writer (to ascii .ppm format) and input file parser.
             </p>
     </div>
 
