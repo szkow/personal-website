@@ -5,28 +5,50 @@
     <link rel='stylesheet' href='css/header.css'></link>
     <style>
         #column {
-            border: solid grey;
+            /* border: solid grey; */
             width: 60%;
-            height: 100%;
+            height: auto;
             margin-left: 20%;
             margin-top: 5%;
         }
         #gallery {
-            border-bottom: solid grey;
             overflow: hidden;
+            width: 100%;
+            height: 500px;
+        }
+        #gallery-thumbnail-container {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-content: center;
+        }
+        #gallery-thumbnail-container div {
+            height: 100%;
+        }
+        .thumbnail {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        #gallery-aspect-container {
+            /* border-bottom: solid grey; */
             padding-top: 56.25%;
             position: relative;
         }
-        #gallery-aspect-container {
+        #gallery-enlarged-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            /* text-align: center; */
+            border: solid black;
         }
-        #gallery img {
-            max-height: 100%;
+        #gallery-enlarged-image {
+            max-height: 50%;
             max-width: 100%;
+            object-fit: contain;
         }
         #links {
             border-bottom: solid grey;
@@ -59,10 +81,16 @@
     </div>
     
     <div id='column'>
-
         <div id='gallery'>
+            <div id='gallery-thumbnail-container'>
+                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
+                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
+                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image'></div>
+            </div>
             <div id='gallery-aspect-container'>
-                <img src='resources/placeholder.png' alt='placeholder image'>
+                <div id='gallery-enlarged-container'>
+                    <img id='gallery-enlarged-img' src='resources/placeholder.png' alt='placeholder image'>
+                </div>
             </div>
         </div>
 
