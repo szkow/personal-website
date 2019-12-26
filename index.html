@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type=text/css>
+    div#header {
+        /* border-bottom: 2px solid rgb(182, 182, 182); */
+        margin: 0px;
+        width: 100%;
+        height: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div#header a {
+        text-decoration: none;
+        font-size: x-large;
+    }
+    div#header div {
+        border-bottom: 1px solid coral;
+        width: 2ch;
+        text-align: center;
+    }
+    div.tile {
+        background-color: coral;
+        height: 200px;
+        margin-top: 2%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    /* div.tile div.tileLink:after {
+        content: "";
+        display: table;
+        clear: both;
+    } */
+    div.tile img {
+        float: left;
+        width: auto;
+        height: auto;
+        max-width: 45%;
+        max-height: 100%;
+    }
+    div.tile div.center {
+        float: left;
+        max-width: 47%;
+        height: auto;
+    }
+    div.tile div.tileLink {
+        background-color: lightcoral;
+        float: right;
+        width: 8%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+
+<body>
+<div id="header">
+    <a href="index.html">
+        <div>&#x2302</div>
+    </a>
+</div>
+
+<h1>Tiles</h1> 
+
+<div class="tile">
+    <img src="resources/placeholder.png" alt="a placeholder image">
+    
+    <div class="center">
+        <h2>this is a div header</h2>
+        <p>and this is where i describe the project i did.<br> 
+            i can do newlines too
+        </p>
+    </div>
+
+    <a href="index.html">
+    <div class="tileLink">
+        >
+    </div>
+    </a>
+</div>
+
+<div class=tile>
+    <img src="resources/placeholder.png" alt="a placeholder image">
+    
+    <div class="center">
+        <h2>this is a div header</h2>
+        <p>and this is where i describe the project i did.<br> 
+            i can do newlines too
+        </p>
+    </div>
+
+    <a href="index.html">
+    <div class="tileLink">
+        >
+    </div>
+    </a>
+</div>
+
+</body>
+</html>
