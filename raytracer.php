@@ -35,7 +35,6 @@
         }
         #words li {
             text-indent: 0;
-            text-
         }
     </style>
 </head>
@@ -110,7 +109,7 @@
                 I developed in Visual Studio 15 and the project ended up being basically the largest piece I'd written so far.
                 The class hierarchy and such is probably extremely jank, but I haven't had other eyes on it. I am particularly
                 proud of how I dealt with some odd interactions between classes: it ended up paying off since I had one of the
-                fasted raytracers in the class.
+                fastest raytracers in the class.
             </p>
         </div>
     </div>
