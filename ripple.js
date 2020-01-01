@@ -1,7 +1,7 @@
 window.onload = ((onloadEvent) => {
     function clickCallback(event) {
-        var maskOut = document.getElementById('mask-outer');
-        var maskIn = document.getElementById('mask-inner');
+        var maskOut = document.getElementById('ripple-outer');
+        var maskIn = document.getElementById('ripple-inner');
         maskOut.setAttribute('cx', event.clientX);
         maskOut.setAttribute('cy', event.clientY);
         maskIn.setAttribute('cx', event.clientX);
@@ -9,7 +9,7 @@ window.onload = ((onloadEvent) => {
         animate(maskOut, maskIn, 8000);
     }
 
-    document.getElementById('background').onclick = clickCallback;
+    document.getElementById('ripple-background').onclick = clickCallback;
 });
 
 function animate(outer, inner, duration) {
