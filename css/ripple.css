@@ -1,0 +1,32 @@
+* {     /* Reset CSS for everything */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+html, body { 
+    margin:0; 
+    padding:0; 
+    overflow:hidden
+}
+body {
+    background-color: coral;
+}
+svg { 
+    position:fixed; 
+    top:0; 
+    bottom:0;
+    width: 100%;
+    height: 100%;
+}
+#background {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    position: relative;
+    z-index: -1;
+}
+#foreground {
+    background-color: grey;
+}
