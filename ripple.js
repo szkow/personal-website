@@ -6,15 +6,16 @@ window.onload = ((onloadEvent) => {
         maskOut.setAttribute('cy', event.clientY);
         maskIn.setAttribute('cx', event.clientX);
         maskIn.setAttribute('cy', event.clientY);
-        animate(maskOut, maskIn, 8000);
+        animate(maskOut, maskIn);
     }
 
     document.getElementById('ripple-background').onclick = clickCallback;
 });
 
-function animate(outer, inner, duration) {
+function animate(outer, inner) {
     var maxRadius = 1000;
-    var animationSteps = 20;
+    var duration = 20000;
+    var animationSteps = 40;
     // var velocity = 1 / 15;
 
     var begin = performance.now();
