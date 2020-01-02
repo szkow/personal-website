@@ -49,17 +49,18 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='resources/placeholder.png' alt='placeholder image' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='resources/raytracer/two_spheres.png' alt='placeholder image' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='resources/raytracer/teapot.png' alt='placeholder image' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='resources/placeholder.png' alt='placeholder image'>
+                <img id='main-image-handle' src='resources/raytracer/teapot.png' alt='placeholder image'>
             </div>
         </div>
 
         <div id='links'>
             <div>
                 <p>
-                    <i class="fab fa-github-square"></i> <a href='https://github.com'>Source code</a>
+                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/raytracer-csci5607'>Source code</a>
                 </p>
             </div>
             <div>
