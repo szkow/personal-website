@@ -21,15 +21,6 @@ header div {
     text-align: center;
     margin-left: 0.75ch;
 }
-#page-title {
-    margin: 1% 40%;
-    text-align: center;
-    /* font-size: x-large;
-    font-weight: bold; */
-}
-#page-title h1 {
-    font-size: xx-large;
-}
 
 /* Footer style */
 footer {
