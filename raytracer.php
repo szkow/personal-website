@@ -3,6 +3,7 @@
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
     <script src='js/image_gallery.js'></script>
+    <link rel='stylesheet' href='/css/site_style.css'></link>
     <link rel='stylesheet' href='css/header.css'>
     <link rel='stylesheet' href='css/gallery.css'>
     <style>

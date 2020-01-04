@@ -2,12 +2,12 @@
 <html>
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
+<link rel='stylesheet' href='/css/site_style.css'></link>
 <link rel='stylesheet' href='css/header.css'></link>
-<style type=text/css>
+<style type='text/css'>
     div.tile {
         border-left: solid coral;
-        /* background-color: coral; */
-        height: 200px;
+        height: 250px;
         margin-top: 2%;
         margin-left: 15%;
         margin-right: 15%;
@@ -60,26 +60,9 @@
     </div>
 
     <a href="raytracer.php">
-    <div class="tileLink">
-        >
-    </div>
-    </a>
-</div>
-
-<div class=tile>
-    <img src="resources/placeholder.png" alt="a placeholder image">
-    
-    <div class="center">
-        <h2>this is a div header</h2>
-        <p>and this is where i describe the project i did.<br> 
-            i can do newlines too
-        </p>
-    </div>
-
-    <a href="projects.html">
-    <div class="tileLink">
-        >
-    </div>
+        <div class="tileLink">
+            <i class="fas fa-chevron-right"></i>
+        </div>
     </a>
 </div>
 </body>
