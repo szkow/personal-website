@@ -12,6 +12,9 @@ p, li, ol {
 
 #page-title {
     margin: 0 15%;
+    padding: 0;
+    border-bottom: thin solid coral;
+    line-height: 0;
     /* text-align: center; */
 }
 #page-title h1 {
