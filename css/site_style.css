@@ -3,7 +3,11 @@
     src: local('Clear Sans Regular'), url('/resources/fonts/clear-sans/ClearSans-Regular.tff');
 }    
 body {
+    margin: 0;
     font-family: 'Clear Sans', Fallback, sans-serif;
+}
+p, li, ol {
+    font-size: 10pt;
 }
 
 #page-title {
