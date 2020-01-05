@@ -16,7 +16,7 @@ p, li, ol {
 #page-title {
     margin: 0 var(--column-margin);
     padding: 0;
-    border-bottom: thin solid coral;
+    border-bottom: thin solid black;
     line-height: 0;
     /* text-align: center; */
 }
