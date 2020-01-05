@@ -1,3 +1,6 @@
+:root {
+    --column-margin: 20%;
+}
 @font-face {
     font-family: 'Clear Sans';
     src: local('Clear Sans Regular'), url('/resources/fonts/clear-sans/ClearSans-Regular.tff');
@@ -11,7 +14,7 @@ p, li, ol {
 }
 
 #page-title {
-    margin: 0 15%;
+    margin: 0 var(--column-margin);
     padding: 0;
     border-bottom: thin solid coral;
     line-height: 0;

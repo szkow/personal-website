@@ -7,10 +7,8 @@
 <style type='text/css'>
     div.tile {
         border-left: solid coral;
-        height: 250px;
-        margin-top: 2%;
-        margin-left: 15%;
-        margin-right: 15%;
+        height: 200px;
+        margin: 1% var(--column-margin) 1% var(--column-margin);
     }
     div.tile img {
         float: left;
