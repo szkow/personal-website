@@ -11,7 +11,7 @@
             border: solid grey;
             width: 60%;
             height: auto;
-            margin: 5% 20%;
+            margin: 5% var(--column-margin);
         }
         #links {
             border-bottom: solid grey;
