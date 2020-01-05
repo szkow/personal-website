@@ -51,14 +51,16 @@
     
     <div class="center">
         <h2>Raytracer</h2>
-            <p> As a part of my computer graphics coursework I wrote a 
-                program which renders using ray tracing--a 
-                physically- and mathematically-based technique to create
-                photorealistic scenes.
-            </p>
-            <p> Written in C++ from (nearly) scratch, including an image 
-                writer (to ascii .ppm format) and input file parser.
-            </p>
+        <p> 
+            As a part of my computer graphics coursework I wrote a 
+            program which creates images using ray tracing&mdash;a 
+            physics-based rendering technique&mdash;to create
+            photorealistic scenes.
+        </p>
+        <p> 
+            Written in C++ from scratch, including an image 
+            writer and input file parser.
+        </p>
     </div>
 
     <a class='tileLink' href="/raytracer.php">
