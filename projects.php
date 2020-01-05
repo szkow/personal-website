@@ -3,7 +3,7 @@
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='/css/site_style.css'></link>
-<link rel='stylesheet' href='css/header.css'></link>
+<link rel='stylesheet' href='/css/header.css'></link>
 <style type='text/css'>
     div.tile {
         border-left: solid coral;
@@ -45,7 +45,7 @@
 </div>
 
 <div class="tile">
-    <img src="resources/placeholder.png" alt="a placeholder image">
+    <img src="/resources/placeholder.png" alt="a placeholder image">
     
     <div class="center">
         <h2>Raytracer</h2>
@@ -59,7 +59,7 @@
             </p>
     </div>
 
-    <a href="raytracer.php">
+    <a href="/raytracer.php">
         <div class="tileLink">
             <i class="fas fa-chevron-right"></i>
         </div>
