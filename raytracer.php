@@ -8,14 +8,11 @@
     <link rel='stylesheet' href='/css/gallery.css'>
     <style>
         #column {
-            border: solid grey;
-            width: 60%;
+            /* border: solid grey; */
             height: auto;
-            margin: 5% var(--column-margin);
+            margin: 0 var(--column-margin);
         }
         #links {
-            border-bottom: solid grey;
-            border-top: solid grey;
             font-size: small;
             width: 100%;
             height: 5%;
@@ -31,6 +28,7 @@
             margin: 0 2.5%;
         }
         #words {
+            background: white;
             text-indent: 1.5em;
             padding: 20px;
         }

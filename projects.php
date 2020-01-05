@@ -24,14 +24,18 @@
         max-height: 90%;
         overflow: hidden;
     }
-    div.tile div.tileLink {
-        background-color: lightcoral;
+    div.tile .tileLink div {
+        background-color: coral;
+        /* color: coral; */
         float: right;
         width: 8%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    div.tile a.tileLink:visited {
+        color: currentColor;    
     }
 </style>
 </head>
@@ -57,8 +61,8 @@
             </p>
     </div>
 
-    <a href="/raytracer.php">
-        <div class="tileLink">
+    <a class='tileLink' href="/raytracer.php">
+        <div>
             <i class="fas fa-chevron-right"></i>
         </div>
     </a>
