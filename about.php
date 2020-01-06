@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<?php include "html/header.html" ?>
+<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
 
 <div id='page-title'>
     <h1>About</h1>
