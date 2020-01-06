@@ -49,7 +49,7 @@
 
 <div id='social-links'>
     <p>
-    <a href='roszk008@umn.edu'>
+    <a href='mailto:roszk008@umn.edu'>
             <i class="far fa-envelope" style='color: black'></i> roszk008@umn.edu</a><br>
     <a href='https://www.linkedin.com/in/april-roszkowski'>
         <i class="fab fa-linkedin" style='color: black'></i> april-roszkowski</a><br>
