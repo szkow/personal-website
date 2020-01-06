@@ -15,8 +15,9 @@
     }
         div.tile div.image-container {
             float: left;
-            width: calc(var(--entry-height) + 2%);
+            width: var(--entry-height);
             height: 100%;
+            margin: 0 2% 0 5px;
             overflow: hidden;
             position: relative;
         }
