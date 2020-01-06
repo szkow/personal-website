@@ -23,14 +23,22 @@
         }
             div.tile div.image-container img {
                 position: absolute;
+            }
+            #thumbnail-raytracer {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%) scale(0.35);
             }
+            #thumbnail-website {
+                top: 0;
+                left: 0;
+                transform-origin: left top;
+                transform: translateX(-10px) scale(0.2);
+            }
         div.tile div.center {
             line-height: 1em;
             float: left;
-            width: 47%;
+            width: 60%;
             overflow: hidden;
         }
         div.tile .tileLink div {
@@ -57,7 +65,8 @@
 
 <div class="tile">
     <div class='image-container'>
-        <img src="/resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
+        <img id='thumbnail-raytracer' 
+             src="/resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
     </div>
     
     <div class="center">
@@ -75,6 +84,27 @@
     </div>
 
     <a class='tileLink' href="/raytracer.php">
+        <div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </a>
+</div>
+
+<div class="tile">
+    <div class='image-container'>
+        <img id='thumbnail-website'
+             src="/resources/website/code_snippet.jpg" alt="a code snippet from this website">
+    </div>
+    
+    <div class="center">
+        <h2>This website</h2>
+        <p> 
+            What you're reading right now is something I wrote December 2019 through January 2020
+            in my free time. I think it's pretty neat!
+        </p>
+    </div>
+
+    <a class='tileLink' href="/website.php">
         <div>
             <i class="fas fa-chevron-right"></i>
         </div>
