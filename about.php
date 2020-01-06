@@ -14,6 +14,9 @@
         margin-right: 1%;
         float: right;
     }
+    #social-links i {
+        font-size: medium;
+    }
     #social-links a {
         text-decoration: none;
         color: grey;
@@ -51,7 +54,7 @@
     <a href='https://www.linkedin.com/in/april-roszkowski'>
         <i class="fab fa-linkedin" style='color: black'></i> april-roszkowski</a><br>
     <a href='https://www.github.com/szkow'>
-        <i class="fab fa-github" style='color: black'></i> szkow</a><br>
+        <i class="fab fa-github-square" style='color: black'></i> szkow</a><br>
 
     <a href='https://www.last.fm/user/szkow'>
         <i class="fab fa-lastfm-square" style='color: black'></i> szkow</a><br>
