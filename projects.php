@@ -24,17 +24,17 @@
             div.tile div.image-container img {
                 position: absolute;
             }
-            #thumbnail-raytracer {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%) scale(0.35);
-            }
-            #thumbnail-website {
-                top: 0;
-                left: 0;
-                transform-origin: left top;
-                transform: translateX(-10px) scale(0.2);
-            }
+                #thumbnail-raytracer {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0.35);
+                }
+                #thumbnail-website {
+                    top: 0;
+                    left: 0;
+                    transform-origin: left top;
+                    transform: translateX(-10px) scale(0.2);
+                }
         div.tile div.center {
             line-height: 1em;
             float: left;
@@ -43,6 +43,7 @@
         }
         div.tile .tileLink div {
             background-color: coral;
+            text-decoration: none;
             /* color: coral; */
             float: right;
             width: 8%;
@@ -51,7 +52,7 @@
             justify-content: center;
             align-items: center;
         }
-            div.tile a.tileLink:visited {
+            div.tile a.tileLink:visited, div.tile a.tileLink:link {
                 color: currentColor;    
             }
 </style>
