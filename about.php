@@ -50,7 +50,9 @@
             <i class="far fa-envelope" style='color: black'></i> roszk008@umn.edu</a><br>
     <a href='https://www.linkedin.com/in/april-roszkowski'>
         <i class="fab fa-linkedin" style='color: black'></i> april-roszkowski</a><br>
-    
+    <a href='https://www.github.com/szkow'>
+        <i class="fab fa-github" style='color: black'></i> szkow</a><br>
+
     <a href='https://www.last.fm/user/szkow'>
         <i class="fab fa-lastfm-square" style='color: black'></i> szkow</a><br>
     </p>
