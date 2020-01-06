@@ -84,7 +84,7 @@
         </p>
     </div>
 
-    <a class='tileLink' href="/raytracer.php">
+    <a class='tileLink' href="/projects/raytracer.php">
         <div>
             <i class="fas fa-chevron-right"></i>
         </div>
@@ -105,7 +105,7 @@
         </p>
     </div>
 
-    <a class='tileLink' href="/website.php">
+    <a class='tileLink' href="/projects/website.php">
         <div>
             <i class="fas fa-chevron-right"></i>
         </div>
