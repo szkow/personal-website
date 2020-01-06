@@ -2,7 +2,7 @@
 /* Header style */
 header {
     /* border-bottom: 2px solid rgb(182, 182, 182); */
-    margin: 0px;
+    margin: 0;
     width: 100%;
     height: 1%;
     display: flex;
@@ -16,19 +16,10 @@ header a {
     /* font-size: small; */
 }
 header div {
-    border-bottom: 1px solid coral;
+    /* border-bottom: 1px solid coral; */
     width: 3ch;
     text-align: center;
-    margin-left: 0.75ch;
-}
-#page-title {
-    margin: 1% 40%;
-    text-align: center;
-    /* font-size: x-large;
-    font-weight: bold; */
-}
-#page-title h1 {
-    font-size: xx-large;
+    margin: 5px 0.375ch;
 }
 
 /* Footer style */
