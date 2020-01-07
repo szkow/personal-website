@@ -16,6 +16,9 @@ html, body {
     position: relative;
     z-index: -1;
 }
+#ripple-background div {
+    position: fixed;
+}
 #ripple-background svg { 
     position:fixed; 
     top:0; 
