@@ -14,7 +14,7 @@ window.onload = ((onloadEvent) => {
 
 function animate(outer, inner) {
     var maxRadius = 1000;
-    var duration = 20000;
+    var duration = 1000;
     var animationSteps = 40;
     // var velocity = 1 / 15;
 
@@ -23,9 +23,9 @@ function animate(outer, inner) {
         var progress = (time - begin) / duration;
         if (progress > 1) { progress = 1; }  // Cap progress at 1
 
-        progress = discretize(progress);
+        // progress = discretize(progress);
 
-        // Redraw our outer
+        // Redraw our circles
         var radius = maxRadius * sineInOut(progress);
         var weight = 0.3 * bellInOut(progress);
         outer.setAttribute('r', radius);
@@ -47,10 +47,12 @@ function animate(outer, inner) {
 }
 
 function sineInOut(t) {
+    t = 0.8 * t + 0.2;
     t = 0.73 * t + 0.27;
     return Math.pow(0.5 * (Math.sin((t - 0.5) * Math.PI) + 1), 5);
 }
 
 function bellInOut(t) {
+    t = 0.8 * t + 0.2;
     return Math.exp(-20 * Math.pow(t - 0.5, 2));
 }
