@@ -18,6 +18,11 @@ html, body {
 }
 #ripple-background div {
     position: fixed;
+    color: antiquewhite;
+    font-family: 'OCR A Std', monospace;
+    font-weight: bold;
+    line-height: 1.2ch;
+    transform: scale(1.5); 
 }
 #ripple-background svg { 
     position:fixed; 
