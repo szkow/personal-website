@@ -9,24 +9,25 @@ window.onload = ((onloadEvent) => {
         animate(maskOut, maskIn);
     }
 
+    generateText(10000);
     document.getElementById('ripple-background').onclick = clickCallback;
 });
 
 function animate(outer, inner) {
-    var maxRadius = 1000;
-    var duration = 1000;
-    var animationSteps = 40;
+    var kMaxRadius = 1000;
+    var kDuration = 1000;
+    var kAnimationSteps = 40;
     // var velocity = 1 / 15;
 
     var begin = performance.now();
     requestAnimationFrame(function ripple(time) {
-        var progress = (time - begin) / duration;
+        var progress = (time - begin) / kDuration;
         if (progress > 1) { progress = 1; }  // Cap progress at 1
 
         // progress = discretize(progress);
 
         // Redraw our circles
-        var radius = maxRadius * sineInOut(progress);
+        var radius = kMaxRadius * sineInOut(progress);
         var weight = 0.3 * bellInOut(progress);
         outer.setAttribute('r', radius);
         inner.setAttribute('r', (1 - weight) * radius);
@@ -41,8 +42,8 @@ function animate(outer, inner) {
     });
 
     function discretize(progress) {
-        var remapped = progress * animationSteps;
-        return (Math.floor(remapped) / animationSteps);
+        var remapped = progress * kAnimationSteps;
+        return (Math.floor(remapped) / kAnimationSteps);
     }
 }
 
@@ -55,4 +56,17 @@ function sineInOut(t) {
 function bellInOut(t) {
     t = 0.8 * t + 0.2;
     return Math.exp(-20 * Math.pow(t - 0.5, 2));
+}
+
+function generateText(characterCount) {
+    // Generate the text
+    var generatedText = '';
+    for (var i = 0; i < characterCount; i++) {
+        var characterCode = Math.floor(93 * Math.random() + 33);
+        generatedText += String.fromCharCode(characterCode);
+    }
+
+    // Update text
+    var text = document.getElementById('ripple-text');
+    text.textContent = generatedText;
 }

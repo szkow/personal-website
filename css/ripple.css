@@ -16,9 +16,10 @@ html, body {
     position: relative;
     z-index: -1;
 }
-#ripple-background div {
+#ripple-text {
     position: fixed;
     color: antiquewhite;
+    word-break: break-all;
     font-family: 'OCR A Std', monospace;
     font-weight: bold;
     line-height: 1.2ch;
