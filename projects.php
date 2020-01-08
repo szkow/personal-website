@@ -2,8 +2,8 @@
 <html>
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='/css/site_style.css'></link>
-<link rel='stylesheet' href='/css/header.css'></link>
+<link rel='stylesheet' href='css/site_style.css'>
+<link rel='stylesheet' href='css/header.css'>
 <style type='text/css'>
 :root {
     --entry-height: 200px;
@@ -59,7 +59,7 @@
 </head>
 
 <body>
-<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
+<?php include $_SERVER["CONTEXT_DOCUMENT_ROOT"] . "/html/header.html" ?>
 <div id='page-title'>
     <h1>Projects</h1>
 </div>
@@ -67,7 +67,7 @@
 <div class="tile">
     <div class='image-container'>
         <img id='thumbnail-raytracer' 
-             src="/resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
+             src="resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
     </div>
     
     <div class="center">
@@ -84,7 +84,7 @@
         </p>
     </div>
 
-    <a class='tileLink' href="/projects/raytracer.php">
+    <a class='tileLink' href="projects/raytracer.php">
         <div>
             <i class="fas fa-chevron-right"></i>
         </div>
@@ -94,7 +94,7 @@
 <div class="tile">
     <div class='image-container'>
         <img id='thumbnail-website'
-             src="/resources/website/code_snippet.jpg" alt="a code snippet from this website">
+             src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
     </div>
     
     <div class="center">
@@ -105,7 +105,7 @@
         </p>
     </div>
 
-    <a class='tileLink' href="/projects/website.php">
+    <a class='tileLink' href="projects/website.php">
         <div>
             <i class="fas fa-chevron-right"></i>
         </div>

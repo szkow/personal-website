@@ -2,11 +2,11 @@
 <html>
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='/css/site_style.css'></link>
-<link rel='stylesheet' href='/css/header.css'></link>
+<link rel='stylesheet' href='css/site_style.css'>
+<link rel='stylesheet' href='css/header.css'>
 </head>
 <body>
-<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
+<?php include $_SERVER["CONTEXT_DOCUMENT_ROOT"] . "/html/header.html" ?>
 
 <div id='page-title'>
     <h1>Index</h1>

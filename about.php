@@ -2,8 +2,8 @@
 <html>
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='/css/site_style.css'></link>
-<link rel='stylesheet' href='/css/header.css'>
+<link rel='stylesheet' href='css/site_style.css'>
+<link rel='stylesheet' href='css/header.css'>
 <style type=text/css>
     #social-links {
         /* border: solid black; */
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
+<?php include $_SERVER["CONTEXT_DOCUMENT_ROOT"] . "/html/header.html" ?>
 
 <div id='page-title'>
     <h1>About</h1>
@@ -43,7 +43,7 @@
         at the University of Minnesota-Twin Cities. This page
         is most definitely under construction, but for the
         time being, feel free to view  
-        <a href='/resources/resume.pdf'>my resume</a>.
+        <a href='resources/resume.pdf'>my resume</a>.
     </p>
 </div>
 
@@ -63,7 +63,7 @@
 
 <footer>
     <div>
-        All content and design by <a href='/about.php'>me</a> &#183 icons 
+        All content and design by <a href='about.php'>me</a> &#183 icons 
         by <a href='https://fontawesome.com'>fontawesome</a>.
     </div>
 </footer>
