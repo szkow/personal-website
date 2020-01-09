@@ -88,7 +88,9 @@ function wiggle(progress, permutationChance) {
 
     var permuted = '';
     for (var i = 0; i < length; i++) {
-        if (Math.random() < permutationChance) {
+        if (string.charAt(i) == '\n') { 
+            permuted += '\n'; 
+        } else if (Math.random() < permutationChance) {
             permuted += generateCharacter();
         } else {
             permuted += string.charAt(i);
