@@ -9,14 +9,19 @@ window.onload = ((onloadEvent) => {
         animate(maskOut, maskIn);
     }
 
-    generateText(10000);
+    // Calculate number of characters to generate
+    var widthInCh = window.innerWidth / 10;  // We'll guess more than 10px per char
+    var heightInCh = window.innerHeight / 10;  // We have linewidth set to 10px
+    var totalChars = widthInCh * heightInCh; 
+
+    generateText(totalChars);
     document.getElementById('ripple-background').onclick = clickCallback;
 });
 
 function animate(outer, inner) {
     var kMaxRadius = 1000;
-    var kDuration = 1000;
-    var kAnimationSteps = 40;
+    var kDuration = 5000;
+    var kAnimationSteps = 35;
     // var velocity = 1 / 15;
 
     var begin = performance.now();
@@ -24,13 +29,16 @@ function animate(outer, inner) {
         var progress = (time - begin) / kDuration;
         if (progress > 1) { progress = 1; }  // Cap progress at 1
 
-        // progress = discretize(progress);
+        // progress = discretize(progress, kAnimationSteps);
 
         // Redraw our circles
         var radius = kMaxRadius * sineInOut(progress);
         var weight = 0.3 * bellInOut(progress);
         outer.setAttribute('r', radius);
         inner.setAttribute('r', (1 - weight) * radius);
+
+        // Wiggle the letters
+        wiggle(progress, 0.01);
 
         // Continue animation
         if (progress < 1) {
@@ -40,11 +48,11 @@ function animate(outer, inner) {
             inner.setAttribute('r', 0);
         }
     });
+}
 
-    function discretize(progress) {
-        var remapped = progress * kAnimationSteps;
-        return (Math.floor(remapped) / kAnimationSteps);
-    }
+function discretize(progress, steps) {
+    var remapped = progress * steps;
+    return (Math.floor(remapped) / steps);
 }
 
 function sineInOut(t) {
@@ -62,11 +70,31 @@ function generateText(characterCount) {
     // Generate the text
     var generatedText = '';
     for (var i = 0; i < characterCount; i++) {
-        var characterCode = Math.floor(93 * Math.random() + 33);
-        generatedText += String.fromCharCode(characterCode);
+        generatedText += generateCharacter();
     }
 
     // Update text
     var text = document.getElementById('ripple-text');
     text.textContent = generatedText;
+}
+
+function wiggle(progress, permutationChance) {
+    var text = document.getElementById('ripple-text');
+    var string = text.textContent;
+    var length = string.length;
+
+    var permuted = '';
+    for (var i = 0; i < length; i++) {
+        if (Math.random() < permutationChance) {
+            permuted += generateCharacter();
+        } else {
+            permuted += string.charAt(i);
+        }
+    }
+
+    text.textContent = permuted;
+}
+
+function generateCharacter() {
+    return String.fromCharCode(Math.floor(93 * Math.random() + 33));
 }
