@@ -41,6 +41,13 @@
             width: 60%;
             overflow: hidden;
         }
+                div.tile div.center h2 span.project-date {
+                    color: grey;
+                    font-weight: normal;
+                    font-size: small;
+                    vertical-align: middle;
+                    margin: 0 3%;
+                }
         div.tile .tileLink div {
             background-color: coral;
             text-decoration: none;
@@ -71,7 +78,7 @@
     </div>
     
     <div class="center">
-        <h2>Raytracer</h2>
+        <h2>Raytracer <span class='project-date'>October 2019</span></h2>
         <p> 
             As a part of my computer graphics coursework I wrote a 
             program which creates images using ray tracing&mdash;a 
@@ -98,7 +105,7 @@
     </div>
     
     <div class="center">
-        <h2>This website</h2>
+        <h2>This website <span class='project-date'>January 2020</span></h2>
         <p> 
             What you're reading right now is something I wrote December 2019 through January 2020
             in my free time. I think it's pretty neat!
