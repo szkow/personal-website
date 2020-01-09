@@ -14,7 +14,7 @@ window.onload = ((onloadEvent) => {
     var heightInCh = window.innerHeight / 10;  // We have linewidth set to 10px
     var totalChars = widthInCh * heightInCh; 
 
-    generateText(totalChars);
+    generateText(widthInCh, heightInCh);
     document.getElementById('ripple-background').onclick = clickCallback;
 });
 
@@ -66,11 +66,14 @@ function bellInOut(t) {
     return Math.exp(-20 * Math.pow(t - 0.5, 2));
 }
 
-function generateText(characterCount) {
+function generateText(widthInCh, heightInCh) {
     // Generate the text
     var generatedText = '';
-    for (var i = 0; i < characterCount; i++) {
-        generatedText += generateCharacter();
+    for (var i = 0; i < heightInCh; i++) {
+        for (var j = 0; j < widthInCh; j++) {
+            generatedText += generateCharacter();
+        }
+        generatedText += '\n';
     }
 
     // Update text
