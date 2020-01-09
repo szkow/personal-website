@@ -60,12 +60,12 @@
         <div id='links'>
             <div>
                 <p>
-                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/raytracer-csci5607'>Source code</a>
+                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/personal-website'>Source code</a>
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Language:</b> C++
+                    <b>Languages:</b> HTML, CSS, Javascript
                 </p>
             </div>
         </div>
