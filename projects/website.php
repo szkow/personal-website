@@ -75,8 +75,8 @@
                 You can see most of the stuff I did for yourself, just by perusing these pages.
                 I'll make a few notes on development, however. I'm new to web development, so 
                 I ended up writing everything without a framework. And this was really fun to do, 
-                actually. I hate HTML a little bit less and I somewhat understand Javascript now
-                although there are definitely things I'd change about the former.
+                actually. I hate HTML a little bit less and I somewhat understand Javascript now;
+                although, there are definitely things I'd change about the former.
             </p>
         </div>
     </div>
