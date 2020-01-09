@@ -2,8 +2,7 @@
 /* Header style */
 nav {
     /* border-bottom: 2px solid rgb(182, 182, 182); */
-    margin: 0;
-    width: 100%;
+    margin: 0 var(--column-margin);
     height: 1%;
     display: flex;
     flex-direction: row;
