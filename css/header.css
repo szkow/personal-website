@@ -1,6 +1,6 @@
 /* header.css */
 /* Header style */
-header {
+nav {
     /* border-bottom: 2px solid rgb(182, 182, 182); */
     margin: 0;
     width: 100%;
@@ -10,12 +10,12 @@ header {
     justify-content: center;
     align-items: center;
 }
-header a {
+nav a {
     text-decoration: none;
     color: black;
     /* font-size: small; */
 }
-header div {
+nav div {
     /* border-bottom: 1px solid coral; */
     width: 3ch;
     text-align: center;
