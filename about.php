@@ -4,6 +4,8 @@
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='/css/site_style.css'></link>
 <link rel='stylesheet' href='/css/header.css'>
+<script src='/js/ripple.js'></script>
+<link rel='stylesheet' href='/css/ripple.css'></link>
 <style type=text/css>
     #social-links {
         /* border: solid black; */
@@ -31,6 +33,7 @@
 </head>
 
 <body>
+<?php include 'html/ripple.html' ?>
 <?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
 
 <div id='page-title'>

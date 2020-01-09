@@ -6,6 +6,8 @@
     <link rel='stylesheet' href='/css/site_style.css'></link>
     <link rel='stylesheet' href='/css/header.css'>
     <link rel='stylesheet' href='/css/gallery.css'>
+    <script src='/js/ripple.js'></script>
+    <link rel='stylesheet' href='/css/ripple.css'></link>
     <style>
         #column {
             /* border: solid grey; */
@@ -39,6 +41,7 @@
 </head>
 
 <body>
+    <?php include '../html/ripple.html' ?>
     <?php include $_SERVER["DOCUMENT_ROOT"] . '/html/header.html' ?>
 
     <div id='page-title'>

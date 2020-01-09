@@ -4,6 +4,8 @@
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='/css/site_style.css'></link>
 <link rel='stylesheet' href='/css/header.css'></link>
+<script src='/js/ripple.js'></script>
+<link rel='stylesheet' href='/css/ripple.css'></link>
 <style type='text/css'>
 :root {
     --entry-height: 200px;
@@ -66,6 +68,7 @@
 </head>
 
 <body>
+<?php include 'html/ripple.html' ?>
 <?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
 <div id='page-title'>
     <h1>Projects</h1>
