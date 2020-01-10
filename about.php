@@ -34,8 +34,8 @@
 
 <body>
 <?php include 'html/ripple.html' ?>
-<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
 <div id="page-container">
+<?php include $_SERVER["DOCUMENT_ROOT"] . "/html/header.html" ?>
     
     <div id="about-container">
         <div id='page-title'>
