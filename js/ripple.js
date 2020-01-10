@@ -57,13 +57,13 @@ function discretize(progress, steps) {
 
 function getCubicBezier({p0_x, p0_y}, {p1_x, p1_y}, {p2_x, p2_y}, {p3_x, p3_y}) {
     return (t => {
-        var cubic = Math.pow(1 - t, 3);
-        var quadratic = 3 * Math.pow(1 - t, 2) * t;
-        var linear = 3 * (1 - t) * Math.pow(t, 2);
-        var constant = Math.pow(t, 3);
+        const cubic = Math.pow(1 - t, 3);
+        const quadratic = 3 * Math.pow(1 - t, 2) * t;
+        const linear = 3 * (1 - t) * Math.pow(t, 2);
+        const constant = Math.pow(t, 3);
 
-        var bezierX = cubic * p0_x + quadratic * p1_x + linear * p2_x + constant * p3_x;
-        var bezierY = cubic * p0_y + quadratic * p1_y + linear * p2_y + constant * p3_y;
+        const bezierX = cubic * p0_x + quadratic * p1_x + linear * p2_x + constant * p3_x;
+        const bezierY = cubic * p0_y + quadratic * p1_y + linear * p2_y + constant * p3_y;
         return {bezierX, bezierY};
     });
 }
