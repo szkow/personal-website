@@ -55,7 +55,7 @@ function discretize(progress, steps) {
     return (Math.floor(remapped) / steps);
 }
 
-function getCubicBezier({p0_x, p0_y}, {p1_x, p1_y}, {p2_x, p2_y}, {p3_x, p3_y}) {
+function parameterizeCubicBezier({x: p0_x, y: p0_y}, {x: p1_x, y: p1_y}, {x: p2_x, y: p2_y}, {x: p3_x, y: p3_y}) {
     return (t => {
         const cubic = Math.pow(1 - t, 3);
         const quadratic = 3 * Math.pow(1 - t, 2) * t;
@@ -66,6 +66,12 @@ function getCubicBezier({p0_x, p0_y}, {p1_x, p1_y}, {p2_x, p2_y}, {p3_x, p3_y}) 
         const bezierY = cubic * p0_y + quadratic * p1_y + linear * p2_y + constant * p3_y;
         return {bezierX, bezierY};
     });
+}
+
+function getCubicBezier(c_1, c_2) {
+    const start = {x: 0, y: 0};
+    const end = {x: 1, y: 1};
+    return parameterizeCubicBezier(start, c_1, c_2, end);
 }
 
 function sineInOut(t) {
