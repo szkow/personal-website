@@ -20,8 +20,8 @@ window.onload = ((onloadEvent) => {
 
 function animate(outer, inner) {
     var kMaxRadius = 1000;
-    var kDuration = 5000;
-    var kAnimationSteps = 35;
+    var kDuration = 40000;
+    var kAnimationSteps = 30;
     // var velocity = 1 / 15;
 
     var begin = performance.now();
@@ -29,7 +29,7 @@ function animate(outer, inner) {
         var progress = (time - begin) / kDuration;
         if (progress > 1) { progress = 1; }  // Cap progress at 1
 
-        // progress = discretize(progress, kAnimationSteps);
+        progress = discretize(progress, kAnimationSteps);
 
         // Redraw our circles
         var radius = kMaxRadius * sineInOut(progress);
@@ -53,6 +53,19 @@ function animate(outer, inner) {
 function discretize(progress, steps) {
     var remapped = progress * steps;
     return (Math.floor(remapped) / steps);
+}
+
+function getCubicBezier({p0_x, p0_y}, {p1_x, p1_y}, {p2_x, p2_y}, {p3_x, p3_y}) {
+    return (t => {
+        var cubic = Math.pow(1 - t, 3);
+        var quadratic = 3 * Math.pow(1 - t, 2) * t;
+        var linear = 3 * (1 - t) * Math.pow(t, 2);
+        var constant = Math.pow(t, 3);
+
+        var bezierX = cubic * p0_x + quadratic * p1_x + linear * p2_x + constant * p3_x;
+        var bezierY = cubic * p0_y + quadratic * p1_y + linear * p2_y + constant * p3_y;
+        return {bezierX, bezierY};
+    });
 }
 
 function sineInOut(t) {
