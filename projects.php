@@ -44,10 +44,14 @@
             overflow: hidden;
         }
                 div.tile div.center h2 span.project-date {
+                    border: thin solid lightgrey;
                     color: grey;
                     font-weight: normal;
                     font-size: small;
+                    position: relative;
+                    bottom: 3px;
                     vertical-align: middle;
+                    padding: 0.6%;
                     margin: 0 3%;
                 }
         div.tile .tileLink div {
