@@ -9,6 +9,10 @@ html, body {
     padding:0; 
     /* overflow:hidden */
 }
+body {
+    position: relative;
+    z-index: -2;
+}
 #ripple-background {
     margin: 0;
     width: 100%;
