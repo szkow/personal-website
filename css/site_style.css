@@ -3,7 +3,7 @@
 }
 @font-face {
     font-family: 'Clear Sans';
-    src: local('Clear Sans Regular'), url('/resources/fonts/clear-sans/ClearSans-Regular.tff');
+    src: local('Clear Sans Regular'), url('../resources/fonts/clear-sans/ClearSans-Regular.tff');
 }    
 body {
     margin: 0;
