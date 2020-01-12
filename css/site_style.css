@@ -2,15 +2,15 @@
     --column-margin: 20%;
 }
 @font-face {
-    font-family: 'Clear Sans';
-    src: local('Clear Sans Regular'), url('../resources/fonts/clear-sans/ClearSans-Regular.tff');
+    font-family: 'Glacial Indifference';
+    src: local('Glacial Indifference Regular'), url('../resources/fonts/glacial-indifference/GlacialIndifference-Regular.otf');
 }    
 body {
     margin: 0;
-    font-family: 'Clear Sans', Fallback, sans-serif;
+    font-family: 'Glacial Indifference', Fallback, sans-serif;
 }
 p, li, ol {
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 #page-title {
