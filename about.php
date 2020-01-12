@@ -10,11 +10,18 @@
     #social-links {
         /* border: solid black; */
         font-size: small;
-        min-width: 15%;
+        /* min-width: 15%; */
         max-width: 25%;
         margin-top: 10%;
-        margin-right: 1%;
+        margin-right: 7%;
         float: right;
+    }
+    #social-links ul {
+        margin-left: 0;
+        padding-left: 0;    
+    }
+    #social-links li {
+        list-style: none;
     }
     #social-links i {
         font-size: medium;
@@ -57,17 +64,29 @@
         </div>
         
         <div id='social-links'>
-            <p>
-            <a href='mailto:roszk008@umn.edu'>
-                    <i class="far fa-envelope" style='color: black'></i> roszk008@umn.edu</a><br>
-            <a href='https://www.linkedin.com/in/april-roszkowski'>
-                <i class="fab fa-linkedin" style='color: black'></i> april-roszkowski</a><br>
-            <a href='https://www.github.com/szkow'>
-                <i class="fab fa-github-square" style='color: black'></i> szkow</a><br>
-        
-            <a href='https://www.last.fm/user/szkow'>
-                <i class="fab fa-lastfm-square" style='color: black'></i> szkow</a><br>
-            </p>
+            <ul>
+                <a href='mailto:roszk008@umn.edu'>
+                        <li>
+                            <i class="far fa-envelope" style='color: black'></i> roszk008@umn.edu
+                        </li>
+                </a>
+                <a href='https://www.linkedin.com/in/april-roszkowski'>
+                    <li>
+                        <i class="fab fa-linkedin" style='color: black'></i> april-roszkowski
+                    </li>
+                </a>
+                <a href='https://www.github.com/szkow'>
+                    <li>
+                        <i class="fab fa-github-square" style='color: black'></i> szkow
+                    </li>
+                </a>
+            
+                <a href='https://www.last.fm/user/szkow'>
+                    <li>
+                        <i class="fab fa-lastfm-square" style='color: black'></i> szkow
+                    </li>
+                </a>
+            </ul>
         </div>
     </div>
     
