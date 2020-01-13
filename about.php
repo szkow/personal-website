@@ -59,7 +59,7 @@
                 at the University of Minnesota-Twin Cities. This page
                 is most definitely under construction, but for the
                 time being, feel free to view  
-                <a href='resources/resume.pdf'>my resume</a>.
+                <a class='pdf-link' href='resources/resume.pdf'>my resume</a>.
             </p>
         </div>
         

@@ -12,6 +12,12 @@ body {
 p, li, ol {
     font-size: 11pt;
 }
+a.pdf-link::after {
+    display: inline;
+    font-size: x-small;
+    vertical-align: top;
+    content: '[PDF]';
+}
 
 #page-title {
     margin: 0 var(--column-margin);
