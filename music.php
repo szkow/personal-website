@@ -4,6 +4,7 @@
         <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
         <link rel='stylesheet' href='css/site_style.css'></link>
         <link rel='stylesheet' href='css/header.css'>
+        <script src='js/lastfm_request.js'></script>
         <!-- <script src='js/ripple.js'></script>
         <link rel='stylesheet' href='css/ripple.css'></link> -->
 
@@ -46,6 +47,8 @@
                     Chart generated via <a href='http://www.tapmusic.net'>tapmusic.net</a>
                 </figcaption>
             </figure>
+
+            <div id='recently-played'></div>
         </div>
     </body>
 </html>
