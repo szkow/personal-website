@@ -31,6 +31,28 @@
                 top: 0;
                 left: 0;
             }
+            #recently-played {
+                overflow: scroll;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 1% 0;
+            }
+            #recently-played .recent-entry {
+                margin: 0 1%;
+                border: thin solid black;
+                width: 20%;
+            }
+            #recently-played .recent-track {
+                font-size: large;
+            }
+            #recently-played .recent-artist, .recent-album {
+                font-size: medium;
+            }
+            #recently-played .recent-date {
+                color: grey;
+                font-size: small;
+            }
         </style>
     </head>
     <body>
@@ -41,7 +63,8 @@
             <figure id='chart-container'>
                 <h2>My week in music</h2>
                 <div>
-                    <img src='http://www.tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'>
+                    <img src='http://www.tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'
+                         alt='the top 9 albums I listened to this week'>
                 </div>
                 <figcaption>
                     Chart generated via <a href='http://www.tapmusic.net'>tapmusic.net</a>

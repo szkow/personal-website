@@ -33,16 +33,21 @@ window.onload = (loadEvent) => {
 
     function makeTrackElement(artist, title, album, date, nowPlaying) {
         var container = document.createElement('div');
-        var artistElement = document.createElement('span');
+        container.className = 'recent-entry';
+        var artistElement = document.createElement('div');
         artistElement.innerHTML = artist;
-        var titleElement = document.createElement('span');
+        artistElement.className = 'recent-artist';
+        var titleElement = document.createElement('div');
         titleElement.innerHTML = title;
+        titleElement.className = 'recent-title';
         var albumElement = document.createElement('div');
         albumElement.innerHTML = album;
-        var dateElement = document.createElement('h4');
+        albumElement.className = 'recent-album';
+        var dateElement = document.createElement('div');
         dateElement.innerHTML = date;
+        dateElement.className = 'recent-date';
 
-        container.append(artistElement, titleElement, albumElement, dateElement);
+        container.append(titleElement, artistElement, albumElement, dateElement);
         return container;
     }
 };
