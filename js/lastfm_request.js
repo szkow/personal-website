@@ -1,4 +1,5 @@
 window.onload = (loadEvent) => {
+    const kNumTracks = 5;
     var recentScrobbles = document.getElementById('recently-played');
 
     function printResponse() {
@@ -8,11 +9,20 @@ window.onload = (loadEvent) => {
     function processResponse() {
         var response = this.responseXML;
         var trackList = response.getElementsByTagName('track');
-        console.log(trackList.item(0));
-        var track0 = trackList.item(0);  // Use getChildren or something...
-        var artist = track0.item(0).innerHTML;
-        var title = track0.item(1).innerHTML;
-        recentScrobbles.innerHTML = artist + ' - ' + title;
+        for (var i = 0; i < Math.min(trackList.length, kNumTracks); i++) {
+            var trackInfo = trackList.item(i).children;  // Gets children of a given track
+            
+            // Parse data from XML
+            var artist = trackInfo[0].innerHTML;
+            var title = trackInfo[1].innerHTML;
+
+            // Make a new div
+            var newTrack = document.createElement('div');
+            newTrack.innerText = artist + ' - ' + title;
+
+            // Add the div to the DOM
+            recentScrobbles.appendChild(newTrack);
+        }
     }
 
     var request = new XMLHttpRequest();
