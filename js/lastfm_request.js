@@ -17,10 +17,11 @@ window.onload = (loadEvent) => {
             
             // Parse data from XML
             // See https://www.last.fm/api/show/user.getRecentTracks
-            var artist = track.getElementsByTagName('artist').item(0).innerHTML;
-            var title = track.getElementsByTagName('name').item(0).innerHTML;
+            var nowPlaying = (track.getAttribute('nowplaying') === 'true');
+            var artist = track.getElementsByTagName('artist').item(0).innerHTML;  // There should only be one of each of these
+            var title = track.getElementsByTagName('name').item(0).innerHTML;     //   tags per track
             var album = track.getElementsByTagName('album').item(0).innerHTML;
-            var date = track.getElementsByTagName('date').item(0).innerHTML;
+            var date = (nowPlaying) ? 'Now playing' : track.getElementsByTagName('date').item(0).innerHTML;
 
             // Make a new div
             var newTrack = makeTrackElement(artist, title, album, date);
@@ -30,13 +31,13 @@ window.onload = (loadEvent) => {
         }
     }
 
-    function makeTrackElement(artist, title, album, date) {
+    function makeTrackElement(artist, title, album, date, nowPlaying) {
         var container = document.createElement('div');
-        var artistElement = document.createElement('h1');
+        var artistElement = document.createElement('span');
         artistElement.innerHTML = artist;
-        var titleElement = document.createElement('h2');
+        var titleElement = document.createElement('span');
         titleElement.innerHTML = title;
-        var albumElement = document.createElement('h3');
+        var albumElement = document.createElement('div');
         albumElement.innerHTML = album;
         var dateElement = document.createElement('h4');
         dateElement.innerHTML = date;
