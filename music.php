@@ -109,7 +109,7 @@
             </figure>
 
             <h2>Recently played:</h2>
-            <div id='recently-played'></div>
+            <div id='recently-played'>Loading...</div>
         </div>
     </body>
 </html>

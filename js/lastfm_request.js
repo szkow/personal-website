@@ -1,6 +1,7 @@
 window.onload = (loadEvent) => {
     const kNumTracks = 50;
     var recentScrobbles = document.getElementById('recently-played');
+    recentScrobbles.innerText = 'Loading...';
 
     var request = new XMLHttpRequest();
     request.addEventListener('load', processResponse);
@@ -14,6 +15,7 @@ window.onload = (loadEvent) => {
     }
 
     function processResponse() {
+        recentScrobbles.innerText = '';  // Remove loading text
         var response = this.responseXML;
         var trackList = response.getElementsByTagName('track');
         for (var i = 0; i < Math.min(trackList.length, kNumTracks); i++) {
