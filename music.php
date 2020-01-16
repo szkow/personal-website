@@ -9,6 +9,10 @@
         <link rel='stylesheet' href='css/ripple.css'></link> -->
 
         <style type='text/css'>
+            :root {
+                --track-width: 20vw;
+                --track-height: 13vh;
+            }
             #content-container {
                 margin: 0 var(--column-margin);
             }
@@ -32,17 +36,40 @@
                 left: 0;
             }
             #recently-played {
-                overflow: scroll;
+                overflow-x: auto;
+                overflow-y: hidden;
                 display: flex;
-                flex-direction: row;
+                flex-flow: column wrap;
                 align-items: center;
-                padding: 1% 0;
+                height: var(--track-height);
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                margin: 2% 0;
+                padding: 5px 0;
+            }
+            #recently-played::-webkit-scrollbar {
+                display: none;
             }
             #recently-played .recent-entry {
                 margin: 0 1%;
                 border: thin solid black;
-                width: 20%;
+                flex: 0 0 100%;
+                width: var(--track-width);
+                max-height: 100%;
             }
+            #recently-played .recent-entry img {
+                float: left;
+                height: 100%;
+                max-height: 100%;
+            }
+            #recently-played .recent-entry .recent-text-container {
+                float: left;
+                max-width: calc(100% - var(--track-height));
+                position: relative;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
             #recently-played .recent-track {
                 font-size: large;
             }
@@ -71,6 +98,7 @@
                 </figcaption>
             </figure>
 
+            <h2>Recently played:</h2>
             <div id='recently-played'></div>
         </div>
     </body>

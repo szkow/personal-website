@@ -1,5 +1,5 @@
 window.onload = (loadEvent) => {
-    const kNumTracks = 5;
+    const kNumTracks = 50;
     var recentScrobbles = document.getElementById('recently-played');
 
     var request = new XMLHttpRequest();
@@ -8,6 +8,10 @@ window.onload = (loadEvent) => {
         'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=szkow&api_key=4e4274667141deb75c3ce0d94ae90938');
     request.responseType = 'document';
     request.send();
+
+    function printResponse() {
+        console.log(this.responseText);
+    }
 
     function processResponse() {
         var response = this.responseXML;
@@ -18,22 +22,34 @@ window.onload = (loadEvent) => {
             // Parse data from XML
             // See https://www.last.fm/api/show/user.getRecentTracks
             var nowPlaying = (track.getAttribute('nowplaying') === 'true');
+            var albumArt = track.getElementsByTagName('image').item(1).innerHTML;
             var artist = track.getElementsByTagName('artist').item(0).innerHTML;  // There should only be one of each of these
             var title = track.getElementsByTagName('name').item(0).innerHTML;     //   tags per track
             var album = track.getElementsByTagName('album').item(0).innerHTML;
             var date = (nowPlaying) ? 'Now playing' : track.getElementsByTagName('date').item(0).innerHTML;
 
             // Make a new div
-            var newTrack = makeTrackElement(artist, title, album, date);
+            var newTrack = makeTrackElement(artist, title, album, date, albumArt);
 
             // Add the div to the DOM
             recentScrobbles.appendChild(newTrack);
         }
     }
 
-    function makeTrackElement(artist, title, album, date, nowPlaying) {
+    function makeTrackElement(artist, title, album, date, albumArt) {
+        // Make the container for everything
         var container = document.createElement('div');
         container.className = 'recent-entry';
+
+        // Make the album art
+        var albumArtElement = document.createElement('img');
+        albumArtElement.setAttribute('src', albumArt);
+
+        // Make a container for the text
+        var textContainer = document.createElement('div');
+        textContainer.className = 'recent-text-container';
+
+        // Make the individual fields
         var artistElement = document.createElement('div');
         artistElement.innerHTML = artist;
         artistElement.className = 'recent-artist';
@@ -47,7 +63,8 @@ window.onload = (loadEvent) => {
         dateElement.innerHTML = date;
         dateElement.className = 'recent-date';
 
-        container.append(titleElement, artistElement, albumElement, dateElement);
+        textContainer.append(titleElement, artistElement, albumElement, dateElement);
+        container.append(albumArtElement, textContainer);
         return container;
     }
 };
