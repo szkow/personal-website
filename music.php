@@ -12,6 +12,7 @@
             :root {
                 --track-width: 20vw;
                 --track-height: 13vh;
+                --track-text-padding: 2%;
             }
             #content-container {
                 margin: 0 var(--column-margin);
@@ -22,6 +23,7 @@
             }
             #chart-container figcaption {
                 text-align: left;
+                font-size: small;
             }
             #chart-container div {  /* This is the aspect ratio box */
                 position: relative;
@@ -56,28 +58,34 @@
                 flex: 0 0 100%;
                 width: var(--track-width);
                 max-height: 100%;
+                overflow: hidden;
             }
             #recently-played .recent-entry img {
                 float: left;
                 height: 100%;
                 max-height: 100%;
-            }
+            }            
             #recently-played .recent-entry .recent-text-container {
                 float: left;
-                max-width: calc(100% - var(--track-height));
-                position: relative;
+                max-width: calc(100% - (2 * var(--track-text-padding)) - var(--track-height));
                 white-space: nowrap;
                 overflow: hidden;
+                padding: 0 var(--track-text-padding);
             }
-
-            #recently-played .recent-title {
+            #recently-played .recent-entry  .recent-text-container .recent-title, .recent-artist, .recent-album, .recent-date {
+                overflow: hidden;
+            }
+            #recently-played .recent-entry .recent-text-container a {
+                color: currentColor;
+            }
+            #recently-played .recent-entry .recent-text-container .recent-title {
                 font-size: large;
                 line-height: 2em;
             }
-            #recently-played .recent-artist, .recent-album {
+            #recently-played .recent-entry .recent-text-container .recent-artist, .recent-album {
                 font-size: small;
             }
-            #recently-played .recent-date {
+            #recently-played .recent-entry .recent-text-container .recent-date {
                 color: grey;
                 font-size: small;
             }

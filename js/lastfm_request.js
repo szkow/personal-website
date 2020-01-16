@@ -26,17 +26,18 @@ window.onload = (loadEvent) => {
             var artist = track.getElementsByTagName('artist').item(0).innerHTML;  // There should only be one of each of these
             var title = track.getElementsByTagName('name').item(0).innerHTML;     //   tags per track
             var album = track.getElementsByTagName('album').item(0).innerHTML;
+            var songLink = track.getElementsByTagName('url').item(0).innerHTML;
             var date = (nowPlaying) ? 'Now playing' : track.getElementsByTagName('date').item(0).innerHTML;
 
             // Make a new div
-            var newTrack = makeTrackElement(artist, title, album, date, albumArt);
+            var newTrack = makeTrackElement(artist, title, album, date, albumArt, songLink);
 
             // Add the div to the DOM
             recentScrobbles.appendChild(newTrack);
         }
     }
 
-    function makeTrackElement(artist, title, album, date, albumArt) {
+    function makeTrackElement(artist, title, album, date, albumArt, songLink) {
         // Make the container for everything
         var container = document.createElement('div');
         container.className = 'recent-entry';
@@ -63,8 +64,16 @@ window.onload = (loadEvent) => {
         dateElement.innerHTML = date;
         dateElement.className = 'recent-date';
 
-        textContainer.append(titleElement, artistElement, albumElement, dateElement);
-        container.append(albumArtElement, textContainer);
+        // Add hyperlinks to the album art and song title
+        var albumArtLinkElement = document.createElement('a');
+        albumArtLinkElement.setAttribute('href', songLink);
+        albumArtLinkElement.append(albumArtElement);
+        var titleLinkElement = document.createElement('a');
+        titleLinkElement.setAttribute('href', songLink);
+        titleLinkElement.append(titleElement);
+
+        textContainer.append(titleLinkElement, artistElement, albumElement, dateElement);
+        container.append(albumArtLinkElement, textContainer);
         return container;
     }
 };
