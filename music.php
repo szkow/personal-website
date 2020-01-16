@@ -70,11 +70,12 @@
                 overflow: hidden;
             }
 
-            #recently-played .recent-track {
+            #recently-played .recent-title {
                 font-size: large;
+                line-height: 2em;
             }
             #recently-played .recent-artist, .recent-album {
-                font-size: medium;
+                font-size: small;
             }
             #recently-played .recent-date {
                 color: grey;
