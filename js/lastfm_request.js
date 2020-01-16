@@ -27,7 +27,7 @@ window.onload = (loadEvent) => {
             var title = track.getElementsByTagName('name').item(0).innerHTML;     //   tags per track
             var album = track.getElementsByTagName('album').item(0).innerHTML;
             var songLink = track.getElementsByTagName('url').item(0).innerHTML;
-            var date = (nowPlaying) ? 'Now playing' : track.getElementsByTagName('date').item(0).innerHTML;
+            var date = (nowPlaying) ? 'Now playing' : convertDate(track.getElementsByTagName('date').item(0).innerHTML);
 
             // Make a new div
             var newTrack = makeTrackElement(artist, title, album, date, albumArt, songLink);
@@ -75,5 +75,11 @@ window.onload = (loadEvent) => {
         textContainer.append(titleLinkElement, artistElement, albumElement, dateElement);
         container.append(albumArtLinkElement, textContainer);
         return container;
+    }
+
+    function convertDate(dateString) {
+        const rawTime = moment.utc(dateString, 'DD MMM YYYY, HH:mm').fromNow();
+        const capitalized = rawTime.charAt(0).toUpperCase() + rawTime.slice(1);
+        return capitalized;
     }
 };
