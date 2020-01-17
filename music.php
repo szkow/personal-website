@@ -6,8 +6,8 @@
         <link rel='stylesheet' href='css/site_style.css'></link>
         <link rel='stylesheet' href='css/header.css'>
         <script src='js/lastfm_request.js'></script>
-        <!-- <script src='js/ripple.js'></script>
-        <link rel='stylesheet' href='css/ripple.css'></link> -->
+        <script src='js/ripple.js'></script>
+        <link rel='stylesheet' href='css/ripple.css'></link>
 
         <style type='text/css'>
             :root {
@@ -97,6 +97,10 @@
         </style>
     </head>
     <body>
+        <?php
+            include 'html/ripple.html';
+            include 'html/header.html'
+        ?>
         <div id='page-title'>
             <h1>Music: I like it</h1>
         </div>
@@ -112,7 +116,6 @@
                 </figcaption>
             </figure>
 
-            <h2>Recently played:</h2>
             <div id='recently-played'>Loading...</div>
         </div>
     </body>

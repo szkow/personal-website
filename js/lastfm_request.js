@@ -1,4 +1,10 @@
-window.onload = (loadEvent) => {
+if (window.addEventListener) {
+    window.addEventListener('load', loadRecentTracks);
+} else {
+    window.attachEvent('onload', loadRecentTracks);
+}
+
+function loadRecentTracks() {
     const kNumTracks = 50;
     var recentScrobbles = document.getElementById('recently-played');
 
@@ -93,4 +99,4 @@ window.onload = (loadEvent) => {
         const capitalized = rawTime.charAt(0).toUpperCase() + rawTime.slice(1);
         return capitalized;
     }
-};
+}
