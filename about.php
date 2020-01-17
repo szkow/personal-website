@@ -8,7 +8,7 @@
 <link rel='stylesheet' href='css/ripple.css'></link>
 <style type=text/css>
     #social-links {
-        /* border: solid black; */
+        /* border: thin solid black; */
         font-size: small;
         /* min-width: 15%; */
         max-width: 25%;
@@ -31,9 +31,7 @@
         color: grey;
     }
     #center-column {
-        margin-top: 5%;
-        margin-left: 27%;
-        width: 47%;
+        margin-left: var(--column-margin);
         float: left;
     }
 </style>
@@ -54,13 +52,19 @@
         </div>
         
         <div id='center-column'>
-            <p>Welcome to my website!</p>
+            <!-- <p>Welcome to my website!</p>
             <p>My name is April Roszkowski, a Computer Science student
                 at the University of Minnesota-Twin Cities. This page
                 is most definitely under construction, but for the
                 time being, feel free to view  
                 <a class='pdf-link' href='resources/resume.pdf'>my resume</a>.
-            </p>
+            </p> -->
+            <div>
+                <h2>Introduction</h2>
+                <p>
+
+                </p>
+            </div>
         </div>
         
         <div id='social-links'>
