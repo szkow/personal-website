@@ -1,7 +1,6 @@
 window.onload = (loadEvent) => {
     const kNumTracks = 50;
     var recentScrobbles = document.getElementById('recently-played');
-    recentScrobbles.innerText = 'Loading...';
 
     var request = new XMLHttpRequest();
     request.addEventListener('load', processResponse);
@@ -33,6 +32,11 @@ window.onload = (loadEvent) => {
 
             // Make a new div
             var newTrack = makeTrackElement(artist, title, album, date, albumArt, songLink);
+
+            // Give currently playing track a nice border
+            if (nowPlaying) {
+                newTrack.style.setProperty('border', 'solid limegreen')
+            }
 
             // Add the div to the DOM
             recentScrobbles.appendChild(newTrack);
