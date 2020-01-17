@@ -78,6 +78,11 @@ window.onload = (loadEvent) => {
         titleLinkElement.setAttribute('href', songLink);
         titleLinkElement.append(titleElement);
 
+        // Add tooltip to stuff
+        titleElement.title = title;
+        artistElement.title = artist;
+        albumElement.title = album;
+
         textContainer.append(titleLinkElement, artistElement, albumElement, dateElement);
         container.append(albumArtLinkElement, textContainer);
         return container;
