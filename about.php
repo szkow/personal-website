@@ -32,6 +32,7 @@
     }
     #center-column {
         margin-left: var(--column-margin);
+        width: calc(100% - 2 * var(--column-margin));
         float: left;
     }
 </style>
@@ -48,7 +49,7 @@
     
     <div id="about-container">
         <div id='page-title'>
-            <h1>About</h1>
+            <h1>April Roszkowski: I live here</h1>
         </div>
         
         <div id='center-column'>
@@ -60,9 +61,36 @@
                 <a class='pdf-link' href='resources/resume.pdf'>my resume</a>.
             </p> -->
             <div>
-                <h2>Introduction</h2>
+                <h2>Me</h2>
                 <p>
+                    I'm April, a student and self-made entrepreneur. Sorry, that last one was a joke 
+                    actually.
+                    
+                    Currently, I'm a third-year student at the University of Minnesota studying computer
+                    science with a minor in math. I've found I really like the mathy side of computer
+                    science, hence the minor and my interest in computer graphics/visualization and 
+                    robotics (kinda, maybe not sure yet).
 
+                    Anyways, welcome to my site; take a look around, check out my 
+                    <a class='pdf-link' href="resources/resume.pdf">resume</a>!
+                </p>
+            </div>
+            <div>
+                <h2>Interests</h2>
+                <p>
+                    I play piano, listen to music, and do small coding projects in my free time. Music
+                    is what I spend the majority of time on, though. My music tastes are pretty varied,
+                    but the most common theme is that I love contemporary music and more experimental
+                    stuff. You can see what I've been listening to recently <a href='music.php'>here</a>
+                    or on my Last.fm account, found among my social links.
+                </p>
+            </div>
+            <div>
+                <h2>This website</h2>
+                <p>
+                    The site is meant to be a little archive of my personal work and supplement to
+                    my resume. All the design/content is pretty fresh off the presses so there's
+                    not too much to see for now, however.
                 </p>
             </div>
         </div>
