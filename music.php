@@ -13,7 +13,7 @@
             :root {
                 --track-width: 20vw;
                 --track-height: 13vh;
-                --track-text-padding: 2%;
+                --track-text-margin: 2%;
             }
             #content-container {
                 margin: 0 var(--column-margin);
@@ -68,13 +68,13 @@
             }            
             #recently-played .recent-entry .recent-text-container {
                 float: left;
-                max-width: calc(100% - (2 * var(--track-text-padding)) - var(--track-height));
-                white-space: nowrap;
+                max-width: calc(100% - (2 * var(--track-text-margin)) - var(--track-height));
                 overflow: hidden;
-                padding: 0 var(--track-text-padding);
+                margin: 0 var(--track-text-margin);
             }
             #recently-played .recent-entry  .recent-text-container .recent-title, .recent-artist, .recent-album, .recent-date {
-                overflow: hidden;
+                /* overflow: hidden; */
+                white-space: nowrap;
             }
             #recently-played .recent-entry .recent-text-container a {
                 color: currentColor;
@@ -82,7 +82,11 @@
             #recently-played .recent-entry .recent-text-container .recent-title {
                 font-size: large;
                 line-height: 2em;
+                /* transition: transform 1s linear; */
             }
+            /* #recently-played .recent-entry .recent-text-container .recent-title:hover {
+                transform: translate(-100%, 0);
+            } */
             #recently-played .recent-entry .recent-text-container .recent-artist, .recent-album {
                 font-size: small;
             }
