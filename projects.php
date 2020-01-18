@@ -77,7 +77,7 @@
     include 'html/header.html' 
 ?>
 <div id='page-title'>
-    <h1>Projects</h1>
+    <h1>Projects: I try sometimes</h1>
 </div>
 
 <div class="tile">
