@@ -72,60 +72,60 @@
 </head>
 
 <body>
-<?php 
-    include 'html/ripple.html'; 
-    include 'html/header.html' 
-?>
-<div id='page-title'>
-    <h1>Projects: I try sometimes</h1>
-</div>
-
-<div class="tile">
-    <div class='image-container'>
-        <img id='thumbnail-raytracer' 
-             src="resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
-    </div>
-    
-    <div class="center">
-        <h2>Raytracer <span class='project-date'>October 2019</span></h2>
-        <p> 
-            As a part of my computer graphics coursework I wrote a 
-            program which creates images using ray tracing&mdash;a 
-            physics-based rendering technique&mdash;to create
-            photorealistic scenes.
-        </p>
-        <p> 
-            Written in C++ from scratch, including an image 
-            writer and input file parser.
-        </p>
+    <?php 
+        include 'html/ripple.html'; 
+        include 'html/header.html' 
+    ?>
+    <div id='page-title'>
+        <h1>Projects: I try sometimes</h1>
     </div>
 
-    <a class='tileLink' href="projects/raytracer.php">
-        <div>
-            <i class="fas fa-chevron-right"></i>
+    <div class="tile">
+        <div class='image-container'>
+            <img id='thumbnail-website'
+                src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
         </div>
-    </a>
-</div>
-
-<div class="tile">
-    <div class='image-container'>
-        <img id='thumbnail-website'
-             src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
-    </div>
-    
-    <div class="center">
-        <h2>This website <span class='project-date'>January 2020</span></h2>
-        <p> 
-            What you're reading right now is something I wrote December 2019 through January 2020
-            in my free time. I think it's pretty neat!
-        </p>
-    </div>
-
-    <a class='tileLink' href="projects/website.php">
-        <div>
-            <i class="fas fa-chevron-right"></i>
+        
+        <div class="center">
+            <h2>This website <span class='project-date'>January 2020</span></h2>
+            <p> 
+                What you're reading right now is something I wrote December 2019 through January 2020
+                in my free time. I think it's pretty neat!
+            </p>
         </div>
-    </a>
-</div>
+
+        <a class='tileLink' href="projects/website.php">
+            <div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+    </div>
+
+    <div class="tile">
+        <div class='image-container'>
+            <img id='thumbnail-raytracer' 
+                src="resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
+        </div>
+        
+        <div class="center">
+            <h2>Raytracer <span class='project-date'>October 2019</span></h2>
+            <p> 
+                As a part of my computer graphics coursework I wrote a 
+                program which creates images using ray tracing&mdash;a 
+                physics-based rendering technique&mdash;to create
+                photorealistic scenes.
+            </p>
+            <p> 
+                Written in C++ from scratch, including an image 
+                writer and input file parser.
+            </p>
+        </div>
+
+        <a class='tileLink' href="projects/raytracer.php">
+            <div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </a>
+    </div>
 </body>
 </html>
