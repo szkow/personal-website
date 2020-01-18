@@ -6,8 +6,8 @@
 }  */
 :root {
     --ripple-background-color: white;
-    --ripple-text-color: antiquewhite;
-    --ripple-text-background-color: white;
+    --ripple-text-color: darkgrey;
+    --ripple-text-background-color: rgb(22, 59, 73);
 }
 html, body { 
     margin:0; 
