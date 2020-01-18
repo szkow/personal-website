@@ -19,9 +19,9 @@ window.onload = ((onloadEvent) => {
 });
 
 function animate(outer, inner) {
-    var kMaxRadius = 1000;
-    var kDuration = 40000;
-    var kAnimationSteps = 30;
+    const kMaxRadius = 1000;
+    const kDuration = 7000;
+    const kAnimationSteps = 100;
     // var velocity = 1 / 15;
 
     var begin = performance.now();
@@ -29,11 +29,11 @@ function animate(outer, inner) {
         var progress = (time - begin) / kDuration;
         if (progress > 1) { progress = 1; }  // Cap progress at 1
 
-        progress = discretize(progress, kAnimationSteps);
+        // progress = discretize(progress, kAnimationSteps);
 
         // Redraw our circles
-        var radius = kMaxRadius * sineInOut(progress);
-        var weight = 0.3 * bellInOut(progress);
+        const radius = kMaxRadius * sineInOut(progress);
+        const weight = 0.3 * bellInOut(progress);
         outer.setAttribute('r', radius);
         inner.setAttribute('r', (1 - weight) * radius);
 
@@ -51,7 +51,7 @@ function animate(outer, inner) {
 }
 
 function discretize(progress, steps) {
-    var remapped = progress * steps;
+    const remapped = progress * steps;
     return (Math.floor(remapped) / steps);
 }
 
@@ -75,14 +75,14 @@ function getCubicBezier(c_1, c_2) {
 }
 
 function sineInOut(t) {
-    t = 0.8 * t + 0.2;
-    t = 0.73 * t + 0.27;
-    return Math.pow(0.5 * (Math.sin((t - 0.5) * Math.PI) + 1), 5);
+    const j = 0.8 * t + 0.2;
+    const s = 0.73 * j + 0.27;
+    return Math.pow(0.5 * (Math.sin((s - 0.5) * Math.PI) + 1), 5);
 }
 
 function bellInOut(t) {
-    t = 0.8 * t + 0.2;
-    return Math.exp(-20 * Math.pow(t - 0.5, 2));
+    const j = 0.8 * t + 0.2;
+    return Math.exp(-20 * Math.pow(j - 0.5, 2));
 }
 
 function generateText(widthInCh, heightInCh) {
@@ -101,9 +101,9 @@ function generateText(widthInCh, heightInCh) {
 }
 
 function wiggle(progress, permutationChance) {
-    var text = document.getElementById('ripple-text');
-    var string = text.textContent;
-    var length = string.length;
+    const text = document.getElementById('ripple-text');
+    const string = text.textContent;
+    const length = string.length;
 
     var permuted = '';
     for (var i = 0; i < length; i++) {
