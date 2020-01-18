@@ -99,8 +99,7 @@
                     robotics (kinda, maybe not sure yet).
                 </p>
                 <p>
-                    Anyways, welcome to my site; take a look around, check out my 
-                    <a class='pdf-link' href="resources/resume.pdf">resume</a>!
+                    Anyways, welcome to my site; take a look around!
                 </p>
             </div>
             <a href='resources/resume.pdf'>
