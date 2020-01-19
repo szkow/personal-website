@@ -38,6 +38,7 @@
             text-indent: 0;
         }
     </style>
+    <title>April Roszkowski &CenterDot; Raytracing</title>
 </head>
 
 <body>
