@@ -1,0 +1,45 @@
+ /* * {     
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}  */
+:root {
+    --ripple-background-color: white;
+    --ripple-text-color: darkgrey;
+    --ripple-text-background-color: rgb(22, 59, 73);
+}
+html, body { 
+    margin:0; 
+    padding:0; 
+}
+body {
+    position: relative;
+    z-index: -2;
+}
+#ripple-background {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+#ripple-text {
+    position: fixed;
+    color: var(--ripple-text-color);
+    background-color: var(--ripple-text-background-color);
+    font-family: 'OCR A Std', monospace;
+    font-weight: bold;
+    line-height: 10px;
+    transform: scale(1.5); 
+}
+#ripple-background svg { 
+    position:fixed; 
+    top:0; 
+    bottom:0;
+    width: 100%;
+    height: 100%;
+}
+#ripple-background svg rect {
+    fill: var(--ripple-background-color);
+}
