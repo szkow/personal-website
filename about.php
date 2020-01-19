@@ -69,6 +69,7 @@
         bottom: 70px;
     }
 </style>
+<title>April Roszkowski &CenterDot; About</title>
 </head>
 
 <body>

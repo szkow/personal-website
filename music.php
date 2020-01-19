@@ -95,6 +95,7 @@
                 font-size: small;
             }
         </style>
+        <title>April Roszkowski &CenterDot; Music</title>
     </head>
     <body>
         <?php

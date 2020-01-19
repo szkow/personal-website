@@ -69,6 +69,7 @@
                 color: currentColor;    
             }
 </style>
+<title>April Roszkowski &CenterDot; Projects</title>
 </head>
 
 <body>
