@@ -1,0 +1,17 @@
+<div id='ripple-background'>
+    <div id='ripple-text'></div>
+    <svg width="100%" height="100%">
+        <defs>
+            <mask id='ripple-mask'>
+            <rect width='100%' height='100%' fill='white'/>
+            <circle id='ripple-outer' cx='50%' cy='50%' r="0"
+                    fill="black" opacity='0.4'/>
+            <circle id='ripple-inner' cx='50%' cy='50%' r='0'
+                    fill='white'/>
+            </mask>
+        </defs>
+        
+        <rect width='100%' height='100%'
+              mask='url(#ripple-mask)'/>
+    </svg>
+</div>

@@ -2,10 +2,12 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <script src='/js/image_gallery.js'></script>
-    <link rel='stylesheet' href='/css/site_style.css'></link>
-    <link rel='stylesheet' href='/css/header.css'>
-    <link rel='stylesheet' href='/css/gallery.css'>
+    <script src='../js/image_gallery.js'></script>
+    <link rel='stylesheet' href='../css/site_style.css'></link>
+    <link rel='stylesheet' href='../css/header.css'>
+    <link rel='stylesheet' href='../css/gallery.css'>
+    <script src='../js/ripple.js'></script>
+    <link rel='stylesheet' href='../css/ripple.css'></link>
     <style>
         #column {
             /* border: solid grey; */
@@ -39,7 +41,10 @@
 </head>
 
 <body>
-    <?php include $_SERVER["DOCUMENT_ROOT"] . '/html/header.html' ?>
+    <?php 
+        include '../html/ripple.html';
+        include '../html/header.html' 
+    ?>
 
     <div id='page-title'>
         <h1>Personal Website</h1>
@@ -48,11 +53,11 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='/resources/website/code_snippet.jpg'
+                <div><img class='thumbnail' src='../resources/website/code_snippet.jpg'
                             alt='a code snippet from this website' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='/resources/website/code_snippet.jpg' 
+                <img id='main-image-handle' src='../resources/website/code_snippet.jpg' 
                             alt='a code snippet from this website'>
             </div>
         </div>
@@ -60,12 +65,12 @@
         <div id='links'>
             <div>
                 <p>
-                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/raytracer-csci5607'>Source code</a>
+                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/personal-website'>Source code</a>
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Language:</b> C++
+                    <b>Languages:</b> HTML, CSS, Javascript
                 </p>
             </div>
         </div>
@@ -75,8 +80,8 @@
                 You can see most of the stuff I did for yourself, just by perusing these pages.
                 I'll make a few notes on development, however. I'm new to web development, so 
                 I ended up writing everything without a framework. And this was really fun to do, 
-                actually. I hate HTML a little bit less and I somewhat understand Javascript now
-                although there are definitely things I'd change about the former.
+                actually. I hate HTML a little bit less and I somewhat understand Javascript now;
+                although, there are definitely things I'd change about the former.
             </p>
         </div>
     </div>

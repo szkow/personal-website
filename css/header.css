@@ -1,21 +1,21 @@
 /* header.css */
 /* Header style */
-header {
+nav {
     /* border-bottom: 2px solid rgb(182, 182, 182); */
-    margin: 0;
-    width: 100%;
+    margin: 0 var(--column-margin);
     height: 1%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    pointer-events: all;
 }
-header a {
+nav a {
     text-decoration: none;
     color: black;
     /* font-size: small; */
 }
-header div {
+nav div {
     /* border-bottom: 1px solid coral; */
     width: 3ch;
     text-align: center;
@@ -24,11 +24,27 @@ header div {
 
 /* Footer style */
 footer {
+    pointer-events: all;
     font-size: x-small;
     color: grey;
     text-align: center;
     position: absolute;
-    bottom: 0;
-    width: 99vw;
-    height: 20px;
+    bottom: -20px;
+    width: 100%;
+    padding-bottom: 1%;
+}
+
+#page-container {
+    float: left;
+    padding-bottom: 2.5rem;
+    pointer-events: none;
+    position: relative;
+}
+
+#about-container {
+    float: left;
+    pointer-events: none;
+}
+#about-container div {
+    pointer-events: all;
 }
