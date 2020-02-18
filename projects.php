@@ -7,21 +7,32 @@
 <script src='js/ripple.js'></script>
 <link rel='stylesheet' href='css/ripple.css'></link>
 <style type='text/css'>
-:root {
-    --entry-height: 200px;
+@media screen and (orientation: portrait) {
+    :root {
+        --entry-height: 15vw;
+    }
+}
+@media screen, screen and (orientation: landscape) {
+    :root {
+        --entry-height: 23vh;
+    }
 }
     div.tile {
         border-left: solid coral;
         height: var(--entry-height);
+        width: calc(100% - 2 * var(--column-margin));
         margin: 1% var(--column-margin) 1% var(--column-margin);
+        overflow: hidden;
     }
         div.tile div.image-container {
             float: left;
             width: var(--entry-height);
             height: 100%;
-            margin: 0 2% 0 5px;
+            margin: 0 0 0 5px;
             overflow: hidden;
             position: relative;
+            /* padding-top: 100%; */
+            background: grey;
         }
             div.tile div.image-container img {
                 position: absolute;
@@ -40,7 +51,8 @@
         div.tile div.center {
             line-height: 1em;
             float: left;
-            width: 60%;
+            max-width: calc(100% - var(--entry-height) - 8% - 2% - 5px);
+            padding: 0 1%;
             overflow: hidden;
         }
                 div.tile div.center h2 span.project-date {
@@ -57,13 +69,15 @@
         div.tile .tileLink div {
             background-color: coral;
             text-decoration: none;
-            /* color: coral; */
-            float: right;
+            float: left;
             width: 8%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        div.tile .tileLink div::after {
+            clear:right;
         }
             div.tile a.tileLink:visited, div.tile a.tileLink:link {
                 color: currentColor;    
