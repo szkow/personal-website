@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='css/site_style.css'></link>
-<link rel='stylesheet' href='css/header.css'></link>
-<script src='js/ripple.js'></script>
-<link rel='stylesheet' href='css/ripple.css'></link>
-<style type='text/css'>
-@media screen and (orientation: portrait) {
-    :root {
-        --entry-height: 15vw;
-    }
-}
-@media screen, screen and (orientation: landscape) {
-    :root {
-        --entry-height: 23vh;
-    }
-}
-    div.tile {
-        border-left: solid coral;
-        height: var(--entry-height);
-        width: calc(100% - 2 * var(--column-margin));
-        margin: 1% var(--column-margin) 1% var(--column-margin);
-        overflow: hidden;
-    }
+    <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='css/site_style.css'>
+    </link>
+    <link rel='stylesheet' href='css/header.css'>
+    </link>
+    <script src='js/ripple.js'></script>
+    <link rel='stylesheet' href='css/ripple.css'>
+    </link>
+    <style type='text/css'>
+        @media screen and (orientation: portrait) {
+            :root {
+                --entry-height: 15vw;
+            }
+        }
+
+        @media screen,
+        screen and (orientation: landscape) {
+            :root {
+                --entry-height: 23vh;
+            }
+        }
+
+        div.tile {
+            border-left: solid coral;
+            height: var(--entry-height);
+            width: calc(100% - 2 * var(--column-margin));
+            margin: 1% var(--column-margin) 1% var(--column-margin);
+            overflow: hidden;
+            background: white;
+        }
+
+        @media (max-width: 750px) {
+            div.tile div.image-container {
+                width: 0;
+            }
+        }
+        
+        @media (min-width: 750px) {
+            div.tile div.image-container {
+                width: var(--entry-height);
+            }
+        }
+
         div.tile div.image-container {
             float: left;
-            width: var(--entry-height);
+            /* width: var(--entry-height); */
             height: 100%;
             margin: 0 0 0 5px;
             overflow: hidden;
@@ -34,38 +55,66 @@
             /* padding-top: 100%; */
             background: grey;
         }
-            div.tile div.image-container img {
-                position: absolute;
-            }
-                #thumbnail-raytracer {
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) scale(0.35);
-                }
-                #thumbnail-website {
-                    top: 0;
-                    left: 0;
-                    transform-origin: left top;
-                    transform: translateX(-10px) scale(0.2);
-                }
+
+        div.tile div.image-container img {
+            position: absolute;
+        }
+
+        #thumbnail-raytracer {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.35);
+        }
+
+        #thumbnail-website {
+            top: 0;
+            left: 0;
+            transform-origin: left top;
+            transform: translateX(-10px) scale(0.2);
+        }
+
         div.tile div.center {
             line-height: 1em;
             float: left;
             max-width: calc(100% - var(--entry-height) - 8% - 2% - 5px);
+            height: 100%;
             padding: 0 1%;
             overflow: hidden;
+            position: relative;
         }
-                div.tile div.center h2 span.project-date {
-                    border: thin solid lightgrey;
-                    color: grey;
-                    font-weight: normal;
-                    font-size: small;
-                    position: relative;
-                    bottom: 3px;
-                    vertical-align: middle;
-                    padding: 0.6%;
-                    margin: 0 3%;
-                }
+
+        div.tile div.center ul.project-tags {
+            position: absolute;
+            bottom: 3px;
+            /* width: 100%; */
+            height: 1.3em;
+            padding: 0;
+            margin: 0 0 0 0;
+            list-style: none;
+            color: grey;
+        }
+        
+        div.tile div.center ul.project-tags li {
+            display: inline;
+            margin: 0 0.5ch;
+            padding: 0 0.3em;
+            border: solid lightgrey thin;
+            border-radius: 3px;
+            font-size: small;
+        }
+
+        div.tile div.center h2 span.project-date {
+            /* border: thin solid lightgrey; */
+            color: grey;
+            font-weight: normal;
+            font-size: small;
+            position: relative;
+            bottom: 3px;
+            vertical-align: middle;
+            padding: 0.6%;
+            margin: 0 3%;
+        }
+
         div.tile .tileLink div {
             background-color: coral;
             text-decoration: none;
@@ -76,14 +125,17 @@
             justify-content: center;
             align-items: center;
         }
+
         div.tile .tileLink div::after {
-            clear:right;
+            clear: right;
         }
-            div.tile a.tileLink:visited, div.tile a.tileLink:link {
-                color: currentColor;    
-            }
-</style>
-<title>April Roszkowski &CenterDot; Projects</title>
+
+        div.tile a.tileLink:visited,
+        div.tile a.tileLink:link {
+            color: currentColor;
+        }
+    </style>
+    <title>April Roszkowski &CenterDot; Projects</title>
 </head>
 
 <body>
@@ -97,16 +149,21 @@
 
     <div class="tile">
         <div class='image-container'>
-            <img id='thumbnail-website'
-                src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
+            <img id='thumbnail-website' src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
         </div>
-        
+
         <div class="center">
             <h2>This website <span class='project-date'>January 2020</span></h2>
-            <p> 
+            <p>
                 What you're reading right now is something I wrote December 2019 through January 2020
                 in my free time. I think it's pretty neat!
             </p>
+            <ul class='project-tags'>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+            </ul>
         </div>
 
         <a class='tileLink' href="projects/website.php">
@@ -118,22 +175,22 @@
 
     <div class="tile">
         <div class='image-container'>
-            <img id='thumbnail-raytracer' 
-                src="resources/raytracer/two_spheres.png" alt="sample output from my ray tracer">
+            <img id='thumbnail-raytracer' src="resources/raytracer/two_spheres.png"
+                alt="sample output from my ray tracer">
         </div>
-        
+
         <div class="center">
             <h2>Raytracer <span class='project-date'>October 2019</span></h2>
-            <p> 
-                As a part of my computer graphics coursework I wrote a 
-                program which creates images using ray tracing&mdash;a 
+            <p>
+                As a part of my computer graphics coursework I wrote a
+                program which creates images using ray tracing&mdash;a
                 physics-based rendering technique&mdash;to create
                 photorealistic scenes.
             </p>
-            <p> 
-                Written in C++ from scratch, including an image 
-                writer and input file parser.
-            </p>
+            <ul class='project-tags'>
+                <li>C++</li>
+                <li>C</li>
+            </ul>
         </div>
 
         <a class='tileLink' href="projects/raytracer.php">
@@ -143,4 +200,5 @@
         </a>
     </div>
 </body>
+
 </html>
