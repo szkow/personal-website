@@ -18,7 +18,6 @@ a.pdf-link::after {
     vertical-align: top;
     content: '[PDF]';
 }
-
 #page-title {
     margin: 0 var(--column-margin);
     padding: 0;
