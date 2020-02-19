@@ -30,11 +30,24 @@
             width: calc(100% - 2 * var(--column-margin));
             margin: 1% var(--column-margin) 1% var(--column-margin);
             overflow: hidden;
+            background: white;
+        }
+
+        @media (max-width: 750px) {
+            div.tile div.image-container {
+                width: 0;
+            }
+        }
+        
+        @media (min-width: 750px) {
+            div.tile div.image-container {
+                width: var(--entry-height);
+            }
         }
 
         div.tile div.image-container {
             float: left;
-            width: var(--entry-height);
+            /* width: var(--entry-height); */
             height: 100%;
             margin: 0 0 0 5px;
             overflow: hidden;
@@ -149,6 +162,7 @@
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
+                <li>Git</li>
             </ul>
         </div>
 
