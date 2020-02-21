@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='css/site_style.css'></link>
-<link rel='stylesheet' href='css/header.css'></link>
-<script src='js/ripple.js'></script>
-<link rel='stylesheet' href='css/ripple.css'></link>
-<style type='text/css'>
-@media screen and (orientation: portrait) {
-    :root {
-        --entry-height: 15vw;
-    }
-}
-@media screen, screen and (orientation: landscape) {
-    :root {
-        --entry-height: 23vh;
-    }
-}
-    div.tile {
-        border-left: solid coral;
-        height: var(--entry-height);
-        width: calc(100% - 2 * var(--column-margin));
-        margin: 1% var(--column-margin) 1% var(--column-margin);
-        overflow: hidden;
-    }
+    <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='css/site_style.css'>
+    </link>
+    <link rel='stylesheet' href='css/header.css'>
+    </link>
+    <script src='js/ripple.js'></script>
+    <link rel='stylesheet' href='css/ripple.css'>
+    </link>
+    <style type='text/css'>
+        @media screen and (orientation: portrait) {
+            :root {
+                --entry-height: 15vw;
+            }
+        }
+
+        @media screen,
+        screen and (orientation: landscape) {
+            :root {
+                --entry-height: 23vh;
+            }
+        }
+
+        div.tile {
+            border-left: solid coral;
+            height: var(--entry-height);
+            width: calc(100% - 2 * var(--column-margin));
+            margin: 1% var(--column-margin) 1% var(--column-margin);
+            overflow: hidden;
+            background: white;
+        }
+
+        @media (max-width: 750px) {
+            div.tile div.image-container {
+                width: 0;
+            }
+
+            div.tile div.center ul.project-tags {
+                display: none;
+            }
+
+            div.tile div.center {
+                max-width: calc(100% - 8% - 2% - 5px);
+            }
+        }
+
+        @media (min-width: 750px) {
+            div.tile div.image-container {
+                width: var(--entry-height);
+            }
+
+            div.tile div.center {
+                max-width: calc(100% - var(--entry-height) - 5px - 8% - 2%);
+            }
+        }
+
         div.tile div.image-container {
             float: left;
             width: var(--entry-height);
@@ -51,9 +83,42 @@
         div.tile div.center {
             line-height: 1em;
             float: left;
-            max-width: calc(100% - var(--entry-height) - 8% - 2% - 5px);
+            height: 100%;
             padding: 0 1%;
             overflow: hidden;
+            position: relative;
+        }
+
+        div.tile div.center ul.project-tags {
+            position: absolute;
+            bottom: 3px;
+            /* width: 100%; */
+            height: 1.3em;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            color: grey;
+        }
+
+        div.tile div.center ul.project-tags li {
+            display: inline;
+            margin: 0 0.5ch;
+            padding: 0 0.3em;
+            border: solid lightgrey thin;
+            border-radius: 3px;
+            font-size: small;
+        }
+
+        div.tile div.center h2 span.project-date {
+            /* border: thin solid lightgrey; */
+            color: grey;
+            font-weight: normal;
+            font-size: small;
+            position: relative;
+            bottom: 3px;
+            vertical-align: middle;
+            padding: 0.6%;
+            margin: 0 3%;
         }
                 div.tile div.center h2 span.project-date {
                     border: thin solid lightgrey;
