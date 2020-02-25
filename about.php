@@ -38,22 +38,35 @@
         float: left;
     }
     #center-column #center-image {
+        margin-top: 1%;
         /* background-image: url('resources/raytracer/teapot.png'); */
-        background-color: aliceblue;
+        background-color: darkgrey;
         background-size: contain;
-        height: 70%;
-        position: relative;
+        height: 85%;
+        position: relative; 
     }
     #center-column #center-image div {
         position: absolute;
-        left: 25%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 50%;
-        top: 4%;
+        max-height: 90%;
         /* font-size: x-large; */
         opacity: 0;
+        background-color: rgba(50,50,50,0.7);
         visibility: hidden;
         transition: opacity 500ms;
+        padding: 1% 5%;
+        color: lightgrey;
+        overflow-y: auto;
+        scrollbar-width: thin;
     }
+
+    #center-column #center-image div a {
+        color: grey;
+    }
+
     #center-column #tabs {
         display: flex;
         flex-direction: row;
@@ -67,11 +80,20 @@
     #center-column #tabs li {
         position: relative;
         padding: 1% 0;
-        width: 15%;
+        max-width: 15%;
         text-align: center;
         cursor: pointer;
-        transition: transform 500ms;
+        transition: transform 500ms ease, background 500ms ease;
     }
+
+    .about-me-focus {
+        background: center center fixed no-repeat url('resources/about/ithaca_sunset.jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
     #center-column #tabs li h2 {
         margin: 0;
     }
@@ -92,7 +114,7 @@
     </div>
     
     <div id='center-column'>
-        <div id='center-image'>
+        <div id='center-image' class='about-me-focus'>
             <div id='about-me-text'>
                 <h2>Me</h2>
                 <p>
