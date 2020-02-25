@@ -39,12 +39,23 @@
     }
     #center-column #center-image {
         margin-top: 1%;
-        /* background-image: url('resources/raytracer/teapot.png'); */
         background-color: darkgrey;
-        background-size: contain;
         height: 85%;
         position: relative; 
+        overflow: hidden;
     }
+
+    #center-column #center-image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        opacity: 0;
+        transition: opacity 900ms ease;
+        visibility: hidden;
+    }
+
     #center-column #center-image div {
         position: absolute;
         top: 50%;
@@ -64,7 +75,7 @@
     }
 
     #center-column #center-image div a {
-        color: grey;
+        color: aliceblue;
     }
 
     #center-column #tabs {
@@ -83,15 +94,7 @@
         max-width: 15%;
         text-align: center;
         cursor: pointer;
-        transition: transform 500ms ease, background 500ms ease;
-    }
-
-    .about-me-focus {
-        background: center center fixed no-repeat url('resources/about/ithaca_sunset.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        transition: transform 500ms ease;
     }
 
     #center-column #tabs li h2 {
@@ -114,7 +117,17 @@
     </div>
     
     <div id='center-column'>
-        <div id='center-image' class='about-me-focus'>
+        <div id='center-image'>
+            <img id='about-me-image' src='resources/about/ithaca_sunset.jpg' 
+                alt='me standing on a bride in Ithaca, New York at sunset'/>
+            <img id='about-resume-image' src='resources/about/jobs!!!.png'
+                alt='jobs! work! great!'/>
+            <img id='about-identity-image' src='resources/about/pride.jpg'
+                alt='the nonbinary pride flag'/>
+            <img id='about-interests-image' src='resources/about/cicada.jpg'
+                alt='a freshly-molted cicada in my front yard'/>
+            <img id='about-research-image' src='resources/about/MATH!!!.jpg'
+                alt='esoteric math scribbles on a blackboard in Cornell'/>
             <div id='about-me-text'>
                 <h2>Me</h2>
                 <p>
@@ -134,7 +147,7 @@
             <div id='about-resume-text'>
                 <h2>R&eacute;sum&eacute;</h2>
                 <p>
-                    <a href='resources/resume.pdf'>
+                    <a href='resources/resume.pdf' download='april_roszkowski_resume.pdf'>
                     It kinda speaks for itself. <i class="fas fa-download"></i>
                     </a>
                 </p>
@@ -179,8 +192,8 @@
                     <a href="https://en.wikipedia.org/wiki/Optimal_control">optimal control theory</a> and the problem of how to make
                     many robots to move similarly. It's difficult to explain this clearly <em>and</em> briefly, so it may be
                     more enlightening if you're curious to skim my final presentation for the REU: download as
-                    <a href='resources/optimal_control/Cornell Final Presentation.pdf'>PDF</a> or
-                    <a href='resources/optimal_control/Cornell Final Presentation.pptx'>PowerPoint</a>.
+                    <a href='resources/optimal_control/Cornell Final Presentation.pdf' download='Cornell Final Presentation.pdf'>PDF</a> or
+                    <a href='resources/optimal_control/Cornell Final Presentation.pptx' download='Cornell Final Presentation.pptx'>PowerPoint</a>.
                 </p>
             </div>
         </div>
