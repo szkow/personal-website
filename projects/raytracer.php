@@ -34,6 +34,9 @@
             text-indent: 1.5em;
             padding: 20px;
         }
+        #words h2 {
+            text-indent: 0;
+        }
         #words li {
             text-indent: 0;
         }
@@ -107,7 +110,7 @@
                 </ol>
             </p>
 
-            <h2><i class="fas fa-graduation-cap"></i> What I learned</h2>
+            <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
             <p>
                 I developed in Visual Studio 15 and the project ended up being basically the largest piece I'd written so far.
                 The class hierarchy and such is probably extremely jank&mdash;I haven't had other eyes on it&mdash;but I am 
