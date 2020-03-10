@@ -76,13 +76,22 @@
             </div>
         </div>
         <div id='words'>
-            <h2>Summary</h2>
+            <h2><i class="fas fa-hammer"></i> What I did</h2>
             <p>
                 You can see most of the stuff I did for yourself, just by perusing these pages.
-                I'll make a few notes on development, however. I'm new to web development, so 
-                I ended up writing everything without a framework. And this was really fun to do, 
-                actually. I hate HTML a little bit less and I somewhat understand Javascript now;
-                although, there are definitely things I'd change about the former.
+                The weird ripple animation that happens when you click on the margins is a holdover
+                from when I was considering a very different aesthetic for the site. It was fun to
+                program though!
+            </p>
+            
+            <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
+            <p>
+                I'm new to web development, so I ended up writing everything without a framework. And 
+                this was really fun to do, actually. I hate HTML a little bit less and I somewhat 
+                understand Javascript now; although, there are definitely things I'd change about the former.
+                I also learned that sometimes simple effects are very, very
+                hard to achieve (lookin' at you, <code>&lt;details&gt;</code> with CSS transitions...) and
+                that Mozilla is your friend.
             </p>
         </div>
     </div>
