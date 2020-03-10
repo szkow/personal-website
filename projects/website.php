@@ -34,6 +34,9 @@
             text-indent: 1.5em;
             padding: 20px;
         }
+        #words h2 {
+            text-indent: 0;
+        }
         #words li {
             text-indent: 0;
         }
