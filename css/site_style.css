@@ -1,5 +1,5 @@
 :root {
-    --column-margin: 20%;
+    --column-margin: 20vw;
 }
 @font-face {
     font-family: 'Glacial Indifference';
@@ -18,7 +18,6 @@ a.pdf-link::after {
     vertical-align: top;
     content: '[PDF]';
 }
-
 #page-title {
     margin: 0 var(--column-margin);
     padding: 0;
