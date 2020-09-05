@@ -24,11 +24,32 @@
             }
         }
 
-        div.tile {
-            border-left: solid coral;
-            height: var(--entry-height);
+        div.tile-container {
+            margin: 1% var(--column-margin) 1% calc(var(--column-margin) - 10px);
+            padding-left: 10px;
             width: calc(100% - 2 * var(--column-margin));
-            margin: 1% var(--column-margin) 1% var(--column-margin);
+            border-left: solid coral 3px;
+        }
+
+        div.tile-year {
+            width: var(--entry-height);
+            font-size: 20pt;
+            line-height: 2.5em;
+            transform: rotate(-90deg) translateY(-100%);
+            position: absolute;
+            text-align: right;
+            margin: 1%;
+        }
+
+        div.tile-year h1 {
+            color: coral;
+            font-weight: bold;
+        }
+            
+        div.tile {
+            /* border-left: solid coral; */
+            margin: 0 0 2% 0;
+            height: var(--entry-height);
             overflow: hidden;
             background: white;
         }
@@ -147,58 +168,85 @@
         <h1>Projects: I try sometimes</h1>
     </div>
 
-    <div class="tile">
-        <div class='image-container'>
-            <img id='thumbnail-website' src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
-        </div>
-
-        <div class="center">
-            <h2>This website <span class='project-date'>January 2020</span></h2>
-            <p>
-                What you're reading right now is something I wrote December 2019 through January 2020
-                in my free time. I think it's pretty neat!
-            </p>
-            <ul class='project-tags'>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Git</li>
-            </ul>
-        </div>
-
-        <a class='tileLink' href="projects/website.php">
-            <div>
-                <i class="fas fa-chevron-right"></i>
+    <div class='tile-container'>
+        <div class='tile-year'><h1>2020</h1></div>
+        <div class="tile">
+            <div class='image-container'>
+                <img id='thumbnail-website' src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
             </div>
-        </a>
+
+            <div class="center">
+                <h2>Merriam's Webpage</h2>
+                <p>
+                    I wrote a neat lil unobtrusive dictionary add-on for Firefox.
+                </p>
+                <ul class='project-tags'>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <a class='tileLink' href="projects/merriams-webpage.php">
+                <div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+        <div class="tile">
+            <div class='image-container'>
+                <img id='thumbnail-website' src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
+            </div>
+
+            <div class="center">
+                <h2>This website</h2>
+                <p>
+                    What you're reading right now is something I wrote December 2019 through January 2020
+                    in my free time. I think it's pretty neat!
+                </p>
+                <ul class='project-tags'>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                </ul>
+            </div>
+
+            <a class='tileLink' href="projects/website.php">
+                <div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class='tile-container'>
+        <div class='tile-year'><h1>2019</h1></div>
+        <div class="tile">
+            <div class='image-container'>
+                <img id='thumbnail-raytracer' src="resources/raytracer/two_spheres.png"
+                    alt="sample output from my ray tracer">
+            </div>
+
+            <div class="center">
+                <h2>Raytracer</h2>
+                <p>
+                    As a part of my computer graphics coursework I wrote a
+                    program which creates images using ray tracing&mdash;a
+                    physics-based rendering technique&mdash;to create
+                    photorealistic scenes.
+                </p>
+                <ul class='project-tags'>
+                    <li>C++</li>
+                    <li>C</li>
+                </ul>
+            </div>
+
+            <a class='tileLink' href="projects/raytracer.php">
+                <div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
     </div>
 
-    <div class="tile">
-        <div class='image-container'>
-            <img id='thumbnail-raytracer' src="resources/raytracer/two_spheres.png"
-                alt="sample output from my ray tracer">
-        </div>
-
-        <div class="center">
-            <h2>Raytracer <span class='project-date'>October 2019</span></h2>
-            <p>
-                As a part of my computer graphics coursework I wrote a
-                program which creates images using ray tracing&mdash;a
-                physics-based rendering technique&mdash;to create
-                photorealistic scenes.
-            </p>
-            <ul class='project-tags'>
-                <li>C++</li>
-                <li>C</li>
-            </ul>
-        </div>
-
-        <a class='tileLink' href="projects/raytracer.php">
-            <div>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-    </div>
 </body>
 
 </html>
