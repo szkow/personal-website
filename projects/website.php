@@ -96,6 +96,10 @@
                 hard to achieve (lookin' at you, <code>&lt;details&gt;</code> with CSS transitions...) and
                 that Mozilla is your friend.
             </p>
+            <p>
+                The music page uses an XML HTTP request which is something I've never implemented before. 
+                It was interesting to see how web requests work and actually have it function in the end.
+            </p>
         </div>
     </div>
 </body>

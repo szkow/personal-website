@@ -76,7 +76,7 @@
         div.tile div.center {
             line-height: 1em;
             float: left;
-            max-width: calc(100% - var(--entry-height) - 8% - 2% - 5px);
+            width: calc(100% - var(--entry-height) - 8% - 2% - 5px);
             height: 100%;
             padding: 0 1%;
             overflow: hidden;
