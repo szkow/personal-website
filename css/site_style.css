@@ -22,9 +22,15 @@ a.pdf-link::after {
     margin: 0 var(--column-margin);
     padding: 0;
     border-bottom: thin solid black;
-    line-height: 0;
+    line-height: 1ch;
     /* text-align: center; */
 }
 #page-title h1 {
     font-size: xx-large;
+}
+#page-title h2 {
+    position: relative;
+    left: 1.5em;
+    color: darkgrey;
+    font-size: large;
 }

@@ -105,14 +105,12 @@
 
 <body>
     <?php 
-        include 'html/ripple.html' 
-    ?>
-    <?php 
         include 'html/header.html'
     ?>
     
     <div id='page-title'>
-        <h1>April Roszkowski: I live here</h1>
+        <h1>April Roszkowski</h1>
+        <h2>I live here</h2>
     </div>
     
     <div id='center-column'>

@@ -138,7 +138,8 @@
             include 'html/header.html'
         ?>
     <div id='page-title'>
-        <h1>Music: I like it</h1>
+        <h1>Music</h1>
+        <h2>I like it</h2>
     </div>
     
     <div id='content-container'>

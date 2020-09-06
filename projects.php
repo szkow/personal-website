@@ -172,7 +172,8 @@
         include 'html/header.html' 
     ?>
     <div id='page-title'>
-        <h1>Projects: I try sometimes</h1>
+        <h1>Projects</h1>
+        <h2>I try sometimes</h2>
     </div>
 
     <div id='content-wrapper'>
