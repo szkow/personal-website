@@ -6,7 +6,6 @@
     <link rel='stylesheet' href='../css/site_style.css'></link>
     <link rel='stylesheet' href='../css/header.css'>
     <link rel='stylesheet' href='../css/gallery.css'>
-    <script src='../js/ripple.js'></script>
     <link rel='stylesheet' href='../css/ripple.css'></link>
     <style>
         #column {
@@ -57,12 +56,14 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='../resources/website/code_snippet.jpg'
-                            alt='a code snippet from this website' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='../resources/merriams_webpage/merriam_webster_is_subtle.jpg'
+                            alt='a screenshot of the add-on' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='../resources/merriams_webpage/in_action.jpg'
+                    alt='a screenshot of the add-on with a definition' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='../resources/website/code_snippet.jpg' 
-                            alt='a code snippet from this website'>
+                <img id='main-image-handle' src='../resources/merriams_webpage/merriam_webster_is_subtle.jpg' 
+                            alt='a screenshot of the add-on'>
             </div>
         </div>
 

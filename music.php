@@ -8,7 +8,6 @@
     </link>
     <link rel='stylesheet' href='css/header.css'>
     <script src='js/lastfm_request.js'></script>
-    <script src='js/ripple.js'></script>
     <link rel='stylesheet' href='css/ripple.css'>
     </link>
 

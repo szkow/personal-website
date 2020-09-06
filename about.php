@@ -4,7 +4,6 @@
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='css/site_style.css'></link>
 <link rel='stylesheet' href='css/header.css'>
-<script src='js/ripple.js'></script>
 <script src='js/about_click.js'></script>
 <link rel='stylesheet' href='css/ripple.css'></link>
 <style type=text/css>

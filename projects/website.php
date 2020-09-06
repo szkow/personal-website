@@ -6,7 +6,6 @@
     <link rel='stylesheet' href='../css/site_style.css'></link>
     <link rel='stylesheet' href='../css/header.css'>
     <link rel='stylesheet' href='../css/gallery.css'>
-    <script src='../js/ripple.js'></script>
     <link rel='stylesheet' href='../css/ripple.css'></link>
     <style>
         #column {
@@ -81,10 +80,8 @@
         <div id='words'>
             <h2><i class="fas fa-hammer"></i> What I did</h2>
             <p>
-                You can see most of the stuff I did for yourself, just by perusing these pages.
-                The weird ripple animation that happens when you click on the margins is a holdover
-                from when I was considering a very different aesthetic for the site. It was fun to
-                program though!
+                You can see most of the stuff I did for yourself, just by browsing these pages. I'm particularly
+                proud of my music page.
             </p>
             
             <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
