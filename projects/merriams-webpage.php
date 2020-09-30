@@ -82,15 +82,16 @@
         <div id='words'>
             <h2><i class="fas fa-hammer"></i> What I did</h2>
             <p>
-
+                I created a dictionary extension for Firefox that pops up a book icon when highlighting words on a 
+                webpage. Clicking the book brings up an overlay with the word's definition and a link to
+                the entry on Merriam Webster. It's a bit rough around the edges, but you can download it
+                <a href='../resources/merriams_webpage/merriams_book-0.1-fx.xpi'>here</a>.
             </p>
             
             <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
             <p>
-
-            </p>
-            <p>
-
+                I learned how to write an extension from scratch for Firefox, and I also got to do some
+                neat JSON parsing as a result of querying Merriam Webster's API.
             </p>
         </div>
     </div>
