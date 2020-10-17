@@ -132,8 +132,8 @@
                     Sorry, the last few are a joke.
                 </p>
                 <p>
-                    Currently, I'm a third-year student at the University of Minnesota studying computer
-                    science with a minor in math. I've found I really like the mathy side of computer
+                    Currently, I'm a student at the University of Minnesota studying computer
+                    science with a minor in math (I'll be graduating Spring 2021). I've found I really like the mathy side of computer
                     science, hence the minor and my interest in computer graphics/visualization and 
                     robotics (kinda, maybe not sure yet).
                 </p>
