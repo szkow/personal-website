@@ -38,7 +38,7 @@
             width: var(--entry-height);
             font-size: 20pt;
             line-height: 2.5em;
-            transform: rotate(-90deg) translateY(-100%) translateY(-7px);
+            transform: rotate(-90deg) translateY(-125%);
             position: absolute;
             text-align: right;
             margin: 1%;
