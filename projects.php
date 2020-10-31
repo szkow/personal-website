@@ -24,7 +24,6 @@
         }
 
         #content-wrapper {
-            overflow-x: hidden;
             width: calc(100% - 2 * var(--column-margin));
             margin: 1% var(--column-margin) 1% calc(var(--column-margin) - 10px);
         }
@@ -32,21 +31,25 @@
         div.tile-container {
             padding-left: 10px;
             border-left: solid coral 3px;
+            position: relative;
         }
 
         div.tile-year {
-            width: var(--entry-height);
+            /* height: var(--entry-height); */
             font-size: 20pt;
-            line-height: 2.5em;
-            transform: rotate(-90deg) translateY(-125%);
+            left: 0;
+            top: 0;
+            margin: 0;
+            transform: rotate(-90deg) translateY(calc(-120% - 13px)) translateX(-20%);
             position: absolute;
             text-align: right;
-            margin: 1%;
         }
 
         div.tile-year h1 {
             color: coral;
             font-weight: bold;
+            padding: 0;
+            margin: 0;
         }
             
         div.tile {
