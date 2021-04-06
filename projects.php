@@ -27,9 +27,10 @@
             border-bottom: 2px coral solid;
         }
 
-        #content-wrapper {
+        #center-column {
+            float: left;
             width: calc(100% - 2 * var(--column-margin));
-            margin: 1% var(--column-margin) 1% calc(var(--column-margin) - 10px);
+            margin: 1% 0 1% calc(var(--column-margin) - 10px);
         }
 
         div.tile-container {
@@ -170,6 +171,77 @@
         div.tile a.tileLink:link {
             color: currentColor;
         }
+
+        #tidbits-container {
+            float: right;
+            text-align: center;
+            width: calc(0.67 * var(--column-margin));
+            margin: 5vw calc(0.15 * var(--column-margin)) 0 0;
+        }
+
+        #tidbits-container > h1 {
+            border-bottom: thin black solid;
+        }
+
+        #tidbits {
+            height: 25vw;
+            text-align: left;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        #tidbits a {
+            color: currentColor;
+            text-decoration: none;
+        }
+
+        .tidbit {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 3em;
+            overflow: hidden;
+        }
+
+        .tidbit a {
+            display: inline-block;
+        }
+
+        .tidbit .thumbnail {
+            margin: 0 5px 0 0;
+            height: 3em;
+            width: 3em;
+            /* padding-top: 100%; */
+            background-image: url('resources/about/cicada.jpg');
+            background-size: cover; /* or contain */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+       
+        .tidbit .text {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            overflow: hidden;
+            height: 3em;
+            vertical-align: center;
+        }
+
+        .tidbit .text h1 {
+            margin: 0;
+            padding: 0;
+            font-size: large;
+        }
+
+        .tidbit .text h2 {
+            margin: 3px 0 0 0;
+            padding: 0;
+            position: relative;
+            font-size: small;
+            color: grey;
+            margin-left: 10px;
+        }
+
     </style>
     <title>April Roszkowski &CenterDot; Projects</title>
 </head>
@@ -184,7 +256,7 @@
         <h2>I try sometimes</h2>
     </div>
 
-    <div id='content-wrapper'>
+    <div id='center-column'>
         <div class='tile-container'>
             <div class='tile-year'><h1>2020</h1></div>
             <div class="tile">
@@ -262,6 +334,22 @@
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
+    
+    <div id='tidbits-container'>
+        <h1>Tidbits</h1>
+        <div id='tidbits'>
+            <a href='projects/tidbits/ray-marching.php'>
+                <div class='tidbit'>
+                    <div class='thumbnail'>
+                    </div>
+                    <div class='text'>
+                        <h1>Ray Marching</h1>
+                        <h2>April 6, 2021</h2>
+                    <div>
+                </div>
+            </a>
         </div>
     </div>
 
