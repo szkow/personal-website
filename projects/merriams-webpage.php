@@ -43,7 +43,7 @@
             text-indent: 0;
         }
     </style>
-    <title>April Roszkowski &CenterDot; This website</title>
+    <title>April Roszkowski &CenterDot; Merriam's Webpage</title>
 </head>
 
 <body>
@@ -53,46 +53,49 @@
     ?>
 
     <div id='page-title'>
-        <h1>Personal Website</h1>
+        <h1>Merriam's Webpage</h1>
     </div>
     
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='../resources/website/code_snippet.jpg'
-                            alt='a code snippet from this website' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='../resources/merriams_webpage/merriam_webster_is_subtle.jpg'
+                            alt='a screenshot of the add-on' onclick='expandImage(this)'></div>
+                <div><img class='thumbnail' src='../resources/merriams_webpage/in_action.jpg'
+                    alt='a screenshot of the add-on with a definition' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='../resources/website/code_snippet.jpg' 
-                            alt='a code snippet from this website'>
+                <img id='main-image-handle' src='../resources/merriams_webpage/merriam_webster_is_subtle.jpg' 
+                            alt='a screenshot of the add-on'>
             </div>
         </div>
 
         <div id='links'>
             <div>
                 <p>
-                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/personal-website'>Source code</a>
+                    <i class="fab fa-github-square"></i> <a href='https://github.com/szkow/merriam-webpage'>Source code</a>
                 </p>
             </div>
             <div>
                 <p>
-                    <b>Languages:</b> HTML, CSS, Javascript
+                    <b>Languages:</b> Javascript
                 </p>
             </div>
         </div>
         <div id='words'>
             <p>
-                You can see most of the stuff I did for yourself, just by browsing these pages. I'm particularly
-                proud of my music page since it uses an XML HTTP request which is something I've never implemented before. 
-                It was interesting to see how web requests work and actually have it function in the end.
+                I created a dictionary extension for Firefox that pops up a book icon when highlighting words on a 
+                webpage. Clicking the book brings up an overlay with the word's definition and a link to
+                the entry on Merriam Webster. It's a bit rough around the edges, but you can download it
+                <a href='../resources/merriams_webpage/merriams_webpage.xpi'>here</a>.
+
+                Also, newer versions of the plugin include a small icon (designed by Desmond Kamas, the best designer) 
+                in your toolbar where you can explicitly look up words.
             </p>
             <p>
-                I'm new to web development, so I ended up writing everything without a framework. And 
-                this was really fun to do, actually. I hate HTML a little bit less and I somewhat 
-                understand Javascript now; although, there are definitely things I'd change about the former.
-                I also learned that sometimes simple effects are very, very
-                hard to achieve (lookin' at you, <code>&lt;details&gt;</code> with CSS transitions...) and
-                that Mozilla is your friend.
+                This was a pretty fun project, since I learned how to write an extension from scratch for Firefox and also got to do some
+                neat JSON parsing of Merriam Webster's dictionary entries. It's uing my personal API key, though, so if too many people use
+                it and it exceeds like 1000 lookups/day, they get mad at me.
             </p>
         </div>
     </div>
