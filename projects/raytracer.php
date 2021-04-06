@@ -6,9 +6,11 @@
     <link rel='stylesheet' href='../css/site_style.css'></link>
     <link rel='stylesheet' href='../css/header.css'>
     <link rel='stylesheet' href='../css/gallery.css'>
-    <script src='../js/ripple.js'></script>
     <link rel='stylesheet' href='../css/ripple.css'></link>  
     <style>
+        #nav-projects{
+            border-bottom: 2px coral solid;
+        }
         #column {
             /* border: solid grey; */
             height: auto;
@@ -79,7 +81,7 @@
             </div>
         </div>
         <div id='words'>
-            <h2><i class="fas fa-mountain"></i> Background</h2>
+            <h2>Some Background</h2>
             <p>
                 Raytracing is a method of rendering a virtual scene which is typically used for photorealistic styles. This is
                 because the technique attempts to simulate the paths that light rays take through the scene before entering 
@@ -89,7 +91,7 @@
                 cards which optimize basic raytracing computation so, who knows! Maybe in 3 years we'll all be raytracing our apps.
             </p>
 
-            <h2><i class="fas fa-hammer"></i> What I did</h2>
+            <h2>What I did</h2>
             <p>
                 From scratch, I made:
                 <ol>
@@ -109,9 +111,9 @@
                         .obj triangle meshes) in a scene, as well as parameters like field of view of the camera.
                     </li>
                 </ol>
+                Wow, yeah, I'm so impressive.
             </p>
 
-            <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
             <p>
                 I developed in Visual Studio 15 and the project ended up being basically the largest piece I'd written so far.
                 The class hierarchy and such is probably extremely jank&mdash;I haven't had other eyes on it&mdash;but I am 

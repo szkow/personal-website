@@ -8,7 +8,6 @@
     </link>
     <link rel='stylesheet' href='css/header.css'>
     <script src='js/lastfm_request.js'></script>
-    <script src='js/ripple.js'></script>
     <link rel='stylesheet' href='css/ripple.css'>
     </link>
 
@@ -17,6 +16,10 @@
             --track-width: 20vw;
             --track-height: 13vh;
             --track-text-margin: 2%;
+        }
+
+        #nav-music{
+            border-bottom: 2px coral solid;
         }
 
         #content-container {
@@ -55,10 +58,11 @@
         #recently-played-wrapper {
             float: left;
             height: 100%;
-            padding-top: 4%;
+            text-align: center;
         }
 
         #recently-played {
+            text-align: left;
             overflow-y: scroll;
             overflow-x: hidden;
             display: flex;
@@ -139,22 +143,24 @@
             include 'html/header.html'
         ?>
     <div id='page-title'>
-        <h1>Music: I like it</h1>
+        <h1>Music</h1>
+        <h2>I like it</h2>
     </div>
     
     <div id='content-container'>
         <div id='recently-played-wrapper'>
+            <h2>Recent scrobbles</h2>
             <div id='recently-played'>Loading...</div>
         </div>
 
         <figure id='chart-container'>
             <h2>This week's listens</h2>
             <div>
-                <img src='http://www.tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'
+                <img src='https://tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'
                     alt='the top 9 albums I listened to this week'>
             </div>
             <figcaption>
-                My top albums of the week. Generated via <a href='http://www.tapmusic.net'>tapmusic.net</a>
+                My top albums of the week. Generated via <a href='https://tapmusic.net'>tapmusic.net</a>
             </figcaption>
         </figure>
     </div>
