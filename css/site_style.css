@@ -10,7 +10,7 @@ body {
     font-family: 'Glacial Indifference', Fallback, sans-serif;
 }
 p, li, ol {
-    font-size: 11pt;
+    font-size: 12pt;
 }
 a.pdf-link::after {
     display: inline;

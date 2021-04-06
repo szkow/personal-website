@@ -18,6 +18,10 @@
             --track-text-margin: 2%;
         }
 
+        #nav-music{
+            border-bottom: 2px coral solid;
+        }
+
         #content-container {
             margin: 0 var(--column-margin);
             height: 76vh;
@@ -54,10 +58,11 @@
         #recently-played-wrapper {
             float: left;
             height: 100%;
-            padding-top: 4%;
+            text-align: center;
         }
 
         #recently-played {
+            text-align: left;
             overflow-y: scroll;
             overflow-x: hidden;
             display: flex;
@@ -144,17 +149,18 @@
     
     <div id='content-container'>
         <div id='recently-played-wrapper'>
+            <h2>Recent scrobbles</h2>
             <div id='recently-played'>Loading...</div>
         </div>
 
         <figure id='chart-container'>
             <h2>This week's listens</h2>
             <div>
-                <img src='http://www.tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'
+                <img src='https://tapmusic.net/collage.php?user=szkow&type=7day&size=3x3&caption=true'
                     alt='the top 9 albums I listened to this week'>
             </div>
             <figcaption>
-                My top albums of the week. Generated via <a href='http://www.tapmusic.net'>tapmusic.net</a>
+                My top albums of the week. Generated via <a href='https://tapmusic.net'>tapmusic.net</a>
             </figcaption>
         </figure>
     </div>

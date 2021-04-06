@@ -23,6 +23,10 @@
             }
         }
 
+        #nav-projects{
+            border-bottom: 2px coral solid;
+        }
+
         #content-wrapper {
             width: calc(100% - 2 * var(--column-margin));
             margin: 1% var(--column-margin) 1% calc(var(--column-margin) - 10px);
@@ -149,6 +153,7 @@
         div.tile .tileLink div {
             background-color: coral;
             text-decoration: none;
+            font-size: x-large;
             float: left;
             width: 8%;
             height: 100%;

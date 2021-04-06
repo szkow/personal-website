@@ -7,6 +7,9 @@
 <script src='js/about_click.js'></script>
 <link rel='stylesheet' href='css/ripple.css'></link>
 <style type=text/css>
+    #nav-about {
+        border-bottom: 2px coral solid;
+    }
     #social-links {
         /* border: thin solid black; */
         font-size: small;
@@ -116,7 +119,7 @@
     <div id='center-column'>
         <div id='center-image'>
             <img id='about-me-image' src='resources/about/ithaca_sunset.jpg' 
-                alt='me standing on a bride in Ithaca, New York at sunset'/>
+                alt='me standing on a bridge in Ithaca, New York at sunset'/>
             <img id='about-resume-image' src='resources/about/jobs!!!.png'
                 alt='jobs! work! great!'/>
             <img id='about-identity-image' src='resources/about/pride.jpg'
@@ -124,21 +127,17 @@
             <img id='about-interests-image' src='resources/about/cicada.jpg'
                 alt='a freshly-molted cicada in my front yard'/>
             <img id='about-research-image' src='resources/about/MATH!!!.jpg'
-                alt='esoteric math scribbles on a blackboard in Cornell'/>
+                alt='esoteric math scribbles on a blackboard at Cornell'/>
             <div id='about-me-text'>
                 <h2>Me</h2>
                 <p>
-                    I'm April, a student, musician, self-made entrepreneur, creative, and influencer. 
-                    Sorry, the last few are a joke.
+                    Hi, I'm April. I currently am studying computer science, and I'm into applied mathematics, and music (hence the link to my last.fm to the right). This website is both a little archive of my own to keep track of things and a showcase aimed towards potential employers, so, if you're not a potential employer, apologies for the gross, businessy "I'm selling myself" language.
                 </p>
                 <p>
-                    Currently, I'm a student at the University of Minnesota studying computer
-                    science with a minor in math (I'll be graduating Spring 2021). I've found I really like the mathy side of computer
-                    science, hence the minor and my interest in computer graphics/visualization and 
-                    robotics (kinda, maybe not sure yet).
+                    Currently, I'm a pursuing a masters degree at the University of Wisconsin - Madison. I've found I really like the mathy side of computer science, hence my interest in computer graphics/visualization (and a bit of machine learning).
                 </p>
                 <p>
-                    Anyways, welcome to my site; take a look around!
+                    Anyways, welcome to my site; take a look around! The meat of this site is the <a href='projects.php'>project page</a>.
                 </p>
             </div>
             <div id='about-resume-text'>

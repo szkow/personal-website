@@ -8,6 +8,9 @@
     <link rel='stylesheet' href='../css/gallery.css'>
     <link rel='stylesheet' href='../css/ripple.css'></link>
     <style>
+        #nav-projects{
+            border-bottom: 2px coral solid;
+        }
         #column {
             /* border: solid grey; */
             height: auto;
@@ -78,13 +81,11 @@
             </div>
         </div>
         <div id='words'>
-            <h2><i class="fas fa-hammer"></i> What I did</h2>
             <p>
                 You can see most of the stuff I did for yourself, just by browsing these pages. I'm particularly
-                proud of my music page.
+                proud of my music page since it uses an XML HTTP request which is something I've never implemented before. 
+                It was interesting to see how web requests work and actually have it function in the end.
             </p>
-            
-            <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
             <p>
                 I'm new to web development, so I ended up writing everything without a framework. And 
                 this was really fun to do, actually. I hate HTML a little bit less and I somewhat 
@@ -92,10 +93,6 @@
                 I also learned that sometimes simple effects are very, very
                 hard to achieve (lookin' at you, <code>&lt;details&gt;</code> with CSS transitions...) and
                 that Mozilla is your friend.
-            </p>
-            <p>
-                The music page uses an XML HTTP request which is something I've never implemented before. 
-                It was interesting to see how web requests work and actually have it function in the end.
             </p>
         </div>
     </div>

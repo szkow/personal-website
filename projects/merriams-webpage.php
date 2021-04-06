@@ -8,6 +8,9 @@
     <link rel='stylesheet' href='../css/gallery.css'>
     <link rel='stylesheet' href='../css/ripple.css'></link>
     <style>
+        #nav-projects{
+            border-bottom: 2px coral solid;
+        }
         #column {
             /* border: solid grey; */
             height: auto;
@@ -80,18 +83,19 @@
             </div>
         </div>
         <div id='words'>
-            <h2><i class="fas fa-hammer"></i> What I did</h2>
             <p>
                 I created a dictionary extension for Firefox that pops up a book icon when highlighting words on a 
                 webpage. Clicking the book brings up an overlay with the word's definition and a link to
                 the entry on Merriam Webster. It's a bit rough around the edges, but you can download it
                 <a href='../resources/merriams_webpage/merriams_webpage.xpi'>here</a>.
+
+                Also, newer versions of the plugin include a small icon (designed by Desmond Kamas, the best designer) 
+                in your toolbar where you can explicitly look up words.
             </p>
-            
-            <h2><i class="fas fa-apple-alt"></i> What I learned</h2>
             <p>
-                I learned how to write an extension from scratch for Firefox, and I also got to do some
-                neat JSON parsing as a result of querying Merriam Webster's API.
+                This was a pretty fun project, since I learned how to write an extension from scratch for Firefox and also got to do some
+                neat JSON parsing of Merriam Webster's dictionary entries. It's uing my personal API key, though, so if too many people use
+                it and it exceeds like 1000 lookups/day, they get mad at me.
             </p>
         </div>
     </div>
