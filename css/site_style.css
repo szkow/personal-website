@@ -35,3 +35,18 @@ a.pdf-link::after {
     font-size: large;
     margin: 0;
 }
+
+/* For tidbit headers, which include a date */
+#page-title .tidbit-header {
+    position: relative;
+}
+#page-title .tidbit-header div {
+    color: grey;
+    font-size: normal;
+}
+#page-title .tidbit-header h3 {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 3px;
+}
