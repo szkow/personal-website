@@ -20,17 +20,18 @@ a.pdf-link::after {
 }
 #page-title {
     margin: 0 var(--column-margin);
-    padding: 0;
+    padding: 0 0 3px 0;
     border-bottom: thin solid black;
-    line-height: 1ch;
     /* text-align: center; */
 }
 #page-title h1 {
     font-size: xx-large;
+    margin: 0;
 }
 #page-title h2 {
     position: relative;
     left: 1.5em;
     color: darkgrey;
     font-size: large;
+    margin: 0;
 }
