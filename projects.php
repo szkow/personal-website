@@ -109,6 +109,12 @@
             transform: translateX(-10px) scale(0.2);
         }
 
+        #thumbnail-compvis {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -46%) scale(0.4);
+        }
+
         div.tile div.center {
             line-height: 1em;
             float: left;
@@ -260,6 +266,33 @@
     </div>
 
     <div id='center-column'>
+        <div class='tile-container'>
+            <div class='tile-year'><h1>2021</h1></div>
+            <div class="tile">
+                <div class='image-container'>
+                    <img id='thumbnail-compvis' src="resources/comp_vis/paper_screencap.png" alt="">
+                </div>
+
+                <div class="center">
+                    <h2>Intuitive Physics of Bouncing Spheroids</h2>
+                    <p>
+                        In a course on computer vision, some peers and I created a convolutional neural network
+                        to predict the motion of a bouncing spheroid (ball, football, etc.).
+                    </p>
+                    <ul class='project-tags'>
+                        <li>Python</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+
+                <a class='tileLink' href="projects/intuitive_physics_of_spheroids.php">
+                    <div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <div class='tile-container'>
             <div class='tile-year'><h1>2020</h1></div>
             <div class="tile">
