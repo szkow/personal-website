@@ -212,10 +212,13 @@
             height: 3em;
             width: 3em;
             /* padding-top: 100%; */
-            background-image: url('resources/about/cicada.jpg');
             background-size: cover; /* or contain */
             background-position: center center;
             background-repeat: no-repeat;
+        }
+
+        #raymarch .thumbnail {
+            background-image: url('resources/tidbits/ray_marching/wave.png');
         }
        
         .tidbit .text {
@@ -337,11 +340,11 @@
         </div>
     </div>
     
-    <div id='tidbits-container'>
+    <!-- <div id='tidbits-container'>
         <h1>Tidbits</h1>
         <div id='tidbits'>
             <a href='projects/tidbits/ray-marching.php'>
-                <div class='tidbit'>
+                <div id='raymarch' class='tidbit'>
                     <div class='thumbnail'>
                     </div>
                     <div class='text'>
@@ -351,7 +354,7 @@
                 </div>
             </a>
         </div>
-    </div>
+    </div> -->
 
 </body>
 
