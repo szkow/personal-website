@@ -1,0 +1,127 @@
+html {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#background{fill: gray;}
+.background{fill: gray;}
+svg text{
+fill: white;
+font-weight: 600
+}
+.axis{
+stroke:rgb(80, 80, 80);
+stroke-width:3
+}
+
+.g0{fill: rgb(103,0,31);}
+.g1{fill: rgb(178,24,43);}
+.g2{fill: rgb(214,96,77);}
+.g3{fill: rgb(244,165,130);}
+.g4{fill: rgb(253,219,199);}
+.g5{fill: rgb(209,229,240);}
+.g6{fill: rgb(146,197,222);}
+.g7{fill: rgb(67,147,195);}
+.g8{fill: rgb(33,102,172);}
+.g9{fill: rgb(5,48,97);}
+.gmax{fill: dimgray}
+
+text.pivot{
+fill: greenyellow;
+}
+
+rect.pivot{
+fill: none;
+stroke: greenyellow;
+stroke-width: 2
+}
+
+rect.notPivot{
+fill: none;
+stroke: none;
+}
+
+.foreground:hover{
+filter:brightness(0.6)
+}
+
+.backHover{
+fill: gray
+}
+
+.backHover:hover{ 
+fill: dimgray
+}
+
+.backHoverClicked{
+fill: dimgray
+}
+
+.backHistoSmall{
+fill:rgba(10, 10, 10, 0.2)
+}
+
+.clicked{
+stroke:white;
+stroke-width:1.5;
+filter:brightness(0.4);
+}
+
+.drag{
+stroke: rgb(0, 140, 255);
+stroke-width: 5;
+cursor: e-resize;
+}
+
+.brush .selection{
+fill: yellowgreen;
+fill-opacity: .7;
+stroke: none;
+}
+
+.backHisto{
+fill:rgba(10, 10, 10, 0.637)
+}
+
+.pcp{
+fill:none;
+stroke: white;
+stroke-width: 1.5;
+opacity:0.5
+}
+
+text.dragging{
+fill:rgb(0, 140, 255)
+}
+
+#histogram{
+z-index:1
+}
+
+#line{
+position:absolute;
+z-index:2; 
+pointer-events:none;
+}
+
+#line_highlight{
+position:absolute;
+z-index:3; 
+pointer-events:none;
+}
+
+#others{
+z-index:4;
+position:absolute;
+pointer-events:none;
+}
+
+.line_hover path{
+fill:none;
+stroke:rgb(0, 195, 255)
+}
