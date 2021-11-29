@@ -3,8 +3,8 @@
 <head>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='style.css'></link>
     <link rel='stylesheet' href='../../../css/site_style.css'></link>
+    <link rel='stylesheet' href='style.css'></link>
     <link rel='stylesheet' href='../../../css/header.css'>
     <style>
        
@@ -32,8 +32,9 @@
     </div>
     <div id='controls'>
         <div>
+            <label for='chart size'>Chart width</label>
             <input type='range' id='size_slider' name='size' min='10' max='1900' step='1' value='1900'>
-            <label for='chart size'>Chart size</label>
+            <p id='heightwidth_label'>Current size: 1600 &#215; 533</p>
         </div>
     </div>
 

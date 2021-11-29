@@ -77,9 +77,10 @@ d3.csv('leaderboard.csv').then(function(data){
 
   const aspect_ratio = 3
   document.getElementById('size_slider').addEventListener('change', (e) => {
-      let chart_width = e.target.value
-      let chart_height = chart_width / aspect_ratio
+      let width = e.target.value
+      let height = width / aspect_ratio
+      document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
       d3.selectAll('g.eachAttr').remove()
-      drawHistograms(histData, data, true, chart_width, chart_height)
+      drawHistograms(histData, data, true, width, height)
   })
 })

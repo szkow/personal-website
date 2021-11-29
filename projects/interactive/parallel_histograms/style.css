@@ -8,12 +8,15 @@ html {
                                   supported by Chrome and Opera */
 }
 
+body {
+font-family: Arial, Arial, Helvetica, sans-serif
+}
+
 #background{fill: gray;}
 .background{fill: gray;}
 svg text{
 fill: white;
 font-weight: 600;
-font-family: Arial, Arial, Helvetica, sans-serif
 }
 .axis{
 stroke:rgb(80, 80, 80);
