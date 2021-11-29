@@ -16,7 +16,6 @@ d3.select('#file').on('change', function(){
       data.nColor = 10
       let histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
       drawHistograms(histData, data, true)    
-      // generateTable(data)
   })
   fileReader.readAsText(this.files[0])
 })
@@ -74,6 +73,13 @@ d3.csv('leaderboard.csv').then(function(data){
   })
   data.nColor = 10
   let histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
-  drawHistograms(histData, data, true)    
-  // generateTable(data)
+  drawHistograms(histData, data, true)
+
+  const aspect_ratio = 3
+  document.getElementById('size_slider').addEventListener('change', (e) => {
+      let chart_width = e.target.value
+      let chart_height = chart_width / aspect_ratio
+      d3.selectAll('g.eachAttr').remove()
+      drawHistograms(histData, data, true, chart_width, chart_height)
+  })
 })

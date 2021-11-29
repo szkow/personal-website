@@ -12,7 +12,8 @@ html {
 .background{fill: gray;}
 svg text{
 fill: white;
-font-weight: 600
+font-weight: 600;
+font-family: Arial, Arial, Helvetica, sans-serif
 }
 .axis{
 stroke:rgb(80, 80, 80);

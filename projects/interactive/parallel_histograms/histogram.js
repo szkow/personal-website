@@ -1,18 +1,3 @@
-let eachHeight = 350
-let bottomHeight = 30
-let padding = {
-    left: 30,
-    right: 30,
-    top: 30,
-    bottom: 30
-}
-let marginBtn = 15
-let marginIn = 7
-
-let widgetEachWidth = 8
-let widgetBtnWidth = 2
-let widgetEachHeight = 14
-let widgetHeight = 20
 
 function setCallbacks(data, __data){
   //SELECT
@@ -23,7 +8,24 @@ function translate(x, y){
     return 'translate('+x+','+y+')'
 }
 
-function drawHistograms(data, __data, redrawLines){
+function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
+    let num_charts = data.length
+    let padding = {
+        left: 30,
+        right: 30,
+        top: 30,
+        bottom: 30
+    }
+    let marginBtn = 15
+    let marginIn = 7
+    let bottomHeight = 30
+
+    // let totalWidth = data.map(k => k.property.width).reduce((a, b) => (a + b), 0) + marginBtn * data.length + padding.left + padding.right
+    let totalWidth = width - padding.left - padding.right
+    // let totalHeight = eachHeight + bottomHeight + padding.top + padding.bottom
+    let totalHeight = height - padding.top - padding.bottom
+    let eachHeight = totalHeight - bottomHeight
+
     d3.select("body")
         .on('keydown', function(k){
             if(d3.event.shiftKey){
@@ -38,14 +40,14 @@ function drawHistograms(data, __data, redrawLines){
     // let isMaxOut = !d3.select('#enableGrayOut').select('input').property('checked')
     let isMaxOut = false
 
+    let prop_width = totalWidth / num_charts - marginBtn
+    console.log(prop_width)
     data.forEach(function(k, i){
-        if(k.property == undefined){
-            k.property = {
-                width: 80,
-                translateX: 80*i,
-                order: i,
-                innerZoomRatio: 1
-            }
+        k.property = {
+            width: prop_width,
+            translateX: prop_width *i,
+            order: i,
+            innerZoomRatio: 1
         }
         k.xScale = d3.scaleLinear().domain([0, d3.max(k, kk => kk.dataLength)]).range([0, k.property.width])
         k.yScale = d3.scaleLinear().domain([k.min, k.max]).range([eachHeight, 0])
@@ -56,24 +58,21 @@ function drawHistograms(data, __data, redrawLines){
         k['___lineData']= d3.line()(data.map((d, i) => [d.property.translateX + marginBtn*i, d.yScale(k[d.name])]))
     })
 
-    let totalWidth = data.map(k => k.property.width).reduce((a, b) => (a + b), 0) + marginBtn * data.length + padding.left + padding.right
-    let totalHeight = eachHeight + bottomHeight + padding.top + padding.bottom
-
-    d3.select('#histogram').attr('width', totalWidth).attr('height', totalHeight)
-    d3.select('#others').attr('width', totalWidth).attr('height', totalHeight)
+    d3.select('#histogram').attr('width', width).attr('height', height)
+    d3.select('#others').attr('width', width).attr('height', height)
     if(redrawLines){
-        d3.select('#line').attr('width', totalWidth - padding.left).attr('height', totalHeight - padding.top)
-        d3.select('#line_highlight').attr('width', totalWidth - padding.left).attr('height', totalHeight - padding.top)
+        d3.select('#line').attr('width', width - padding.left).attr('height', height - padding.top)
+        d3.select('#line_highlight').attr('width', width - padding.left).attr('height', height - padding.top)
         d3.select('#line').style('left', padding.left+'px').style('top', padding.top+'px')
         d3.select('#line_highlight').style('left', padding.left+'px').style('top', padding.top+'px')
     }
-    d3.select('#background').attr('width', totalWidth).attr('height', totalHeight)
+    d3.select('#background').attr('width', width).attr('height', height)
         .on('click', function(){
             removeWidget()
         })
         
     let svg = d3.select('#histogram').select('.wrapper').attr('transform', translate(padding.left, padding.top))  
-    // d3.select('#widgetArea').attr('transform', translate(padding.left, padding.top))
+    d3.select('#widgetArea').attr('transform', translate(padding.left, padding.top))
     d3.select('.line_hover').attr('transform', translate(padding.left, padding.top))
     d3.select('#others').select('.wrapper').attr('transform', translate(padding.left, padding.top))
 
@@ -213,7 +212,7 @@ function drawHistograms(data, __data, redrawLines){
                 //if(selected === null || selected[0] === selected[1]) data[i]['___isBrushed'] = false
                 //else data[i]['property']['___isBrushed'] = true
                 let newData = updateData(data, __data, currentPivot)
-                drawHistograms(newData, __data, true)
+                drawHistograms(newData, __data, true, width, height)
             })
 
         let brush = otherAttr.select('.brush').call(_brush)
@@ -229,15 +228,15 @@ function drawHistograms(data, __data, redrawLines){
                     data.forEach(function(kk){
                         if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
                     })
-                    drawHistograms(data, __data)
+                    drawHistograms(data, __data, false, width, height)
                 }
                 else if(d3.event.shiftKey){
                     k.property.innerZoomRatio *= 2
-                    drawHistograms(data, __data)
+                    drawHistograms(data, __data, false, width, height)
                 }
                 else{
                     let newData = updateData(data, __data, k.name)
-                    drawHistograms(newData, __data)
+                    drawHistograms(newData, __data, false, width, height)
                 }
             })
             .call(d3.drag()
@@ -335,7 +334,7 @@ function drawHistograms(data, __data, redrawLines){
     }
 
     function dragZoomEnd(_this){
-        drawHistograms(data, __data, true)
+        drawHistograms(data, __data, true, width, height)
     }
 
     function addLine(_data){
