@@ -8,7 +8,11 @@ function translate(x, y){
     return 'translate('+x+','+y+')'
 }
 
-function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
+function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=3, scale=1.0){
+    let width = max_width * scale
+    let height = width / aspect_ratio
+
+
     let num_charts = data.length
     let padding = {
         left: 30,
@@ -18,7 +22,11 @@ function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
     }
     let marginBtn = 15
     let marginIn = 7
-    let bottomHeight = 30
+    let bottomHeight = 30 * scale
+
+    let below_font_size = Math.floor(0.75 * bottomHeight)
+    let below_font_weight = 600 - 500 * (1.0 - scale)
+
 
     // let totalWidth = data.map(k => k.property.width).reduce((a, b) => (a + b), 0) + marginBtn * data.length + padding.left + padding.right
     let totalWidth = width - padding.left - padding.right
@@ -41,7 +49,6 @@ function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
     let isMaxOut = false
 
     let prop_width = totalWidth / num_charts - marginBtn
-    console.log(prop_width)
     data.forEach(function(k, i){
         k.property = {
             width: prop_width,
@@ -212,37 +219,41 @@ function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
                 //if(selected === null || selected[0] === selected[1]) data[i]['___isBrushed'] = false
                 //else data[i]['property']['___isBrushed'] = true
                 let newData = updateData(data, __data, currentPivot)
-                drawHistograms(newData, __data, true, width, height)
+                drawHistograms(newData, __data, true, max_width, aspect_ratio, scale)
             })
 
         let brush = otherAttr.select('.brush').call(_brush)
 
-        let belowText = otherAttr.select('.bottomText')
-            .attr('transform', translate(0, eachHeight + bottomHeight))
-            .style('pointer-events', 'all')
-            .text(k => k.property.innerZoomRatio == 1 ? k.name : k.name+'*')
-            .classed('pivot', k => k.pivot)
-            .on('click', function(k){
-                if(d3.event.ctrlKey){
-                    k.property.width *= 2
-                    data.forEach(function(kk){
-                        if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
-                    })
-                    drawHistograms(data, __data, false, width, height)
-                }
-                else if(d3.event.shiftKey){
-                    k.property.innerZoomRatio *= 2
-                    drawHistograms(data, __data, false, width, height)
-                }
-                else{
-                    let newData = updateData(data, __data, k.name)
-                    drawHistograms(newData, __data, false, width, height)
-                }
-            })
-            .call(d3.drag()
-                    .on('end', dragMoveEnd)
-                    .on("drag", (k, i, nodes) => dragMove(k.property.order, nodes[i])
-            ))
+        if (below_font_size >= 10) {
+            let belowText = otherAttr.select('.bottomText')
+                .attr('transform', translate(0, eachHeight + bottomHeight))
+                .style('pointer-events', 'all')
+                .style('font-size', `${below_font_size}px`)
+                .style('font-weight', `${below_font_weight}`)
+                .text(k => k.property.innerZoomRatio == 1 ? k.name : k.name+'*')
+                .classed('pivot', k => k.pivot)
+                .on('click', function(k){
+                    if(d3.event.ctrlKey){
+                        k.property.width *= 2
+                        data.forEach(function(kk){
+                            if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
+                        })
+                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale)
+                    }
+                    else if(d3.event.shiftKey){
+                        k.property.innerZoomRatio *= 2
+                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale)
+                    }
+                    else{
+                        let newData = updateData(data, __data, k.name)
+                        drawHistograms(newData, __data, false, max_width, aspect_ratio, scale)
+                    }
+                })
+                .call(d3.drag()
+                        .on('end', dragMoveEnd)
+                        .on("drag", (k, i, nodes) => dragMove(k.property.order, nodes[i])
+                ))
+        }
 
         let highlightBorder = otherAttr.select('.highlightBorder')
             .attr('width', k => k.property.width + marginIn * 2)
@@ -334,7 +345,7 @@ function drawHistograms(data, __data, redrawLines, width=1600, height=1600/3){
     }
 
     function dragZoomEnd(_this){
-        drawHistograms(data, __data, true, width, height)
+        drawHistograms(data, __data, true, max_width, aspect_ratio, scale)
     }
 
     function addLine(_data){

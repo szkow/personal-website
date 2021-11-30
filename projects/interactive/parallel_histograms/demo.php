@@ -7,7 +7,14 @@
     <link rel='stylesheet' href='style.css'></link>
     <link rel='stylesheet' href='../../../css/header.css'>
     <style>
-       
+       #chart_container {
+           height: 634px;
+           width: 1900px;
+           margin: 10px;
+           margin-bottom: 0;
+           border-bottom: black thin solid;
+           overflow: hidden;
+       }
     </style>
     <title>April Roszkowski &CenterDot; Tiny Parallel Histogram Plots</title>
 </head>
@@ -34,7 +41,7 @@
         <div>
             <label for='chart size'>Chart width</label>
             <input type='range' id='size_slider' name='size' min='10' max='1900' step='1' value='1900'>
-            <p id='heightwidth_label'>Current size: 1600 &#215; 533</p>
+            <p id='heightwidth_label'>Current size: 1900 &#215; 633</p>
         </div>
     </div>
 

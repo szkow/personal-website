@@ -73,14 +73,16 @@ d3.csv('leaderboard.csv').then(function(data){
   })
   data.nColor = 10
   let histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
-  drawHistograms(histData, data, true)
+  drawHistograms(histData, data, true, 1900, 3, 1.0)
 
   const aspect_ratio = 3
   document.getElementById('size_slider').addEventListener('change', (e) => {
+      let max_width = e.target.max
       let width = e.target.value
       let height = width / aspect_ratio
+      let scale = width / max_width
       document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
       d3.selectAll('g.eachAttr').remove()
-      drawHistograms(histData, data, true, width, height)
+      drawHistograms(histData, data, true, max_width, aspect_ratio, scale)
   })
 })
