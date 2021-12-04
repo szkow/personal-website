@@ -1,3 +1,4 @@
+const violin_scale_cutoff = 0.5
 
 function setCallbacks(data, __data){
   //SELECT
@@ -34,7 +35,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
     let totalHeight = height - padding.top - padding.bottom
     let eachHeight = totalHeight - bottomHeight
 
-    d3.select("body")
+    d3.select('body')
         .on('keydown', function(k){
             if(d3.event.shiftKey){
                 d3.select('#others').selectAll('.drag').style('visibility', 'visible')
@@ -115,14 +116,16 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
             .remove()
 
         let backHisto = chartArea.select('.backHistoArea').selectAll('rect').data(k => k)
-        backHisto.enter()
-            .append('rect').classed('backHisto', true).merge(backHisto)
-            .attr('width', (k, i) => d.xScale(k.dataLength))
-            .attr('height', d.eachHeight)
-            .attr('transform', (k, i) => translate(0, d.eachHeight * i))
-        backHisto.exit()
-            .remove()
-        
+        if (scale > violin_scale_cutoff) {
+            backHisto.enter()
+                .append('rect').classed('backHisto', true).merge(backHisto)
+                .attr('width', (k, i) => d.xScale(k.dataLength))
+                .attr('height', d.eachHeight)
+                .attr('transform', (k, i) => translate(0, d.eachHeight * i))
+            backHisto.exit()
+                .remove()
+        }
+               
         // let isBackChecked = d3.select('#option').select('#enableGhost').select('input').property('checked')
         let isBackChecked = true
         let backHistoSmall = chartArea.select('.backHistoSmallArea').selectAll('rect').data(k => k)
@@ -135,52 +138,109 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
         backHistoSmall.exit()
             .remove()
        
-        let foregroundGroup = chartArea.select('.foregroundArea').selectAll('g').data(k => k)
 
         //console.log(isMaxOut)
 
-        let foreground = foregroundGroup.enter()
-            .append('g').merge(foregroundGroup)
-            .attr('transform', (k, i) => translate(0, d.eachHeight * i)).style('visibility', 'visible')
-            .each(function(k, j){
-                let foregroundEach = d3.select(this).selectAll('rect').data(k => k.data.sort((a, b) => +a.key -b.key), k => k.key)         
-                foregroundEach.enter()
-                    .append('rect').merge(foregroundEach)
-                    .attr('width', function(kk){
-                        if(k.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1]){
-                            return d.xScale(d.xScale.domain()[1]*kk.values.filter(k => k['___selected'] !== false).length/k.selectedLength)
-                        } 
-                        else return d.xScale(kk.values.filter(k => k['___selected'] !== false).length * d.property.innerZoomRatio)
-                    })
-                    .attr('height', d.eachHeight)
-                    .attr('transform', function(k, l, nodes){
-                        if(l == 0) return translate(0, 0)
-                        else{
-                            let prev = d3.select(nodes[l-1])
-                            return translate(Number(prev.attr('width'))+Number(prev.attr('transform').split(',')[0].split('(')[1]) , 0)
-                        }
-                    })
-                    .attr('class', (kk) => (isMaxOut && k.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1]) ? 'gmax' : 'g'+kk.key)
-                    .classed('foreground', true).classed('clicked', false)
-                    .attr('id', (k) => 'i_'+k.key+'_'+i+'_'+j)
-                    .on('click', function(k){
-                        if(d3.select(this).classed('clicked')){
-                            d3.select(this).classed('clicked', false)
-                            pcp_hl(null)
-                            //removeLine(k.values)
-                        }
-                        else{
-                            d3.selectAll('.foreground').classed('clicked', false)
-                            d3.select(this).classed('clicked', true)
-                            //addLine(k.values)
-                            //console.log(k.values)
-                            pcp_hl(k.values)
-                        }
-                    })
-                
-                foregroundEach.exit()
-                    .attr('width', 0)     
+        let foregroundGroup = chartArea.select('.foregroundArea').selectAll('g').data(k => k)
+        if (scale > violin_scale_cutoff) {
+            let foreground = foregroundGroup.enter()
+                .append('g').merge(foregroundGroup)
+                .attr('transform', (k, i) => translate(0, d.eachHeight * i)).style('visibility', 'visible')
+                .each(function(k, j){
+                    let foregroundEach = d3.select(this).selectAll('rect').data(k => k.data.sort((a, b) => +a.key -b.key), k => k.key)         
+                    foregroundEach.enter()
+                        .append('rect').merge(foregroundEach)
+                        .attr('width', function(kk){
+                            if(k.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1]){
+                                return d.xScale(d.xScale.domain()[1]*kk.values.filter(k => k['___selected'] !== false).length/k.selectedLength)
+                            } 
+                            else return d.xScale(kk.values.filter(k => k['___selected'] !== false).length * d.property.innerZoomRatio)
+                        })
+                        .attr('height', d.eachHeight)
+                        .attr('transform', function(k, l, nodes){
+                            if(l == 0) return translate(0, 0)
+                            else{
+                                let prev = d3.select(nodes[l-1])
+                                return translate(Number(prev.attr('width'))+Number(prev.attr('transform').split(',')[0].split('(')[1]) , 0)
+                            }
+                        })
+                        .attr('class', (kk) => (isMaxOut && k.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1]) ? 'gmax' : 'g'+kk.key)
+                        .classed('foreground', true).classed('clicked', false)
+                        .attr('id', (k) => 'i_'+k.key+'_'+i+'_'+j)
+                        .on('click', function(k){
+                            if(d3.select(this).classed('clicked')){
+                                d3.select(this).classed('clicked', false)
+                                pcp_hl(null)
+                                //removeLine(k.values)
+                            }
+                            else{
+                                d3.selectAll('.foreground').classed('clicked', false)
+                                d3.select(this).classed('clicked', true)
+                                //addLine(k.values)
+                                //console.log(k.values)
+                                pcp_hl(k.values)
+                            }
+                        })
+                    
+                    foregroundEach.exit()
+                        .attr('width', 0)     
+                })
+        }
+        else {
+            let paths = []
+            for (var color = 0; color < __data.nColor; ++color) {
+                paths.push([])
+            }
+
+            let foregroundGroup = chartArea.select('.foregroundArea').selectAll('g').data(k => k)
+            d.forEach(function(stacked_bar, j) {
+
+                stacked_bar.data.forEach(function(bar, l, bars) {
+                    let x0 = l > 0 ? paths[bars[l-1].key].at(-1).x1 : d.xScale(0)
+                    let y = (j + 0.5) * d.eachHeight
+
+                    let bar_length = null
+                    if(stacked_bar.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1])
+                        bar_length = d.xScale(d.xScale.domain()[1]*bar.values.filter(k => k['___selected'] !== false).length/stacked_bar.selectedLength)
+                    else bar_length = d.xScale(bar.values.filter(k => k['___selected'] !== false).length * d.property.innerZoomRatio)
+                    let x1 = x0 + bar_length
+
+                    paths[bar.key].push({ 'x0' : x0, 'x1' : x1, 'y' : y })
+                })
             })
+
+            // Connects polygons on first (selected) histogram
+            if (i == 0) {
+                paths.forEach(function(path, key) {
+                        if (key > 0) {
+                            let prev = paths[key - 1].at(-1)
+                            path.unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
+                        }
+                        if (key + 1 < paths.length) {
+                            let next = paths[key + 1][0]
+                            path.push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
+                        }
+                })
+            }
+
+            paths.forEach(function(bar_dat, j){
+                let foreground = foregroundGroup.data([bar_dat]).enter()
+                .append('g')
+                .append('path')
+                .style('stroke', 'none')
+                .attr('d', d3.area()
+                    .x0(k => k.x0)
+                    .x1(k => k.x1)
+                    .y(k => k.y)
+                    .curve(d3.curveCatmullRom)
+                )
+                .attr('class', 'g'+j)
+                .classed('foreground', true).classed('clicked', false)
+                .attr('id', 'i_'+j+'_'+'undefined'+'_'+'undefined')
+                    
+                foregroundGroup.exit()
+            })            
+        }
         foregroundGroup.exit().style('visibility', 'hidden')
     })
     
@@ -251,7 +311,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                 })
                 .call(d3.drag()
                         .on('end', dragMoveEnd)
-                        .on("drag", (k, i, nodes) => dragMove(k.property.order, nodes[i])
+                        .on('drag', (k, i, nodes) => dragMove(k.property.order, nodes[i])
                 ))
         }
 
@@ -267,8 +327,8 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
             .style('visibility', 'hidden')
             .style('pointer-events', 'auto')
             .call(d3.drag()
-                    .on("drag", (k, i, nodes) => dragZoom(k, nodes[i]))
-                    .on("end", (k, i, nodes) => dragZoomEnd(nodes[i])))
+                    .on('drag', (k, i, nodes) => dragZoom(k, nodes[i]))
+                    .on('end', (k, i, nodes) => dragZoomEnd(nodes[i])))
     })
    
     setCallbacks(data, __data)
@@ -284,7 +344,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
     //         .attr('width', widgetEachWidth)
     //         .attr('height', 14)
     //         .attr('transform', k => translate(widgetBtnWidth*2 + (widgetEachWidth + widgetBtnWidth)*k.key, 3))
-    //         .attr('class', k => "g"+k.key)
+    //         .attr('class', k => 'g'+k.key)
     //         .style('pointer-events', 'all')
     //         .on('click', function(k){
     //             if(d3.select(this).classed('clicked')){
@@ -406,7 +466,7 @@ function pcp_hl(data, isHighlight){
 
 function tableHover(datum){
     let hoverArea = d3.select('#others').select('.line_hover')
-    hoverArea.html("")
+    hoverArea.html('')
     if(datum == null) return
     hoverArea.append('path').attr('d', datum['___lineData'])
 }
