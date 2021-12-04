@@ -209,8 +209,8 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                 })
             })
 
-            // Connects polygons on first (selected) histogram
-            if (i == 0) {
+            // Connects polygons on pivot histogram
+            if (d.pivot) {
                 paths.forEach(function(path, key) {
                         if (key > 0) {
                             let prev = paths[key - 1].at(-1)
