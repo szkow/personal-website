@@ -9,6 +9,10 @@ function translate(x, y){
     return 'translate('+x+','+y+')'
 }
 
+function intlerp(start, end, t) {
+    return Math.round(start + (end - start) * t)
+}
+
 function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=3, scale=1.0){
     let width = max_width * scale
     let height = width / aspect_ratio
@@ -16,24 +20,26 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
 
     let num_charts = data.length
     let padding = {
-        left: 30,
-        right: 30,
-        top: 30,
-        bottom: 30
+        left: intlerp(1, 30, scale),
+        right: intlerp(1, 30, scale),
+        top: intlerp(1, 30, scale),
+        bottom: intlerp(1, 30, scale)
     }
-    let marginBtn = 15
-    let marginIn = 7
-    let bottomHeight = 30 * scale
+    let marginBtn = intlerp(1, 15, scale)
+    let marginIn = intlerp(7, 7, scale)
+    let bottomHeight = intlerp(1, 30, scale)
 
     let below_font_size = Math.floor(0.75 * bottomHeight)
-    let below_font_weight = 600 - 500 * (1.0 - scale)
+    let below_font_weight = intlerp(100, 600, scale)
+    let below_font_cutoff = 10
 
+    let back_histo_small_width = intlerp(0, 4, scale)
 
     // let totalWidth = data.map(k => k.property.width).reduce((a, b) => (a + b), 0) + marginBtn * data.length + padding.left + padding.right
     let totalWidth = width - padding.left - padding.right
     // let totalHeight = eachHeight + bottomHeight + padding.top + padding.bottom
     let totalHeight = height - padding.top - padding.bottom
-    let eachHeight = totalHeight - bottomHeight
+    let eachHeight = totalHeight - marginBtn
 
     d3.select('body')
         .on('keydown', function(k){
@@ -75,9 +81,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
         d3.select('#line_highlight').style('left', padding.left+'px').style('top', padding.top+'px')
     }
     d3.select('#background').attr('width', width).attr('height', height)
-        .on('click', function(){
-            removeWidget()
-        })
+
         
     let svg = d3.select('#histogram').select('.wrapper').attr('transform', translate(padding.left, padding.top))  
     d3.select('#widgetArea').attr('transform', translate(padding.left, padding.top))
@@ -111,7 +115,6 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
             .attr('width', k => k.dataLength > 0 ? d.property.width + marginIn : 0)
             .attr('height', d.eachHeight)
             .attr('transform', (k, i) => translate(0, d.eachHeight * i))
-            .on('click', k => k.dataLength > 0 ? widget(k, d3.mouse(svg.node())) : null)
         backHover.exit()
             .remove()
 
@@ -131,7 +134,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
         let backHistoSmall = chartArea.select('.backHistoSmallArea').selectAll('rect').data(k => k)
         backHistoSmall.enter()
             .append('rect').classed('backHistoSmall', true).merge(backHistoSmall)
-            .attr('width', (k, i) => d.xScale(k.dataLength) > 3 || k.dataLength == 0 ? 0 : 4)
+            .attr('width', (k, i) => d.xScale(k.dataLength) > 3 || k.dataLength == 0 ? 0 : back_histo_small_width)
             .attr('height', d.eachHeight)
             .attr('transform', (k, i) => translate(0, d.eachHeight * i))
             .style('visibility', () => isBackChecked ? 'visible': 'hidden')
@@ -284,7 +287,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
 
         let brush = otherAttr.select('.brush').call(_brush)
 
-        if (below_font_size >= 10) {
+        if (below_font_size >= below_font_cutoff) {
             let belowText = otherAttr.select('.bottomText')
                 .attr('transform', translate(0, eachHeight + bottomHeight))
                 .style('pointer-events', 'all')
@@ -332,36 +335,6 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
     })
    
     setCallbacks(data, __data)
-
-    // WIDGET
-    // function widget(d, mouse){
-    //     if(d3.select('#widget').size() > 0) removeWidget()
-
-    //     let widget = d3.select('#widgetArea').append('g').attr('id', 'widget').attr('transform', translate(mouse[0], mouse[1]))
-    //     widget.append('rect').attr('width', 10 * (widgetEachWidth + widgetBtnWidth) + widgetBtnWidth*3).attr('height', 20)
-    //     widget.selectAll('rect.widget').data(d.data).enter()
-    //         .append('rect')
-    //         .attr('width', widgetEachWidth)
-    //         .attr('height', 14)
-    //         .attr('transform', k => translate(widgetBtnWidth*2 + (widgetEachWidth + widgetBtnWidth)*k.key, 3))
-    //         .attr('class', k => 'g'+k.key)
-    //         .style('pointer-events', 'all')
-    //         .on('click', function(k){
-    //             if(d3.select(this).classed('clicked')){
-    //                 d3.select(this).classed('clicked', false)
-    //                 pcp_hl(null)
-    //             }
-    //             else{
-    //                 d3.selectAll('#widget rect').classed('clicked', false)
-    //                 d3.select(this).classed('clicked', true)
-    //                 pcp_hl(k.values)
-    //             }
-    //         })
-    //         .classed('clicked', k => k.values.filter(kk => kk['___pcp']).length !== k.values.length)
-    // }
-    // function removeWidget(){
-    //     d3.select('#widgetArea').select('#widget').remove()
-    // }
 
     // MOVE
     function dragMove(i, _this){

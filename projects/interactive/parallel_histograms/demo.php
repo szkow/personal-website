@@ -40,7 +40,7 @@
     <div id='controls'>
         <div>
             <label for='chart size'>Chart width</label>
-            <input type='range' id='size_slider' name='size' min='10' max='1900' step='1' value='1900'>
+            <input type='range' id='size_slider' name='size' min='200' max='1900' step='1' value='1900'>
             <p id='heightwidth_label'>Current size: 1900 &#215; 633</p>
         </div>
     </div>
