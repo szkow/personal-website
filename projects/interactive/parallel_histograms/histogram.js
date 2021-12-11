@@ -170,29 +170,15 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                         .attr('class', (kk) => (isMaxOut && k.selectedLength * d.property.innerZoomRatio > d.xScale.domain()[1]) ? 'gmax' : 'g'+kk.key)
                         .classed('foreground', true).classed('clicked', false)
                         .attr('id', (k) => 'i_'+k.key+'_'+i+'_'+j)
-                        .on('click', function(k){
-                            if(d3.select(this).classed('clicked')){
-                                d3.select(this).classed('clicked', false)
-                                pcp_hl(null)
-                                //removeLine(k.values)
-                            }
-                            else{
-                                d3.selectAll('.foreground').classed('clicked', false)
-                                d3.select(this).classed('clicked', true)
-                                //addLine(k.values)
-                                //console.log(k.values)
-                                pcp_hl(k.values)
-                            }
-                        })
                     
                     foregroundEach.exit()
                         .attr('width', 0)     
                 })
         }
         else {
-            let paths = []
-            for (var color = 0; color < __data.nColor; ++color) {
-                paths.push([])
+            let paths = {}
+            for (var color = 0; color < __data.colors.length; ++color) {
+                paths[__data.colors[color]] = []
             }
 
             let foregroundGroup = chartArea.select('.foregroundArea').selectAll('g').data(k => k)
@@ -214,19 +200,24 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
 
             // Connects polygons on pivot histogram
             if (d.pivot) {
-                paths.forEach(function(path, key) {
-                        if (key > 0) {
-                            let prev = paths[key - 1].at(-1)
-                            path.unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
-                        }
-                        if (key + 1 < paths.length) {
-                            let next = paths[key + 1][0]
-                            path.push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
-                        }
-                })
+                let keys = Object.keys(paths)
+                for (var l = 0; l < keys; ++l) {
+                    let property = keys[l]
+                    let key = parseInt(property)    
+                    let path = paths[key]
+                    if (l > 0) {
+                        let prev = paths[keys[l - 1]].at(-1)
+                        path.unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
+                    }
+                    if (l + 1 < keys.length) {
+                        let next = paths[keys[l + 1]][0]
+                        path.push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
+                    }
+                }
             }
 
-            paths.forEach(function(bar_dat, j){
+            for (const property in paths) {
+                let bar_dat = paths[property]
                 let foreground = foregroundGroup.data([bar_dat]).enter()
                 .append('g')
                 .append('path')
@@ -237,12 +228,12 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                     .y(k => k.y)
                     .curve(d3.curveCatmullRom)
                 )
-                .attr('class', 'g'+j)
+                .attr('class', 'g'+property)
                 .classed('foreground', true).classed('clicked', false)
-                .attr('id', 'i_'+j+'_'+'undefined'+'_'+'undefined')
+                .attr('id', 'i_'+property+'_'+'undefined'+'_'+'undefined')
                     
                 foregroundGroup.exit()
-            })            
+            }          
         }
         foregroundGroup.exit().style('visibility', 'hidden')
     })

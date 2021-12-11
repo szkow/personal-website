@@ -21,6 +21,7 @@ d3.select('#file').on('change', function(){
 })
 
 function preprocess(data, pivot){
+  const base_nColor = data.colors.length
   let nColor = data.nColor
   
   data.sort((a, b) => b[pivot] - a[pivot])
@@ -34,10 +35,16 @@ function preprocess(data, pivot){
               end = j;
               if(data[i][pivot] != data[j][pivot]) break
           } 
-          for(j = start; j < end; j++) data[j]['___group'] = Math.floor((start + end) / 2 / data.length * nColor)
+          for(j = start; j < end; j++) {
+            let group = Math.floor((start + end) / 2 / data.length * base_nColor)
+            data[j]['___group'] = data.colors[group]
+          }
           i = end - 1 
       }
-      else data[i]['___group'] = Math.floor(i / data.length * nColor)
+      else {
+        let group = Math.floor(i / data.length * base_nColor)
+        data[i]['___group'] = data.colors[group]
+      }
   }
   
   // let numBin = d3.select('#setBin').property('value')
@@ -72,10 +79,12 @@ d3.csv('leaderboard.csv').then(function(data){
       return k
   })
   data.nColor = 10
+  data.colors = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   let histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
   drawHistograms(histData, data, true, 1900, 3, 1.0)
 
   const aspect_ratio = 3
+  var prev_nColor = 10
   document.getElementById('size_slider').addEventListener('change', (e) => {
       let max_width = e.target.max
       let width = e.target.value
@@ -83,6 +92,21 @@ d3.csv('leaderboard.csv').then(function(data){
       let scale = width / max_width
       document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
       d3.selectAll('g.eachAttr').remove()
+
+      if (scale > 0.66) {
+        data.nColor = 10
+        data.colors = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+      }
+      else if (scale > 0.33) {
+        data.nColor = 5
+        data.colors = [ 0, 0, 2, 2, 4, 4, 7, 7, 9, 9 ]
+      }
+      else {
+        data.nColor = 3
+        data.colors = [ 0, 0, 0, 0, 4, 4, 9, 9, 9, 9 ]
+      }
+
+      histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
       drawHistograms(histData, data, true, max_width, aspect_ratio, scale)
   })
 })
