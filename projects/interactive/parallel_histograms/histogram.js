@@ -13,7 +13,7 @@ function intlerp(start, end, t) {
     return Math.round(start + (end - start) * t)
 }
 
-function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=3, scale=1.0){
+function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=3, scale=1.0, draw_violins=true){
     let width = max_width * scale
     let height = width / aspect_ratio
 
@@ -145,7 +145,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
         //console.log(isMaxOut)
 
         let foregroundGroup = chartArea.select('.foregroundArea').selectAll('g').data(k => k)
-        if (scale > violin_scale_cutoff) {
+        if (!draw_violins || scale > violin_scale_cutoff) {
             let foreground = foregroundGroup.enter()
                 .append('g').merge(foregroundGroup)
                 .attr('transform', (k, i) => translate(0, d.eachHeight * i)).style('visibility', 'visible')
@@ -201,17 +201,17 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
             // Connects polygons on pivot histogram
             if (d.pivot) {
                 let keys = Object.keys(paths)
-                for (var l = 0; l < keys; ++l) {
+                for (var l = 0; l < keys.length; ++l) {
                     let property = keys[l]
                     let key = parseInt(property)    
                     let path = paths[key]
                     if (l > 0) {
                         let prev = paths[keys[l - 1]].at(-1)
-                        path.unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
+                        paths[key].unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
                     }
                     if (l + 1 < keys.length) {
                         let next = paths[keys[l + 1]][0]
-                        path.push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
+                        paths[key].push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
                     }
                 }
             }
@@ -273,7 +273,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                 //if(selected === null || selected[0] === selected[1]) data[i]['___isBrushed'] = false
                 //else data[i]['property']['___isBrushed'] = true
                 let newData = updateData(data, __data, currentPivot)
-                drawHistograms(newData, __data, true, max_width, aspect_ratio, scale)
+                drawHistograms(newData, __data, true, max_width, aspect_ratio, scale, draw_violins)
             })
 
         let brush = otherAttr.select('.brush').call(_brush)
@@ -292,15 +292,15 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                         data.forEach(function(kk){
                             if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
                         })
-                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale)
+                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
                     }
                     else if(d3.event.shiftKey){
                         k.property.innerZoomRatio *= 2
-                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale)
+                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
                     }
                     else{
                         let newData = updateData(data, __data, k.name)
-                        drawHistograms(newData, __data, false, max_width, aspect_ratio, scale)
+                        drawHistograms(newData, __data, false, max_width, aspect_ratio, scale, draw_violins)
                     }
                 })
                 .call(d3.drag()
@@ -369,7 +369,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
     }
 
     function dragZoomEnd(_this){
-        drawHistograms(data, __data, true, max_width, aspect_ratio, scale)
+        drawHistograms(data, __data, true, max_width, aspect_ratio, scale, draw_violins)
     }
 
     function addLine(_data){

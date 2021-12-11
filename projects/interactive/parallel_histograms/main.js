@@ -93,20 +93,24 @@ d3.csv('leaderboard.csv').then(function(data){
       document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
       d3.selectAll('g.eachAttr').remove()
 
-      if (scale > 0.66) {
+      let draw_violins = document.getElementById('violin_checkbox').checked
+      let reduced_colors = document.getElementById('color_checkbox').checked
+
+      
+      if (!reduced_colors || scale > 0.66) {
         data.nColor = 10
         data.colors = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
       }
-      else if (scale > 0.33) {
+      else if (reduced_colors && scale > 0.33) {
         data.nColor = 5
         data.colors = [ 0, 0, 2, 2, 4, 4, 7, 7, 9, 9 ]
       }
-      else {
+      else if (reduced_colors) {
         data.nColor = 3
         data.colors = [ 0, 0, 0, 0, 4, 4, 9, 9, 9, 9 ]
       }
 
       histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
-      drawHistograms(histData, data, true, max_width, aspect_ratio, scale)
+      drawHistograms(histData, data, true, max_width, aspect_ratio, scale, draw_violins)
   })
 })

@@ -39,9 +39,16 @@
     </div>
     <div id='controls'>
         <div>
-            <label for='chart size'>Chart width</label>
+            <label for='size_slider'>Chart width</label>
             <input type='range' id='size_slider' name='size' min='200' max='1900' step='1' value='1900'>
             <p id='heightwidth_label'>Current size: 1900 &#215; 633</p>
+            <div></div>
+            <h3>Size-reduction options</h3>
+            <input type='checkbox' id='violin_checkbox' name='violins' checked>
+            <label for='violin_checkbox'>Draw violin plots</label>
+            <br>
+            <input type='checkbox' id='color_checkbox' name='colors' checked>
+            <label for='color_checkbox'>Reduce color palette</label>
         </div>
     </div>
 
