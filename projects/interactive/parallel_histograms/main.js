@@ -85,32 +85,36 @@ d3.csv('leaderboard.csv').then(function(data){
 
   const aspect_ratio = 3
   var prev_nColor = 10
-  document.getElementById('size_slider').addEventListener('change', (e) => {
-      let max_width = e.target.max
-      let width = e.target.value
-      let height = width / aspect_ratio
-      let scale = width / max_width
-      document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
-      d3.selectAll('g.eachAttr').remove()
+  let update_histo = (e) => {
+    let slider = document.getElementById('size_slider')
+    let max_width = slider.max
+    let width = slider.value
+    let height = width / aspect_ratio
+    let scale = width / max_width
+    document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
+    d3.selectAll('g.eachAttr').remove()
 
-      let draw_violins = document.getElementById('violin_checkbox').checked
-      let reduced_colors = document.getElementById('color_checkbox').checked
+    let draw_violins = document.getElementById('violin_checkbox').checked
+    let reduced_colors = document.getElementById('color_checkbox').checked
 
-      
-      if (!reduced_colors || scale > 0.66) {
-        data.nColor = 10
-        data.colors = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-      }
-      else if (reduced_colors && scale > 0.33) {
-        data.nColor = 5
-        data.colors = [ 0, 0, 2, 2, 4, 4, 7, 7, 9, 9 ]
-      }
-      else if (reduced_colors) {
-        data.nColor = 3
-        data.colors = [ 0, 0, 0, 0, 4, 4, 9, 9, 9, 9 ]
-      }
+    
+    if (!reduced_colors || scale > 0.66) {
+      data.nColor = 10
+      data.colors = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+    }
+    else if (reduced_colors && scale > 0.33) {
+      data.nColor = 5
+      data.colors = [ 0, 0, 2, 2, 4, 4, 7, 7, 9, 9 ]
+    }
+    else if (reduced_colors) {
+      data.nColor = 3
+      data.colors = [ 0, 0, 0, 4, 4, 4, 9, 9, 9, 9 ]
+    }
 
-      histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
-      drawHistograms(histData, data, true, max_width, aspect_ratio, scale, draw_violins)
-  })
+    histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
+    drawHistograms(histData, data, true, max_width, aspect_ratio, scale, draw_violins)
+}
+  document.getElementById('size_slider').addEventListener('change', update_histo)
+  document.getElementById('violin_checkbox').addEventListener('change', update_histo)
+  document.getElementById('color_checkbox').addEventListener('change', update_histo)
 })
