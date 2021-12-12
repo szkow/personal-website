@@ -14,6 +14,8 @@ function intlerp(start, end, t) {
 }
 
 function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=3, scale=1.0, draw_violins=true){
+    d3.selectAll('g.eachAttr').remove() // Clean up previous histogram
+
     let width = max_width * scale
     let height = width / aspect_ratio
 
@@ -25,7 +27,7 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
         top: intlerp(1, 30, scale),
         bottom: intlerp(1, 30, scale)
     }
-    let marginBtn = intlerp(1, 15, scale)
+    let marginBtn = intlerp(5, 15, scale)
     let marginIn = intlerp(7, 7, scale)
     let bottomHeight = intlerp(1, 30, scale)
 
@@ -34,6 +36,8 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
     let below_font_cutoff = 10
 
     let back_histo_small_width = intlerp(0, 4, scale)
+
+    let isLines = false
 
     // let totalWidth = data.map(k => k.property.width).reduce((a, b) => (a + b), 0) + marginBtn * data.length + padding.left + padding.right
     let totalWidth = width - padding.left - padding.right
@@ -205,11 +209,14 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                     let property = keys[l]
                     let key = parseInt(property)    
                     let path = paths[key]
-                    if (l > 0) {
-                        let prev = paths[keys[l - 1]].at(-1)
-                        paths[key].unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
-                    }
-                    if (l + 1 < keys.length) {
+                    if (path.length == 0)
+                        continue
+                    // if (l > 0 && paths[keys[l - 1]].length > 0) {
+                    //     let prev = paths[keys[l - 1]].at(-1)
+                    //     paths[key].unshift({ 'x0' : 0, 'x1' : prev.x1, 'y' : (path[0].y - d.eachHeight) })
+                    // }
+                    // Attempt to give bars somethickness in case they only have 1 point
+                    if (l + 1 < keys.length && paths[keys[l + 1]].length > 0) {
                         let next = paths[keys[l + 1]][0]
                         paths[key].push({ 'x0' : 0, 'x1' : (path.at(-1).x1 + next.x1) / 2, 'y' : (path.at(-1).y + d.eachHeight) })
                     }
@@ -278,35 +285,39 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
 
         let brush = otherAttr.select('.brush').call(_brush)
 
-        if (below_font_size >= below_font_cutoff) {
-            let belowText = otherAttr.select('.bottomText')
-                .attr('transform', translate(0, eachHeight + bottomHeight))
-                .style('pointer-events', 'all')
-                .style('font-size', `${below_font_size}px`)
-                .style('font-weight', `${below_font_weight}`)
-                .text(k => k.property.innerZoomRatio == 1 ? k.name : k.name+'*')
-                .classed('pivot', k => k.pivot)
-                .on('click', function(k){
-                    if(d3.event.ctrlKey){
-                        k.property.width *= 2
-                        data.forEach(function(kk){
-                            if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
-                        })
-                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
-                    }
-                    else if(d3.event.shiftKey){
-                        k.property.innerZoomRatio *= 2
-                        drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
-                    }
-                    else{
-                        let newData = updateData(data, __data, k.name)
-                        drawHistograms(newData, __data, false, max_width, aspect_ratio, scale, draw_violins)
-                    }
+        let belowText = otherAttr.select('.bottomText')
+        .attr('transform', translate(0, eachHeight + bottomHeight))
+        .style('pointer-events', 'all')
+        .style('font-size', `${below_font_size}px`)
+        .style('font-weight', `${below_font_weight}`)
+        .text(k => k.property.innerZoomRatio == 1 ? k.name : k.name+'*')
+        .classed('pivot', k => k.pivot)
+        .on('click', function(k){
+            if(d3.event.ctrlKey){
+                k.property.width *= 2
+                data.forEach(function(kk){
+                    if(kk.property.order > k.property.order) kk.property.translateX += k.property.width/2
                 })
-                .call(d3.drag()
-                        .on('end', dragMoveEnd)
-                        .on('drag', (k, i, nodes) => dragMove(k.property.order, nodes[i])
-                ))
+                drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
+            }
+            else if(d3.event.shiftKey){
+                k.property.innerZoomRatio *= 2
+                drawHistograms(data, __data, false, max_width, aspect_ratio, scale, draw_violins)
+            }
+            else{
+                let newData = updateData(data, __data, k.name)
+                drawHistograms(newData, __data, false, max_width, aspect_ratio, scale, draw_violins)
+            }
+        })
+        .call(d3.drag()
+                .on('end', dragMoveEnd)
+                .on('drag', (k, i, nodes) => dragMove(k.property.order, nodes[i])
+        ))
+
+        if (below_font_size < below_font_cutoff) {
+            belowText.text('□')
+            belowText.style('font-weight', '100')
+            belowText.style('font-size', '7px')
         }
 
         let highlightBorder = otherAttr.select('.highlightBorder')

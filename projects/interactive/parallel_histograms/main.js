@@ -92,7 +92,6 @@ d3.csv('leaderboard.csv').then(function(data){
     let height = width / aspect_ratio
     let scale = width / max_width
     document.getElementById('heightwidth_label').innerHTML = 'Current size: ' + width + ' &#215; ' + Math.floor(height)
-    d3.selectAll('g.eachAttr').remove()
 
     let draw_violins = document.getElementById('violin_checkbox').checked
     let reduced_colors = document.getElementById('color_checkbox').checked
