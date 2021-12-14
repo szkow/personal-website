@@ -24,6 +24,7 @@
         include '../../../html/header.html' 
     ?>
 
+    <h1>Tiny Parallel Histograms</h1>
     <div id='chart_container'>
         <svg id = 'others' height = '400px'>
             <g class ="line_hover"></g>
@@ -40,7 +41,7 @@
     <div id='controls'>
         <div>
             <label for='size_slider'>Chart width</label>
-            <input type='range' id='size_slider' name='size' min='200' max='1900' step='1' value='1900'>
+            <input type='range' id='size_slider' name='size' min='200' max='1900' step='10' value='1900'>
             <p id='heightwidth_label'>Current size: 1900 &#215; 633</p>
             <div></div>
             <h3>Size-reduction options</h3>
