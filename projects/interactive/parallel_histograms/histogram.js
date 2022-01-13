@@ -314,10 +314,15 @@ function drawHistograms(data, __data, redrawLines, max_width=1900, aspect_ratio=
                 .on('drag', (k, i, nodes) => dragMove(k.property.order, nodes[i])
         ))
 
-        if (below_font_size < below_font_cutoff) {
+        if (below_font_size < 0.66 * below_font_cutoff) {
             belowText.text('□')
             belowText.style('font-weight', '100')
             belowText.style('font-size', '7px')
+        }
+        else if (below_font_size < below_font_cutoff) {
+            belowText.text(i + 1)
+            belowText.style('font-weight', '100')
+            belowText.style('font-size', '9px')
         }
 
         let highlightBorder = otherAttr.select('.highlightBorder')

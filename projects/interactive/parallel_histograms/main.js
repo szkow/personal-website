@@ -112,7 +112,7 @@ d3.csv('leaderboard.csv').then(function(data){
 
     histData = preprocess(data, Object.keys(data[0]).filter(k => k[0] != '_')[0])
     drawHistograms(histData, data, true, max_width, aspect_ratio, scale, draw_violins)
-}
+  }
   document.getElementById('size_slider').addEventListener('change', update_histo)
   document.getElementById('violin_checkbox').addEventListener('change', update_histo)
   document.getElementById('color_checkbox').addEventListener('change', update_histo)
