@@ -4,10 +4,15 @@
 @font-face {
     font-family: 'Glacial Indifference';
     src: local('Glacial Indifference Regular'), url('../resources/fonts/glacial-indifference/GlacialIndifference-Regular.otf');
-}    
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Glacial Indifference', Fallback, sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Glacial Indifference', Fallback, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 p, li, ol {
     font-size: 12pt;
