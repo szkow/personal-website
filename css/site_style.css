@@ -4,10 +4,15 @@
 @font-face {
     font-family: 'Glacial Indifference';
     src: local('Glacial Indifference Regular'), url('../resources/fonts/glacial-indifference/GlacialIndifference-Regular.otf');
-}    
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Glacial Indifference', Fallback, sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Glacial Indifference', Fallback, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 p, li, ol {
     font-size: 12pt;
@@ -20,17 +25,33 @@ a.pdf-link::after {
 }
 #page-title {
     margin: 0 var(--column-margin);
-    padding: 0;
+    padding: 0 0 3px 0;
     border-bottom: thin solid black;
-    line-height: 1ch;
     /* text-align: center; */
 }
 #page-title h1 {
     font-size: xx-large;
+    margin: 0;
 }
 #page-title h2 {
     position: relative;
     left: 1.5em;
     color: darkgrey;
     font-size: large;
+    margin: 0;
+}
+
+/* For tidbit headers, which include a date */
+#page-title .tidbit-header {
+    position: relative;
+}
+#page-title .tidbit-header div {
+    color: grey;
+    font-size: normal;
+}
+#page-title .tidbit-header h3 {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 3px;
 }
