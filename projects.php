@@ -27,9 +27,10 @@
             border-bottom: 2px coral solid;
         }
 
-        #content-wrapper {
+        #center-column {
+            float: left;
             width: calc(100% - 2 * var(--column-margin));
-            margin: 1% var(--column-margin) 1% calc(var(--column-margin) - 10px);
+            margin: 1% 0 1% calc(var(--column-margin) - 10px);
         }
 
         div.tile-container {
@@ -62,6 +63,17 @@
             height: var(--entry-height);
             overflow: hidden;
             background: white;
+        }
+
+        div.tile div.center h2 {
+            font-size: 24pt;
+            margin: 5px;
+            margin-top: 0;
+            line-height: normal;
+        }
+
+        div.tile div.center p {
+            font-size: 14pt;
         }
 
         @media (max-width: 750px) {
@@ -108,6 +120,12 @@
             transform: translateX(-10px) scale(0.2);
         }
 
+        #thumbnail-compvis {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -46%) scale(0.4);
+        }
+
         div.tile div.center {
             line-height: 1em;
             float: left;
@@ -119,9 +137,6 @@
         }
 
         div.tile div.center ul.project-tags {
-            position: absolute;
-            bottom: 3px;
-            /* width: 100%; */
             height: 1.3em;
             padding: 0;
             margin: 0 0 0 0;
@@ -170,6 +185,80 @@
         div.tile a.tileLink:link {
             color: currentColor;
         }
+
+        #tidbits-container {
+            float: right;
+            text-align: center;
+            width: calc(0.67 * var(--column-margin));
+            margin: 5vw calc(0.15 * var(--column-margin)) 0 0;
+        }
+
+        #tidbits-container > h1 {
+            border-bottom: thin black solid;
+        }
+
+        #tidbits {
+            height: 25vw;
+            text-align: left;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        #tidbits a {
+            color: currentColor;
+            text-decoration: none;
+        }
+
+        .tidbit {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 3em;
+            overflow: hidden;
+        }
+
+        .tidbit a {
+            display: inline-block;
+        }
+
+        .tidbit .thumbnail {
+            margin: 0 5px 0 0;
+            height: 3em;
+            width: 3em;
+            /* padding-top: 100%; */
+            background-size: cover; /* or contain */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        #raymarch .thumbnail {
+            background-image: url('resources/tidbits/ray_marching/wave.png');
+        }
+       
+        .tidbit .text {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            overflow: hidden;
+            height: 3em;
+            vertical-align: center;
+        }
+
+        .tidbit .text h1 {
+            margin: 0;
+            padding: 0;
+            font-size: large;
+        }
+
+        .tidbit .text h2 {
+            margin: 3px 0 0 0;
+            padding: 0;
+            position: relative;
+            font-size: small;
+            color: grey;
+            margin-left: 10px;
+        }
+
     </style>
     <title>April Roszkowski &CenterDot; Projects</title>
 </head>
@@ -184,7 +273,35 @@
         <h2>I try sometimes</h2>
     </div>
 
-    <div id='content-wrapper'>
+    <div id='center-column'>
+        <div class='tile-container'>
+            <div class='tile-year'><h1>2021</h1></div>
+            <div class="tile">
+                <div class='image-container'>
+                    <img id='thumbnail-compvis' src="resources/comp_vis/paper_screencap.png" alt="">
+                </div>
+
+                <div class="center">
+                    <h2>Intuitive Physics of Bouncing Spheroids</h2>
+                    <ul class='project-tags'>
+                        <li>Python</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                    <p>
+                        In a course on computer vision, some peers and I created a convolutional neural network
+                        to predict the motion of a bouncing spheroid (ball, football, etc.).
+                    </p>
+
+                </div>
+
+                <a class='tileLink' href="projects/intuitive_physics_of_spheroids.php">
+                    <div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <div class='tile-container'>
             <div class='tile-year'><h1>2020</h1></div>
             <div class="tile">
@@ -194,12 +311,12 @@
 
                 <div class="center">
                     <h2>Merriam's Webpage</h2>
-                    <p>
-                        I wrote a neat lil unobtrusive dictionary add-on for Firefox.
-                    </p>
                     <ul class='project-tags'>
                         <li>JavaScript</li>
                     </ul>
+                    <p>
+                        I wrote a neat lil unobtrusive dictionary add-on for Firefox.
+                    </p>
                 </div>
 
                 <a class='tileLink' href="projects/merriams-webpage.php">
@@ -215,16 +332,15 @@
 
                 <div class="center">
                     <h2>This website</h2>
-                    <p>
-                        What you're reading right now is something I wrote December 2019 through January 2020
-                        in my free time. I think it's pretty neat!
-                    </p>
                     <ul class='project-tags'>
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
-                        <li>Git</li>
                     </ul>
+                    <p>
+                        What you're reading right now is something I wrote December 2019 through January 2020
+                        in my free time. I think it's pretty neat!
+                    </p>
                 </div>
 
                 <a class='tileLink' href="projects/website.php">
@@ -244,16 +360,16 @@
 
                 <div class="center">
                     <h2>Raytracer</h2>
+                    <ul class='project-tags'>
+                        <li>C++</li>
+                        <li>C</li>
+                    </ul>
                     <p>
                         As a part of my computer graphics coursework I wrote a
                         program which creates images using ray tracing&mdash;a
                         physics-based rendering technique&mdash;to create
                         photorealistic scenes.
                     </p>
-                    <ul class='project-tags'>
-                        <li>C++</li>
-                        <li>C</li>
-                    </ul>
                 </div>
 
                 <a class='tileLink' href="projects/raytracer.php">
@@ -264,6 +380,22 @@
             </div>
         </div>
     </div>
+    
+    <!-- <div id='tidbits-container'>
+        <h1>Tidbits</h1>
+        <div id='tidbits'>
+            <a href='projects/tidbits/ray-marching.php'>
+                <div id='raymarch' class='tidbit'>
+                    <div class='thumbnail'>
+                    </div>
+                    <div class='text'>
+                        <h1>Ray Marching</h1>
+                        <h2>April 6, 2021</h2>
+                    <div>
+                </div>
+            </a>
+        </div>
+    </div> -->
 
 </body>
 
