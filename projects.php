@@ -65,6 +65,17 @@
             background: white;
         }
 
+        div.tile div.center h2 {
+            font-size: 24pt;
+            margin: 5px;
+            margin-top: 0;
+            line-height: normal;
+        }
+
+        div.tile div.center p {
+            font-size: 14pt;
+        }
+
         @media (max-width: 750px) {
             div.tile div.image-container {
                 width: 0;
@@ -126,9 +137,6 @@
         }
 
         div.tile div.center ul.project-tags {
-            position: absolute;
-            bottom: 3px;
-            /* width: 100%; */
             height: 1.3em;
             padding: 0;
             margin: 0 0 0 0;
@@ -275,14 +283,15 @@
 
                 <div class="center">
                     <h2>Intuitive Physics of Bouncing Spheroids</h2>
-                    <p>
-                        In a course on computer vision, some peers and I created a convolutional neural network
-                        to predict the motion of a bouncing spheroid (ball, football, etc.).
-                    </p>
                     <ul class='project-tags'>
                         <li>Python</li>
                         <li>Machine Learning</li>
                     </ul>
+                    <p>
+                        In a course on computer vision, some peers and I created a convolutional neural network
+                        to predict the motion of a bouncing spheroid (ball, football, etc.).
+                    </p>
+
                 </div>
 
                 <a class='tileLink' href="projects/intuitive_physics_of_spheroids.php">
@@ -302,12 +311,12 @@
 
                 <div class="center">
                     <h2>Merriam's Webpage</h2>
-                    <p>
-                        I wrote a neat lil unobtrusive dictionary add-on for Firefox.
-                    </p>
                     <ul class='project-tags'>
                         <li>JavaScript</li>
                     </ul>
+                    <p>
+                        I wrote a neat lil unobtrusive dictionary add-on for Firefox.
+                    </p>
                 </div>
 
                 <a class='tileLink' href="projects/merriams-webpage.php">
@@ -323,16 +332,15 @@
 
                 <div class="center">
                     <h2>This website</h2>
-                    <p>
-                        What you're reading right now is something I wrote December 2019 through January 2020
-                        in my free time. I think it's pretty neat!
-                    </p>
                     <ul class='project-tags'>
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
-                        <li>Git</li>
                     </ul>
+                    <p>
+                        What you're reading right now is something I wrote December 2019 through January 2020
+                        in my free time. I think it's pretty neat!
+                    </p>
                 </div>
 
                 <a class='tileLink' href="projects/website.php">
@@ -352,16 +360,16 @@
 
                 <div class="center">
                     <h2>Raytracer</h2>
+                    <ul class='project-tags'>
+                        <li>C++</li>
+                        <li>C</li>
+                    </ul>
                     <p>
                         As a part of my computer graphics coursework I wrote a
                         program which creates images using ray tracing&mdash;a
                         physics-based rendering technique&mdash;to create
                         photorealistic scenes.
                     </p>
-                    <ul class='project-tags'>
-                        <li>C++</li>
-                        <li>C</li>
-                    </ul>
                 </div>
 
                 <a class='tileLink' href="projects/raytracer.php">
