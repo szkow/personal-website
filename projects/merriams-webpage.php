@@ -81,21 +81,38 @@
                     <b>Languages:</b> Javascript
                 </p>
             </div>
+            <div>
+                <p>
+                    <b>Download:</b> <a href='https://chrome.google.com/webstore/detail/jndchalbfebjhgfllgdigdcfpocoahoe'>Chrome</a>,
+                    <a href='https://addons.mozilla.org/en-US/firefox/addon/merriams-webpage/'>Firefox</a>
+                </p>
+            </div>
         </div>
         <div id='words'>
             <p>
-                I created a dictionary extension for Firefox that pops up a book icon when highlighting words on a 
-                webpage. Clicking the book brings up an overlay with the word's definition and a link to
-                the entry on Merriam Webster. It's a bit rough around the edges, but you can download it
-                <a href='../resources/merriams_webpage/merriams_webpage.xpi'>here</a>.
-
-                Also, newer versions of the plugin include a small icon (designed by Desmond Kamas, the best designer) 
-                in your toolbar where you can explicitly look up words.
+                Like everyone, I read a lot of text online. Like many, I have the vocabulary of a 4th grader. As such, I find dictionary
+                extensions for web browsers a necessary tool in everyday life. I primarily use Firefox, and was surprised by the lack
+                of well-designed word-lookup add-ons available -- even Google's dictionary extension is a mess and cumbersome to use.
+                So, I designed and created a dictionary extension using Merriam Webster's definitions with the goals of having an unobtrusive
+                and intuitive user interface. The project is open-source and available on the 
+                <a href='https://chrome.google.com/webstore/detail/jndchalbfebjhgfllgdigdcfpocoahoe'>Chrome webstore</a> and 
+                <a href='https://addons.mozilla.org/en-US/firefox/addon/merriams-webpage/'>Firefox's add-on marketplace</a>, featuring an
+                icon designed by Desmond Kamas (the best designer).
             </p>
             <p>
-                This was a pretty fun project, since I learned how to write an extension from scratch for Firefox and also got to do some
-                neat JSON parsing of Merriam Webster's dictionary entries. It's uing my personal API key, though, so if too many people use
-                it and it exceeds like 1000 lookups/day, they get mad at me.
+                The primary mode of interaction with the extension is integrated into the website. When you highlight text,
+                a book icon pops up near the selection. Clicking the book brings up an overlay with the word's definition and a link to
+                the entry on Merriam Webster. I aimed to make this as integrated into the website as possible, so as to not distract from
+                reading and encourage quick, everyday use.
+            </p>
+            <p>
+                Alternatively, the extension adds a button to the browser's toolbar which can be clicked to manually look up words. This version
+                also has a 5-word search history, for convenience.
+            </p>
+            <p>
+                This was a pretty fun project, since I learned how to write an extension from scratch and also got to do some
+                neat JSON parsing of Merriam Webster's dictionary entries. Since I developed this in my free time, the extension may be 
+                a bit rough aesthetically, and the text-highlighting interaction may not work as intended on all websites.
             </p>
         </div>
     </div>
