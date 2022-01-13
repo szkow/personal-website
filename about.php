@@ -213,9 +213,9 @@
     </div>
     <div id='social-links'>
         <ul>
-            <a href='mailto:roszk008@umn.edu'>
+            <a href='mailto:april@rosz.net'>
                     <li>
-                        <i class="far fa-envelope" style='color: black'></i> roszk008@umn.edu
+                        <i class="far fa-envelope" style='color: black'></i> april@rosz.net
                     </li>
             </a>
             <a href='https://www.linkedin.com/in/april-roszkowski'>
