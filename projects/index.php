@@ -3,9 +3,9 @@
 
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='css/site_style.css'>
+    <link rel='stylesheet' href='../css/site_style.css'>
     </link>
-    <link rel='stylesheet' href='css/header.css'>
+    <link rel='stylesheet' href='../css/header.css'>
     </link>
     <style type='text/css'>
         @media screen and (orientation: portrait) {
@@ -230,7 +230,7 @@
         }
 
         #raymarch .thumbnail {
-            background-image: url('resources/tidbits/ray_marching/wave.png');
+            background-image: url('../resources/tidbits/ray_marching/wave.png');
         }
        
         .tidbit .text {
@@ -263,7 +263,7 @@
 
 <body>
     <?php 
-        include 'html/header.html' 
+        include '../html/header.html' 
     ?>
     <div id='page-title'>
         <h1>Projects</h1>
@@ -275,7 +275,7 @@
             <div class='tile-year'><h1>2021</h1></div>
             <div class="tile">
                 <div class='image-container'>
-                    <img id='thumbnail-compvis' src="resources/comp_vis/paper_screencap.png" alt="">
+                    <img id='thumbnail-compvis' src="../resources/comp_vis/paper_screencap.png" alt="">
                 </div>
 
                 <div class="center">
@@ -291,7 +291,7 @@
 
                 </div>
 
-                <a class='tileLink' href="projects/intuitive_physics_of_spheroids.php">
+                <a class='tileLink' href="intuitive_physics_of_spheroids/">
                     <div>
                         <i class="fas fa-chevron-right"></i>
                     </div>
@@ -303,7 +303,7 @@
             <div class='tile-year'><h1>2020</h1></div>
             <div class="tile">
                 <div class='image-container'>
-                    <img id='thumbnail-merriams' src="resources/merriams_webpage/merriam_webster_is_subtle.jpg" alt="merriam webster is subtle">
+                    <img id='thumbnail-merriams' src="../resources/merriams_webpage/merriam_webster_is_subtle.jpg" alt="merriam webster is subtle">
                 </div>
 
                 <div class="center">
@@ -316,7 +316,7 @@
                     </p>
                 </div>
 
-                <a class='tileLink' href="projects/merriams-webpage.php">
+                <a class='tileLink' href="merriams-webpage/">
                     <div>
                         <i class="fas fa-chevron-right"></i>
                     </div>
@@ -324,7 +324,7 @@
             </div>
             <div class="tile">
                 <div class='image-container'>
-                    <img id='thumbnail-website' src="resources/website/code_snippet.jpg" alt="a code snippet from this website">
+                    <img id='thumbnail-website' src="../resources/website/code_snippet.jpg" alt="a code snippet from this website">
                 </div>
 
                 <div class="center">
@@ -340,7 +340,7 @@
                     </p>
                 </div>
 
-                <a class='tileLink' href="projects/website.php">
+                <a class='tileLink' href="website/">
                     <div>
                         <i class="fas fa-chevron-right"></i>
                     </div>
@@ -351,7 +351,7 @@
             <div class='tile-year'><h1>2019</h1></div>
             <div class="tile">
                 <div class='image-container'>
-                    <img id='thumbnail-raytracer' src="resources/raytracer/two_spheres.png"
+                    <img id='thumbnail-raytracer' src="../resources/raytracer/two_spheres.png"
                         alt="sample output from my ray tracer">
                 </div>
 
@@ -369,7 +369,7 @@
                     </p>
                 </div>
 
-                <a class='tileLink' href="projects/raytracer.php">
+                <a class='tileLink' href="raytracer/">
                     <div>
                         <i class="fas fa-chevron-right"></i>
                     </div>
