@@ -6,7 +6,6 @@
     <link rel='stylesheet' href='../css/site_style.css'></link>
     <link rel='stylesheet' href='../css/header.css'>
     <link rel='stylesheet' href='../css/gallery.css'>
-    <link rel='stylesheet' href='../css/ripple.css'></link>  
     <style>
         #nav-projects{
             border-bottom: 2px coral solid;
@@ -48,7 +47,6 @@
 
 <body>
     <?php 
-        include '../html/ripple.html';
         include '../html/header.html' 
     ?>
 

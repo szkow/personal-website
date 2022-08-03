@@ -7,8 +7,6 @@
     </link>
     <link rel='stylesheet' href='css/header.css'>
     </link>
-    <link rel='stylesheet' href='css/ripple.css'>
-    </link>
     <style type='text/css'>
         @media screen and (orientation: portrait) {
             :root {
@@ -265,7 +263,6 @@
 
 <body>
     <?php 
-        include 'html/ripple.html'; 
         include 'html/header.html' 
     ?>
     <div id='page-title'>

@@ -5,7 +5,6 @@
 <link rel='stylesheet' href='css/site_style.css'></link>
 <link rel='stylesheet' href='css/header.css'>
 <script src='js/about_click.js'></script>
-<link rel='stylesheet' href='css/ripple.css'></link>
 <style type=text/css>
     #nav-about {
         border-bottom: 2px coral solid;
@@ -120,7 +119,7 @@
         <div id='center-image'>
             <img id='about-me-image' src='resources/about/ithaca_sunset.jpg' 
                 alt='me standing on a bridge in Ithaca, New York at sunset'/>
-            <img id='about-resume-image' src='resources/about/jobs!!!.png'
+            <img id='about-resume-image' src='resources/about/resume_background.png'
                 alt='jobs! work! great!'/>
             <img id='about-identity-image' src='resources/about/pride.jpg'
                 alt='the nonbinary pride flag'/>

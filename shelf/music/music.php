@@ -8,7 +8,6 @@
     </link>
     <link rel='stylesheet' href='css/header.css'>
     <script src='js/lastfm_request.js'></script>
-    <link rel='stylesheet' href='css/ripple.css'>
     </link>
 
     <style type='text/css'>
@@ -139,7 +138,6 @@
 
 <body>
     <?php
-            include 'html/ripple.html';
             include 'html/header.html'
         ?>
     <div id='page-title'>
