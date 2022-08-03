@@ -2,11 +2,10 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <script src='../js/image_gallery.js'></script>
-    <link rel='stylesheet' href='../css/site_style.css'></link>
-    <link rel='stylesheet' href='../css/header.css'>
-    <link rel='stylesheet' href='../css/gallery.css'>
-    <link rel='stylesheet' href='../css/ripple.css'></link>
+    <script src='../../util/image_gallery/image_gallery.js'></script>
+    <link rel='stylesheet' href='../../css/site_style.css'></link>
+    <link rel='stylesheet' href='../../css/header.css'>
+    <link rel='stylesheet' href='../../util/image_gallery/gallery.css'>
     <style>
         #nav-projects{
             border-bottom: 2px coral solid;
@@ -48,8 +47,7 @@
 
 <body>
     <?php 
-        include '../html/ripple.html';
-        include '../html/header.html' 
+        include '../../html/header.html' 
     ?>
 
     <div id='page-title'>
@@ -59,11 +57,11 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='../resources/website/code_snippet.jpg'
+                <div><img class='thumbnail' src='../../resources/website/code_snippet.jpg'
                             alt='a code snippet from this website' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='../resources/website/code_snippet.jpg' 
+                <img id='main-image-handle' src='../../resources/website/code_snippet.jpg' 
                             alt='a code snippet from this website'>
             </div>
         </div>

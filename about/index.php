@@ -2,10 +2,9 @@
 <html>
 <head>
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='css/site_style.css'></link>
-<link rel='stylesheet' href='css/header.css'>
-<script src='js/about_click.js'></script>
-<link rel='stylesheet' href='css/ripple.css'></link>
+<link rel='stylesheet' href='../css/site_style.css'></link>
+<link rel='stylesheet' href='../css/header.css'>
+<script src='about_click.js'></script>
 <style type=text/css>
     #nav-about {
         border-bottom: 2px coral solid;
@@ -108,7 +107,7 @@
 
 <body>
     <?php 
-        include 'html/header.html'
+        include '../html/header.html'
     ?>
     
     <div id='page-title'>
@@ -118,15 +117,15 @@
     
     <div id='center-column'>
         <div id='center-image'>
-            <img id='about-me-image' src='resources/about/ithaca_sunset.jpg' 
+            <img id='about-me-image' src='../resources/about/ithaca_sunset.jpg' 
                 alt='me standing on a bridge in Ithaca, New York at sunset'/>
-            <img id='about-resume-image' src='resources/about/jobs!!!.png'
+            <img id='about-resume-image' src='../resources/about/resume_background.png'
                 alt='jobs! work! great!'/>
-            <img id='about-identity-image' src='resources/about/pride.jpg'
+            <img id='about-identity-image' src='../resources/about/pride.jpg'
                 alt='the nonbinary pride flag'/>
-            <img id='about-interests-image' src='resources/about/cicada.jpg'
+            <img id='about-interests-image' src='../resources/about/cicada.jpg'
                 alt='a freshly-molted cicada in my front yard'/>
-            <img id='about-research-image' src='resources/about/MATH!!!.jpg'
+            <img id='about-research-image' src='../resources/about/MATH!!!.jpg'
                 alt='esoteric math scribbles on a blackboard at Cornell'/>
             <div id='about-me-text'>
                 <h2>Me</h2>
@@ -143,7 +142,7 @@
             <div id='about-resume-text'>
                 <h2>R&eacute;sum&eacute;</h2>
                 <p>
-                    <a href='resources/resume.pdf' download='april_roszkowski_resume.pdf'>
+                    <a href='../resources/resume.pdf' download='april_roszkowski_resume.pdf'>
                     It kinda speaks for itself. <i class="fas fa-download"></i>
                     </a>
                 </p>
@@ -188,8 +187,8 @@
                     <a href="https://en.wikipedia.org/wiki/Optimal_control">optimal control theory</a> and the problem of how to make
                     many robots to move similarly. It's difficult to explain this clearly <em>and</em> briefly, so it may be
                     more enlightening if you're curious to skim my final presentation for the REU: download as
-                    <a href='resources/optimal_control/Cornell Final Presentation.pdf' download='Cornell Final Presentation.pdf'>PDF</a> or
-                    <a href='resources/optimal_control/Cornell Final Presentation.pptx' download='Cornell Final Presentation.pptx'>PowerPoint</a>.
+                    <a href='../resources/optimal_control/Cornell Final Presentation.pdf' download='Cornell Final Presentation.pdf'>PDF</a> or
+                    <a href='../resources/optimal_control/Cornell Final Presentation.pptx' download='Cornell Final Presentation.pptx'>PowerPoint</a>.
                 </p>
             </div>
         </div>

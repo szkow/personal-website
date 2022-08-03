@@ -2,10 +2,10 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <script src='../js/image_gallery.js'></script>
-    <link rel='stylesheet' href='../css/site_style.css'></link>
-    <link rel='stylesheet' href='../css/header.css'>
-    <link rel='stylesheet' href='../css/gallery.css'>
+    <script src='../../util/image_gallery/image_gallery.js'></script>
+    <link rel='stylesheet' href='../../css/site_style.css'></link>
+    <link rel='stylesheet' href='../../css/header.css'>
+    <link rel='stylesheet' href='../../util/image_gallery/gallery.css'>
     <style>
         #nav-projects{
             border-bottom: 2px coral solid;
@@ -47,7 +47,7 @@
 
 <body>
     <?php 
-        include '../html/header.html' 
+        include '../../html/header.html' 
     ?>
 
     <div id='page-title'>
@@ -57,13 +57,13 @@
     <div id='column'>
         <div id='gallery'>
             <div class='gallery-thumbnail-container'>
-                <div><img class='thumbnail' src='../resources/comp_vis/abstract.png'
+                <div><img class='thumbnail' src='../../resources/comp_vis/abstract.png'
                             alt='a screenshot of the abstract of the paper' onclick='expandImage(this)'></div>
-                <div><img class='thumbnail' src='../resources/comp_vis/concept_slide.png'
+                <div><img class='thumbnail' src='../../resources/comp_vis/concept_slide.png'
                             alt='the "concept" slide of our presentation of the paper' onclick='expandImage(this)'></div>
             </div>
             <div class='gallery-main'>
-                <img id='main-image-handle' src='../resources/comp_vis/abstract.png' 
+                <img id='main-image-handle' src='../../resources/comp_vis/abstract.png' 
                             alt='a screenshot of the abstract of the paper'>
             </div>
         </div>
@@ -92,7 +92,7 @@
               networks with PyTorch.
             </p>
             <p>
-              Download the paper <a href='../resources/comp_vis/report.pdf'>here</a> for the full picture.
+              Download the paper <a href='../../resources/comp_vis/report.pdf'>here</a> for the full picture.
             </p>
         </div>
     </div>
