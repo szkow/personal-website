@@ -4,7 +4,7 @@
 <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='css/site_style.css'></link>
 <link rel='stylesheet' href='css/header.css'>
-<script src='js/about_click.js'></script>
+<script src='about/about_click.js'></script>
 <style type=text/css>
     #nav-about {
         border-bottom: 2px coral solid;

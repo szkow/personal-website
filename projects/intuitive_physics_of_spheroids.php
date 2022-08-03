@@ -2,10 +2,10 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/6dc1dfc54e.js" crossorigin="anonymous"></script>
-    <script src='../js/image_gallery.js'></script>
+    <script src='../util/image_gallery/image_gallery.js'></script>
     <link rel='stylesheet' href='../css/site_style.css'></link>
     <link rel='stylesheet' href='../css/header.css'>
-    <link rel='stylesheet' href='../css/gallery.css'>
+    <link rel='stylesheet' href='../util/image_gallery/gallery.css'>
     <style>
         #nav-projects{
             border-bottom: 2px coral solid;
