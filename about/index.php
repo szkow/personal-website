@@ -165,8 +165,8 @@
                     I play piano, listen to music, and do small coding projects in my free time. Music
                     is what I spend the majority of time on, though. My music tastes are pretty varied,
                     but the most common theme is that I love contemporary music and more experimental
-                    stuff. You can see what I've been listening to recently <a href='music.php'>here</a>
-                    or on my Last.fm account, found among my social links.
+                    stuff. You can see what I've been listening to recently on my Last.fm account, 
+		    found among my social links.
                 </p>
             </div>
             <div id='about-research-text'>
