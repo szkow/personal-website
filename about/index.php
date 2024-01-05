@@ -130,13 +130,13 @@
             <div id='about-me-text'>
                 <h2>Me</h2>
                 <p>
-                    Hi, I'm April. I study computer science, but I'm into applied mathematics and music (hence the link to my last.fm to the right). This website is both a little archive of my own to keep track of things and a portfolio aimed towards potential employers (if you're not a potential employer, apologies for the businessy "I'm selling myself" language found on some pages).
+                    Hi, I'm April. I am a computer scientist, but I'm also into applied mathematics and music (hence the link to my last.fm to the right). This website is both a little archive of my own to keep track of things and a portfolio aimed towards potential employers (if you're not a potential employer, apologies for the businessy "I'm selling myself" language found on some pages).
                 </p>
                 <p>
-                    Currently, I'm a pursuing a masters degree at the University of Wisconsin - Madison. I've found I really like the mathy side of computer science, hence my interest in computer graphics/visualization (and a bit of machine learning).
+                    Currently, I'm working as a graphics engineer at Unity. I've found I really like the mathy side of computer science, hence my interest in computer graphics/visualization (and a bit of machine learning).
                 </p>
                 <p>
-                    Anyways, welcome to my site; take a look around! The meat of this site is the <a href='projects.php'>project page</a>.
+                    Anyways, welcome to my site; take a look around! The meat of this site is the <a href='/projects/'>project page</a>.
                 </p>
             </div>
             <div id='about-resume-text'>
@@ -166,7 +166,7 @@
                     is what I spend the majority of time on, though. My music tastes are pretty varied,
                     but the most common theme is that I love contemporary music and more experimental
                     stuff. You can see what I've been listening to recently on my Last.fm account, 
-		    found among my social links.
+		            found among my social links.
                 </p>
             </div>
             <div id='about-research-text'>
@@ -183,7 +183,7 @@
                     united some humanities fields with computation and was motivated by cultural heritage.
                 </p>
                 <p>
-                    Most recently, I worked in a mathematics research lab studying 
+                    More recently, I worked in a mathematics research lab studying 
                     <a href="https://en.wikipedia.org/wiki/Optimal_control">optimal control theory</a> and the problem of how to make
                     many robots to move similarly. It's difficult to explain this clearly <em>and</em> briefly, so it may be
                     more enlightening if you're curious to skim my final presentation for the REU: download as
